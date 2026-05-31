@@ -15,6 +15,7 @@ export function HeroSection() {
           src="/images/kitchen-cleaning-team.jpg"
           alt="Mamoyo Maids professional cleaning team at work"
           fill
+          sizes="100vw"
           className="object-cover animate-zoom-slow"
           priority
           quality={90}

@@ -130,6 +130,7 @@ export function EmploymentPage() {
           src="/images/about-hero.jpg"
           alt="Hire a maid from Mamoyo Maids"
           fill
+          sizes="100vw"
           className="object-cover animate-zoom-slow"
           priority
         />

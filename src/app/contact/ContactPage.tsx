@@ -44,6 +44,7 @@ export function ContactPage() {
           src="/images/contact-hero.jpg"
           alt="Contact Mamoyo Maids"
           fill
+          sizes="100vw"
           className="object-cover animate-zoom-slow"
           priority
         />

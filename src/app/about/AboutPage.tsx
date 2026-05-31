@@ -86,6 +86,7 @@ export function AboutPage() {
           src="/images/about-hero.jpg"
           alt="About Mamoyo Maids"
           fill
+          sizes="100vw"
           className="object-cover animate-zoom-slow"
           priority
         />
@@ -202,6 +203,7 @@ export function AboutPage() {
                       src={teamImages[index]}
                       alt={member.name}
                       fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 25vw"
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent" />

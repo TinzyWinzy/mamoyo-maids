@@ -58,6 +58,7 @@ export function BookingPage() {
           src="/images/booking-hero.jpg"
           alt="Book a cleaning"
           fill
+          sizes="100vw"
           className="object-cover animate-zoom-slow"
           priority
         />

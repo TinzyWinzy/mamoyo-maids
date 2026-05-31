@@ -42,6 +42,7 @@ export function ServicesPage() {
           src="/images/about-hero.jpg"
           alt="Our services"
           fill
+          sizes="100vw"
           className="object-cover animate-zoom-slow"
           priority
         />

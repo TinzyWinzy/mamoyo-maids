@@ -14,6 +14,7 @@ export function CTASection() {
         src="/images/kitchen-cleaning-team.jpg"
         alt="Mamoyo Maids team cleaning a kitchen"
         fill
+        sizes="100vw"
         className="object-cover animate-zoom-slow"
         quality={85}
       />
