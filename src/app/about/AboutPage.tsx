@@ -86,7 +86,7 @@ export function AboutPage() {
           src="/images/about-hero.jpg"
           alt="About Mamoyo Maids"
           fill
-          className="object-cover"
+          className="object-cover animate-zoom-slow"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy/95" />
@@ -131,10 +131,28 @@ export function AboutPage() {
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
               To provide dependable, professional, and friendly cleaning services
               that help families enjoy cleaner homes and more free time. We
-              believe everyone deserves a clean, organized space to relax and
+              believe everyone deserve a clean, organized space to relax and
               thrive — and our mission is to make that accessible to every home we
               serve.
             </p>
+          </AnimatedSection>
+
+          <AnimatedSection className="mb-16 sm:mb-20">
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_15px_50px_rgba(26,39,68,0.1)] max-w-4xl mx-auto">
+              <Image
+                src="/images/plumbing-service.jpg"
+                alt="Mamoyo Maids professional maintenance service"
+                width={800}
+                height={500}
+                className="w-full h-auto object-cover animate-zoom-in"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+              <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm">
+                  <span className="text-xs sm:text-sm font-semibold text-navy">Beyond Cleaning — Complete Home Care</span>
+                </div>
+              </div>
+            </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-20 sm:mb-24">

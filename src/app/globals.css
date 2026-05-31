@@ -52,3 +52,32 @@ body {
     padding-bottom: env(safe-area-inset-bottom);
   }
 }
+
+@keyframes zoomIn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@keyframes zoomOut {
+  0% { transform: scale(1.08); }
+  50% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+@keyframes zoomSlow {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.animate-zoom-in {
+  animation: zoomIn 8s ease-in-out infinite;
+}
+
+.animate-zoom-out {
+  animation: zoomOut 8s ease-in-out infinite;
+}
+
+.animate-zoom-slow {
+  animation: zoomSlow 20s ease-in-out infinite alternate;
+}

@@ -58,7 +58,7 @@ export function BookingPage() {
           src="/images/booking-hero.jpg"
           alt="Book a cleaning"
           fill
-          className="object-cover"
+          className="object-cover animate-zoom-slow"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy/95" />

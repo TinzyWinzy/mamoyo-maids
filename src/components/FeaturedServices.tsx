@@ -23,7 +23,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 const serviceImages: Record<string, string> = {
-  "home-cleaning": "/services/home-cleaning.jpg",
+  "home-cleaning": "/images/bed-making.jpg",
   "deep-cleaning": "/services/deep-cleaning.jpg",
   "laundry-ironing": "/services/laundry.jpg",
   "organizing-decluttering": "/services/organizing.jpg",

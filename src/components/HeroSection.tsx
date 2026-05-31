@@ -12,10 +12,10 @@ export function HeroSection() {
     <section className="relative min-h-[100dvh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/hero.jpg"
-          alt="Mamoyo Maids premium cleaning service"
+          src="/images/kitchen-cleaning-team.jpg"
+          alt="Mamoyo Maids professional cleaning team at work"
           fill
-          className="object-cover"
+          className="object-cover animate-zoom-slow"
           priority
           quality={90}
         />

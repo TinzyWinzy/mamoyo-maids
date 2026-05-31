@@ -11,10 +11,10 @@ export function CTASection() {
   return (
     <section className="relative py-20 sm:py-28 overflow-hidden">
       <Image
-        src="/images/luxury-home.jpg"
-        alt="Premium cleaning"
+        src="/images/kitchen-cleaning-team.jpg"
+        alt="Mamoyo Maids team cleaning a kitchen"
         fill
-        className="object-cover"
+        className="object-cover animate-zoom-slow"
         quality={85}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/90 to-navy/85" />
