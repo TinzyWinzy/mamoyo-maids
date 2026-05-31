@@ -1,0 +1,47 @@
+import { test, expect } from "@playwright/test";
+
+test.describe("Contact Page", () => {
+  test("should load successfully", async ({ page }) => {
+    await page.goto("/contact");
+    await expect(page).toHaveTitle(/Contact.*Mamoyo Maids/);
+  });
+
+  test("should display hero section", async ({ page }) => {
+    await page.goto("/contact");
+    await expect(
+      page.getByRole("heading", { name: /Let.*Make Your Home Shine/i })
+    ).toBeVisible();
+  });
+
+  test("should display contact information", async ({ page }) => {
+    await page.goto("/contact");
+    await expect(page.getByRole("link", { name: /Phone \+/i }).first()).toBeVisible();
+    await expect(page.getByText("info@mamoyomaids.com").first()).toBeVisible();
+  });
+
+  test("should display operating hours", async ({ page }) => {
+    await page.goto("/contact");
+    await expect(page.getByRole("heading", { name: "Operating Hours" })).toBeVisible();
+  });
+
+  test("should display inquiry form", async ({ page }) => {
+    await page.goto("/contact");
+    await expect(
+      page.getByRole("heading", { name: /Quick Inquiry/i })
+    ).toBeVisible();
+    await expect(page.getByLabel(/Name/i)).toBeVisible();
+    await expect(page.getByLabel(/Phone/i)).toBeVisible();
+    await expect(page.getByLabel(/Message/i)).toBeVisible();
+  });
+
+  test("should submit inquiry form", async ({ page }) => {
+    await page.goto("/contact");
+    await page.getByLabel(/Name/i).fill("Test User");
+    await page.getByLabel(/Phone/i).fill("+263771234567");
+    await page.getByLabel(/Message/i).fill("Test inquiry message");
+    await page.getByRole("button", { name: /Send Inquiry/i }).click();
+    await expect(
+      page.getByText("Message Sent!")
+    ).toBeVisible();
+  });
+});
