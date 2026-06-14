@@ -18,6 +18,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--text-primary);
+  --color-dark: var(--dark);
+  --color-dark-light: var(--dark-light);
   --color-navy: var(--dark);
   --color-navy-light: var(--dark-light);
   --color-pink: var(--accent);
