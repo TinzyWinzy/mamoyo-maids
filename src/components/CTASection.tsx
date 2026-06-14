@@ -24,10 +24,10 @@ export function CTASection() {
           <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-5 sm:mb-6">
             Get Started Today
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
             Ready for a Cleaner, Happier Home?
           </h2>
-          <p className="text-base sm:text-lg text-white/65 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
             Join hundreds of satisfied families who trust {SITE_CONFIG.name}{" "}
             for all their home and family needs.
           </p>

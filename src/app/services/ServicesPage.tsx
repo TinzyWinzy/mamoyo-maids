@@ -76,7 +76,7 @@ export function ServicesPage() {
                       <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       {service.shortTitle}
                     </div>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4 sm:mb-5">
+                    <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-4 sm:mb-5">
                       {service.title}
                     </h2>
                     <p className="text-sm sm:text-[15px] text-text-secondary leading-relaxed mb-6 sm:mb-8">
@@ -85,7 +85,7 @@ export function ServicesPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 mb-6 sm:mb-8">
                       <div>
-                        <h4 className="text-[11px] sm:text-xs font-semibold text-pink mb-3 sm:mb-4 uppercase tracking-[0.15em] sm:tracking-[0.2em]">
+                        <h4 className="text-[11px] sm:text-xs font-semibold text-dark mb-3 sm:mb-4 uppercase tracking-[0.15em] sm:tracking-[0.2em]">
                           Benefits
                         </h4>
                         <ul className="space-y-2 sm:space-y-3">
@@ -101,7 +101,7 @@ export function ServicesPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-[11px] sm:text-xs font-semibold text-pink mb-3 sm:mb-4 uppercase tracking-[0.15em] sm:tracking-[0.2em]">
+                        <h4 className="text-[11px] sm:text-xs font-semibold text-dark mb-3 sm:mb-4 uppercase tracking-[0.15em] sm:tracking-[0.2em]">
                           What&apos;s Included
                         </h4>
                         <ul className="space-y-2 sm:space-y-3">
@@ -119,7 +119,7 @@ export function ServicesPage() {
                     </div>
 
                     <div className="mb-6 sm:mb-8">
-                      <h4 className="text-[11px] sm:text-xs font-semibold text-pink mb-2.5 sm:mb-3 uppercase tracking-[0.15em] sm:tracking-[0.2em]">
+                      <h4 className="text-[11px] sm:text-xs font-semibold text-dark mb-2.5 sm:mb-3 uppercase tracking-[0.15em] sm:tracking-[0.2em]">
                         Ideal For
                       </h4>
                       <div className="flex flex-wrap gap-2">
@@ -178,12 +178,12 @@ export function ServicesPage() {
       <section className="py-20 sm:py-28 bg-light-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
           <AnimatedSection className="text-center">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               Why Us
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
               Leave the Hard Work to{" "}
-              <span className="text-pink">Us</span>
+              <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Us</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
               Save time, reduce stress, and let our professional team handle the

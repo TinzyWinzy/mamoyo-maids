@@ -123,11 +123,11 @@ export function AboutPage() {
       <section className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               Our Mission
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-5 sm:mb-6">
-              Helping Families <span className="text-pink">Thrive</span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-5 sm:mb-6">
+              Helping Families <span className="text-dark">Thrive</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
               To provide dependable, professional services that help families
@@ -181,11 +181,11 @@ export function AboutPage() {
       <section className="py-20 sm:py-28 bg-light-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               Our People
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              Meet Our <span className="text-pink">Team</span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+              Meet Our <span className="text-dark">Team</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
               Dedicated professionals who make Mamoyo Services the trusted choice
@@ -211,7 +211,7 @@ export function AboutPage() {
                     <h3 className="text-sm sm:text-lg font-bold text-text-primary mb-0.5 sm:mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-pink font-semibold mb-2 sm:mb-3">
+                    <p className="text-xs sm:text-sm text-dark font-semibold mb-2 sm:mb-3">
                       {member.role}
                     </p>
                     <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
@@ -228,11 +228,11 @@ export function AboutPage() {
       <section className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               Trust Promise
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              Our <span className="text-pink">Trust</span> Guarantee
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+              Our <span className="text-dark">Trust</span> Guarantee
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
               We hold ourselves to the highest standards so you can feel
@@ -246,7 +246,7 @@ export function AboutPage() {
               return (
                 <AnimatedSection key={item.title} delay={index * 0.1}>
                   <div className="bg-light-section rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-border/40 text-center h-full">
-                    <div className="inline-flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-pink/10 text-pink mb-4 sm:mb-5">
+                    <div className="inline-flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-pink/10 text-dark mb-4 sm:mb-5">
                       <Icon className="h-5 w-5 sm:h-7 sm:w-7" />
                     </div>
                     <h3 className="text-sm sm:text-lg font-bold text-text-primary mb-1.5 sm:mb-2">
@@ -262,11 +262,11 @@ export function AboutPage() {
           </div>
 
           <AnimatedSection className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               Reviews
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              What Our <span className="text-pink">Customers</span> Say
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+              What Our <span className="text-dark">Customers</span> Say
             </h2>
           </AnimatedSection>
 
@@ -274,16 +274,16 @@ export function AboutPage() {
             {TESTIMONIALS.map((testimonial, index) => (
               <AnimatedSection key={testimonial.name} delay={index * 0.1}>
                 <div className="relative bg-light-section rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/40 h-full flex flex-col">
-                  <Quote className="absolute top-5 right-5 h-8 w-8 sm:h-10 sm:w-10 text-pink/10" />
+                  <Quote className="absolute top-5 right-5 h-8 w-8 sm:h-10 sm:w-10 text-dark/10" />
                   <div className="flex gap-1 mb-4 sm:mb-5">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="h-4 w-4 sm:h-5 sm:w-5 fill-pink text-pink"
+                        className="h-4 w-4 sm:h-5 sm:w-5 fill-pink text-dark"
                       />
                     ))}
                   </div>
-                  <p className="text-text-secondary leading-relaxed mb-6 sm:mb-8 flex-1 text-sm sm:text-[15px]">
+                  <p className="text-text-secondary leading-relaxed mb-6 sm:mb-8 flex-1 text-base sm:text-lg">
                     &ldquo;{testimonial.text}&rdquo;
                   </p>
                   <div className="flex items-center gap-3 sm:gap-4 pt-5 sm:pt-6 border-t border-border/50">

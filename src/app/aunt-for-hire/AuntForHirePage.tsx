@@ -82,12 +82,12 @@ export function AuntForHirePage() {
       <section className="py-20 sm:py-28 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-accent mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               What Is an Aunt for Hire?
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-5 sm:mb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-5 sm:mb-6">
               Your Guide Through{" "}
-              <span className="text-accent">Tradition</span>
+              <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Tradition</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
               In Zimbabwean culture, a <em>tete</em> (aunt) plays a vital role
@@ -126,11 +126,11 @@ export function AuntForHirePage() {
       <section className="py-20 sm:py-28 bg-light-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-accent mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               How It Works
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4 sm:mb-5">
-              Simple <span className="text-accent">Process</span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4 sm:mb-5">
+              Simple <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Process</span>
             </h2>
           </AnimatedSection>
 
@@ -176,8 +176,8 @@ export function AuntForHirePage() {
         <section className="py-20 sm:py-28 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark">
-                What Families <span className="text-accent">Say</span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-dark">
+                What Families <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Say</span>
               </h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -188,7 +188,7 @@ export function AuntForHirePage() {
                       {[...Array(t.rating)].map((_, j) => (
                         <Star
                           key={j}
-                          className="h-4 w-4 sm:h-5 sm:w-5 fill-accent text-accent"
+                          className="h-4 w-4 sm:h-5 sm:w-5 fill-dark text-dark"
                         />
                       ))}
                     </div>
@@ -210,7 +210,7 @@ export function AuntForHirePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-accent mx-auto mb-4" />
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
               Ready for a <span className="text-accent">Guide</span>?
             </h2>
             <p className="text-base sm:text-lg text-white/90 mb-8 max-w-xl mx-auto">

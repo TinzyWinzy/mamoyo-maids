@@ -14,7 +14,7 @@ export function Footer() {
             <div className="mb-5">
               <Logo variant="light" />
             </div>
-            <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-white/65 text-sm leading-relaxed mb-6 max-w-xs">
               {SITE_CONFIG.tagline}. From cleaning and maid placement to
               counselling and cultural support — we help families live better.
             </p>
@@ -64,7 +64,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/45 hover:text-white text-sm transition-colors duration-300"
+                    className="text-white/55 hover:text-white text-sm transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -89,7 +89,7 @@ export function Footer() {
                 <li key={service}>
                   <Link
                     href="/services"
-                    className="text-white/45 hover:text-white text-sm transition-colors duration-300"
+                    className="text-white/55 hover:text-white text-sm transition-colors duration-300"
                   >
                     {service}
                   </Link>
@@ -106,7 +106,7 @@ export function Footer() {
               <li>
                 <a
                   href={getPhoneUrl(SITE_CONFIG.phone)}
-                  className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-300"
+                  className="flex items-center gap-3 text-white/55 hover:text-white text-sm transition-colors duration-300"
                 >
                   <Phone className="h-4 w-4 text-pink" />
                   {SITE_CONFIG.phone}
@@ -115,14 +115,14 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="flex items-center gap-3 text-white/45 hover:text-white text-sm transition-colors duration-300"
+                  className="flex items-center gap-3 text-white/55 hover:text-white text-sm transition-colors duration-300"
                 >
                   <Mail className="h-4 w-4 text-pink" />
                   {SITE_CONFIG.email}
                 </a>
               </li>
               <li>
-                <div className="flex items-center gap-3 text-white/45 text-sm">
+                <div className="flex items-center gap-3 text-white/55 text-sm">
                   <MapPin className="h-4 w-4 text-pink" />
                   {SITE_CONFIG.address}
                 </div>
@@ -139,7 +139,7 @@ export function Footer() {
                 <p className="text-white/60">
                   Sat: {SITE_CONFIG.operatingHours.saturday}
                 </p>
-                <p className="text-white/35">
+                <p className="text-white/60">
                   Sun: {SITE_CONFIG.operatingHours.sunday}
                 </p>
               </div>
@@ -148,11 +148,11 @@ export function Footer() {
         </div>
 
         <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-white/30">
+          <p className="text-xs text-white/50">
             © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights
             reserved.
           </p>
-            <p className="text-xs text-white/30">
+            <p className="text-xs text-white/50">
               {SITE_CONFIG.tagline}
             </p>
         </div>

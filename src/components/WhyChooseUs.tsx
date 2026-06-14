@@ -7,14 +7,14 @@ import { iconMap } from "@/lib/icons";
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 sm:py-28 bg-white">
+    <section className="py-20 sm:py-28 bg-light-section">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-12 sm:mb-16">
-          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
             Why Choose Us
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-            The Mamoyo <span className="text-pink">Difference</span>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+            The Mamoyo <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Difference</span>
           </h2>
           <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
             We go beyond cleaning — we deliver peace of mind. Here&apos;s what
@@ -38,7 +38,7 @@ export function WhyChooseUs() {
                   <h3 className="text-sm sm:text-base font-bold text-text-primary mb-1.5 sm:mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-text-secondary leading-relaxed hidden sm:block">
+                  <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
                     {item.description}
                   </p>
                 </motion.div>

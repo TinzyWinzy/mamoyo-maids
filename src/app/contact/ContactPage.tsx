@@ -82,10 +82,10 @@ export function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
             <div>
               <AnimatedSection>
-                <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+                <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
                   Contact Information
                 </p>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-8 sm:mb-10">
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-8 sm:mb-10">
                   We&apos;d Love to Hear From You
                 </h2>
 
@@ -360,16 +360,16 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-navy">
+      <section className="py-20 sm:py-28 bg-navy">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
               Ready?
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-5">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-5">
               Ready to Book?
             </h2>
-            <p className="text-sm sm:text-base text-white/55 mb-8 max-w-xl mx-auto">
+            <p className="text-sm sm:text-base text-white/80 mb-8 max-w-xl mx-auto">
               Choose your preferred way to get started with Mamoyo Services.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">

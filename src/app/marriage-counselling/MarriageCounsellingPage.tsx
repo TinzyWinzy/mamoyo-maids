@@ -89,12 +89,12 @@ export function MarriageCounsellingPage() {
       <section className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               About
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-5 sm:mb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-5 sm:mb-6">
               Build a Marriage That{" "}
-              <span className="text-pink">Lasts</span>
+              <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Lasts</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
               Marriage is a beautiful journey, but it comes with its own set of
@@ -133,12 +133,12 @@ export function MarriageCounsellingPage() {
       <section className="py-20 sm:py-28 bg-light-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               What to Expect
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-5 sm:mb-6">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-5 sm:mb-6">
               A Safe Space to{" "}
-              <span className="text-pink">Grow</span>
+              <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Grow</span>
             </h2>
           </AnimatedSection>
 
@@ -176,8 +176,11 @@ export function MarriageCounsellingPage() {
         <section className="py-20 sm:py-28 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
-                What Couples <span className="text-pink">Say</span>
+              <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
+                Testimonials
+              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
+                What Couples <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Say</span>
               </h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -210,11 +213,11 @@ export function MarriageCounsellingPage() {
       <section className="py-20 sm:py-28 bg-navy">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
               Start Your Journey{" "}
               <span className="text-pink">Today</span>
             </h2>
-            <p className="text-base sm:text-lg text-white/60 mb-8 max-w-xl mx-auto">
+            <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
               Whether you&apos;re engaged, newly married, or decades in,
               it&apos;s never too early or too late to invest in your
               relationship.

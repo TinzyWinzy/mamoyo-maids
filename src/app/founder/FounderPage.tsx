@@ -83,12 +83,12 @@ export function FounderPage() {
       <section className="py-20 sm:py-28 bg-background">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-dark mb-4">
               The Beginning
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-8 leading-tight">
               A Vision Born from{" "}
-              <span className="text-accent">Real Need</span>
+              <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Real Need</span>
             </h2>
             <div className="space-y-5 text-base text-text-secondary leading-relaxed">
               <p>
@@ -118,12 +118,12 @@ export function FounderPage() {
       <section className="py-20 sm:py-28 bg-light-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-14 sm:mb-18">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-dark mb-4">
               What Drives Her
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-5">
               Mission &amp;{" "}
-              <span className="text-accent">Vision</span>
+              <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Vision</span>
             </h2>
           </AnimatedSection>
 
@@ -170,12 +170,12 @@ export function FounderPage() {
       <section className="py-20 sm:py-28 bg-background">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-14 sm:mb-18">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-dark mb-4">
               The Journey
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-5">
               How It All{" "}
-              <span className="text-accent">Happened</span>
+              <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Happened</span>
             </h2>
           </AnimatedSection>
 
@@ -187,7 +187,7 @@ export function FounderPage() {
                   <div className={`relative flex flex-col sm:flex-row items-start gap-4 sm:gap-8 ${i % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"}`}>
                     <div className={`flex-1 ${i % 2 === 0 ? "sm:text-right" : "sm:text-left"}`}>
                       <div className={`bg-white rounded-2xl p-5 sm:p-6 border border-border/40 ${i % 2 === 0 ? "sm:mr-8" : "sm:ml-8"}`}>
-                        <span className="text-accent font-bold font-serif text-xl">{m.year}</span>
+                        <span className="text-dark font-bold font-serif text-xl">{m.year}</span>
                         <p className="text-sm text-text-secondary mt-2 leading-relaxed">{m.event}</p>
                       </div>
                     </div>
@@ -223,12 +223,12 @@ export function FounderPage() {
       <section className="py-20 sm:py-28 bg-background">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-dark mb-4">
               Let&apos;s Connect
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-5">
               Want to Say{" "}
-              <span className="text-accent">Hello</span>?
+              <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Hello</span>?
             </h2>
             <p className="text-sm sm:text-base text-text-secondary max-w-xl mx-auto mb-8 leading-relaxed">
               Mamoyo personally reads every message. Whether you have a question

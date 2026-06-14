@@ -212,11 +212,11 @@ export function EmploymentPage() {
       <section className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               Maid Types
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              Choose the <span className="text-pink">Right Fit</span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+              Choose the <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Right Fit</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
               We offer different types of domestic workers to match your household
@@ -232,7 +232,7 @@ export function EmploymentPage() {
                     <Users className="h-3.5 w-3.5" />
                     {type.title}
                   </div>
-                  <p className="text-sm sm:text-[15px] text-text-secondary leading-relaxed mb-5 sm:mb-6">
+                  <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-5 sm:mb-6">
                     {type.description}
                   </p>
                   <ul className="space-y-2.5">
@@ -256,11 +256,11 @@ export function EmploymentPage() {
       <section className="py-20 sm:py-28 bg-light-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               How It Works
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              Simple <span className="text-pink">3-Step</span> Process
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+              Simple <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">3-Step</span> Process
             </h2>
           </AnimatedSection>
 
@@ -279,7 +279,7 @@ export function EmploymentPage() {
                     <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm sm:text-[15px] text-text-secondary leading-relaxed">
+                    <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -293,11 +293,11 @@ export function EmploymentPage() {
       <section className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               Benefits
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              Why Work With <span className="text-pink">Us</span>?
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+              Why Work With <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Us</span>?
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
               We value our team members and provide excellent opportunities for
@@ -314,7 +314,7 @@ export function EmploymentPage() {
                     <div className="inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br from-navy to-navy-light text-white mb-4 sm:mb-5">
                       <Icon className="h-6 w-6 sm:h-7 sm:w-7" />
                     </div>
-                    <h3 className="text-sm sm:text-base font-bold text-text-primary mb-1.5 sm:mb-2">
+                    <h3 className="text-sm sm:text-lg font-bold text-text-primary mb-1.5 sm:mb-2">
                       {benefit.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
@@ -331,11 +331,11 @@ export function EmploymentPage() {
       <section className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-dark mb-3 sm:mb-4">
               Available Maids
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              Meet Our <span className="text-pink">Available</span> Maids
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+              Meet Our <span className="text-dark underline decoration-accent decoration-2 underline-offset-4">Available</span> Maids
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
               Browse profiles of trusted, background-checked domestic workers
@@ -460,7 +460,7 @@ export function EmploymentPage() {
                     <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-2">
                       Request a Maid
                     </h3>
-                    <p className="text-sm sm:text-[15px] text-text-secondary">
+                    <p className="text-base sm:text-lg text-text-secondary">
                       Tell us what you need and we&apos;ll find the perfect match
                       for your home.
                     </p>
@@ -625,13 +625,13 @@ export function EmploymentPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-navy">
+      <section className="py-20 sm:py-28 bg-navy">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-5">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
               Looking to <span className="text-pink">Join</span> Our Team?
             </h2>
-            <p className="text-sm sm:text-base text-white/60 mb-8 max-w-xl mx-auto">
+            <p className="text-sm sm:text-base text-white/80 mb-8 max-w-xl mx-auto">
               We&apos;re always looking for reliable, hardworking individuals to
               join the Mamoyo Services family.
             </p>

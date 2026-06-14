@@ -67,7 +67,7 @@ export function BookingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
           >
             How Booking Works
           </motion.h1>
@@ -181,7 +181,7 @@ export function BookingPage() {
                             required={field.required}
                             value={(formData as Record<string, string>)[field.id]}
                             onChange={handleChange}
-                            className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all"
+                            className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
                             placeholder={field.placeholder}
                           />
                         </div>
@@ -196,7 +196,7 @@ export function BookingPage() {
                           required
                           value={formData.service}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all"
+                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
                         >
                           <option value="">Select a service</option>
                           {SERVICES.map((s) => (
@@ -217,7 +217,7 @@ export function BookingPage() {
                           required
                           value={formData.date}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all"
+                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
                         />
                       </div>
                       <div>
@@ -230,7 +230,7 @@ export function BookingPage() {
                           required
                           value={formData.time}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all"
+                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
                         >
                           <option value="">Select a time</option>
                           {["7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM"].map((t) => (
@@ -249,7 +249,7 @@ export function BookingPage() {
                         rows={3}
                         value={formData.notes}
                         onChange={handleChange}
-                        className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all resize-none"
+                        className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all resize-none"
                         placeholder="Any special instructions or requests..."
                       />
                     </div>
