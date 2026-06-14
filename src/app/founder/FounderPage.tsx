@@ -34,7 +34,7 @@ export function FounderPage() {
         </div>
 
         {/* Text — right side */}
-        <div className="relative z-10 flex-1 flex items-center px-6 sm:px-10 lg:px-14 py-12 lg:py-0">
+        <div className="relative z-10 flex-1 flex items-center px-6 sm:px-10 lg:px-14 py-12 lg:py-0 bg-dark w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
