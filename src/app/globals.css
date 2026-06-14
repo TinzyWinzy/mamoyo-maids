@@ -1,33 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #1A2744;
-  --navy-light: #2A3F6A;
-  --pink: #E88BA7;
-  --pink-light: #F5B8CC;
-  --pink-pale: #FFF0F5;
-  --background: #FFFFFF;
-  --light-section: #FDF6F9;
-  --text-primary: #1A2744;
-  --text-secondary: #5A6B8A;
+  --dark: #0A0A0A;
+  --dark-light: #333333;
+  --accent: #00FFFF;
+  --accent-light: #33FFFF;
+  --accent-pale: #E0FFFF;
+  --background: #F6F1E8;
+  --light-section: #F0EBE0;
+  --text-primary: #0A0A0A;
+  --text-secondary: #5A5A5A;
   --success: #22C55E;
-  --border: #E8ECF1;
+  --border: #D1CCBF;
+  --ring: #00FFFF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--text-primary);
-  --color-navy: var(--navy);
-  --color-navy-light: var(--navy-light);
-  --color-pink: var(--pink);
-  --color-pink-light: var(--pink-light);
-  --color-pink-pale: var(--pink-pale);
+  --color-navy: var(--dark);
+  --color-navy-light: var(--dark-light);
+  --color-pink: var(--accent);
+  --color-pink-light: var(--accent-light);
+  --color-pink-pale: var(--accent-pale);
   --color-light-section: var(--light-section);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-success: var(--success);
   --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-ring: var(--ring);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Literata", Georgia, serif;
 }
 
 html {
@@ -43,7 +47,7 @@ body {
 }
 
 ::selection {
-  background: rgba(232, 139, 167, 0.25);
+  background: rgba(0, 255, 255, 0.2);
   color: var(--text-primary);
 }
 

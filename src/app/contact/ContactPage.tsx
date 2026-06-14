@@ -42,7 +42,7 @@ export function ContactPage() {
       <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
         <Image
           src="/images/contact-hero.jpg"
-          alt="Contact Mamoyo Maids"
+          alt="Contact Mamoyo Services"
           fill
           sizes="100vw"
           className="object-cover animate-zoom-slow"
@@ -63,7 +63,7 @@ export function ContactPage() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
           >
-            Let&apos;s Make Your Home Shine
+            Let&apos;s Help Your Home Thrive
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ export function ContactPage() {
             className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto"
           >
             Get in touch with us today. We&apos;re here to answer your questions
-            and help you book the perfect cleaning service.
+            and help you find the right service for your needs.
           </motion.p>
         </div>
       </section>
@@ -103,6 +103,23 @@ export function ContactPage() {
                       </p>
                       <p className="text-base sm:text-lg font-bold text-text-primary">
                         {SITE_CONFIG.phone}
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                    href={getPhoneUrl(SITE_CONFIG.phoneSecondary)}
+                    className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl hover:bg-light-section transition-all duration-300 group"
+                  >
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-navy-light to-navy text-white group-hover:scale-110 transition-transform duration-300">
+                      <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
+                    </div>
+                    <div>
+                      <p className="text-[11px] sm:text-xs font-semibold text-text-secondary uppercase tracking-wider mb-0.5 sm:mb-1">
+                        Alt. Phone
+                      </p>
+                      <p className="text-base sm:text-lg font-bold text-text-primary">
+                        {SITE_CONFIG.phoneSecondary}
                       </p>
                     </div>
                   </a>
@@ -353,7 +370,7 @@ export function ContactPage() {
               Ready to Book?
             </h2>
             <p className="text-sm sm:text-base text-white/55 mb-8 max-w-xl mx-auto">
-              Choose your preferred way to get started with Mamoyo Maids.
+              Choose your preferred way to get started with Mamoyo Services.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
@@ -366,7 +383,7 @@ export function ContactPage() {
               <a
                 href={getWhatsAppUrl(
                   SITE_CONFIG.whatsapp,
-                  "Hello! I'd like to book a cleaning service."
+                  "Hello! I'd like to book a service."
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

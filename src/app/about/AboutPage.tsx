@@ -84,7 +84,7 @@ export function AboutPage() {
       <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
         <Image
           src="/images/about-hero.jpg"
-          alt="About Mamoyo Maids"
+          alt="About Mamoyo Services"
           fill
           sizes="100vw"
           className="object-cover animate-zoom-slow"
@@ -106,7 +106,7 @@ export function AboutPage() {
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
           >
             Why Families Trust{" "}
-            <span className="text-pink">Mamoyo Maids</span>
+            <span className="text-pink">Mamoyo Services</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -114,8 +114,8 @@ export function AboutPage() {
             transition={{ delay: 0.2 }}
             className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto"
           >
-            We&apos;re more than a cleaning service — we&apos;re your partners
-            in creating a clean, comfortable home.
+            We&apos;re your partners in creating a cleaner home, stronger
+            family, and better quality of life.
           </motion.p>
         </div>
       </section>
@@ -127,14 +127,13 @@ export function AboutPage() {
               Our Mission
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-5 sm:mb-6">
-              Clean Spaces, Better Lives
+              Helping Families <span className="text-pink">Thrive</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
-              To provide dependable, professional, and friendly cleaning services
-              that help families enjoy cleaner homes and more free time. We
-              believe everyone deserve a clean, organized space to relax and
-              thrive — and our mission is to make that accessible to every home we
-              serve.
+              To provide dependable, professional services that help families
+              enjoy cleaner homes, stronger relationships, and more free time.
+              Whether through cleaning, maid placement, training, counselling, or
+              cultural support — we believe every family deserves to thrive.
             </p>
           </AnimatedSection>
 
@@ -142,7 +141,7 @@ export function AboutPage() {
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_15px_50px_rgba(26,39,68,0.1)] max-w-4xl mx-auto">
               <Image
                 src="/images/plumbing-service.jpg"
-                alt="Mamoyo Maids professional maintenance service"
+                alt="Mamoyo Services professional team"
                 width={800}
                 height={500}
                 className="w-full h-auto object-cover animate-zoom-in"
@@ -189,7 +188,7 @@ export function AboutPage() {
               Meet Our <span className="text-pink">Team</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
-              Dedicated professionals who make Mamoyo Maids the trusted choice
+              Dedicated professionals who make Mamoyo Services the trusted choice
               for hundreds of families.
             </p>
           </AnimatedSection>

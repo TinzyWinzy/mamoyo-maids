@@ -3,6 +3,7 @@ import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
+import { TikTokIcon } from "@/lib/icons";
 
 export function Footer() {
   return (
@@ -13,15 +14,15 @@ export function Footer() {
             <Link href="/" className="inline-block mb-5">
               <Image
                 src="/logo.png"
-                alt="Mamoyo Maids"
+                alt={SITE_CONFIG.name}
                 width={160}
                 height={55}
                 className="h-12 sm:h-14 w-auto brightness-0 invert"
               />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
-              {SITE_CONFIG.tagline}. Flexible schedules, reliable service, and a
-              home that shines.
+              {SITE_CONFIG.tagline}. From cleaning and maid placement to
+              counselling and cultural support — we help families live better.
             </p>
             <div className="flex gap-3">
               <a
@@ -39,10 +40,14 @@ export function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-white/10 hover:text-white transition-colors text-xs font-medium"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-white/10 hover:text-white transition-colors"
                   aria-label={platform}
                 >
-                  {platform.charAt(0).toUpperCase()}
+                  {platform === "tiktok" ? (
+                    <TikTokIcon className="h-4 w-4" />
+                  ) : (
+                    platform.charAt(0).toUpperCase()
+                  )}
                 </a>
               ))}
             </div>
@@ -54,9 +59,10 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                { href: "/services", label: "Cleaning Services" },
+                { href: "/services", label: "Our Services" },
                 { href: "/employment", label: "Hire a Maid" },
-                { href: "/booking", label: "Book Now" },
+                { href: "/aunt-for-hire", label: "Aunt for Hire" },
+                { href: "/marriage-counselling", label: "Marriage Counselling" },
                 { href: "/about", label: "About Us" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
@@ -81,6 +87,7 @@ export function Footer() {
                 "Home Cleaning",
                 "Deep Cleaning",
                 "Laundry & Ironing",
+                "Maid Training",
                 "Organizing & Decluttering",
                 "Move-in / Move-out",
               ].map((service) => (
@@ -150,9 +157,9 @@ export function Footer() {
             © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights
             reserved.
           </p>
-          <p className="text-xs text-white/30">
-            Clean Spaces, Better Lives
-          </p>
+            <p className="text-xs text-white/30">
+              {SITE_CONFIG.tagline}
+            </p>
         </div>
       </div>
     </footer>

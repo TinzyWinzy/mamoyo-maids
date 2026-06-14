@@ -18,7 +18,7 @@ export function MobileCTABar() {
       <a
         href={getWhatsAppUrl(
           SITE_CONFIG.whatsapp,
-          "Hello! I'd like to book a cleaning service."
+          "Hello! I'd like to learn more about your services."
         )}
         target="_blank"
         rel="noopener noreferrer"

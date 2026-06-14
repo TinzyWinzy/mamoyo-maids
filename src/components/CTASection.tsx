@@ -12,7 +12,7 @@ export function CTASection() {
     <section className="relative py-20 sm:py-28 overflow-hidden">
       <Image
         src="/images/kitchen-cleaning-team.jpg"
-        alt="Mamoyo Maids team cleaning a kitchen"
+        alt={`${SITE_CONFIG.name} professional team`}
         fill
         sizes="100vw"
         className="object-cover animate-zoom-slow"
@@ -28,21 +28,21 @@ export function CTASection() {
             Ready for a Cleaner, Happier Home?
           </h2>
           <p className="text-base sm:text-lg text-white/65 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-            Join hundreds of satisfied families who trust Mamoyo Maids to keep
-            their homes spotless. Book your cleaning today!
+            Join hundreds of satisfied families who trust {SITE_CONFIG.name}{" "}
+            for all their home and family needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link
               href="/booking"
               className="group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-all duration-300 shadow-xl shadow-pink/30"
             >
-              Book Your Cleaning Today
+              Book a Service
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
               href={getWhatsAppUrl(
                 SITE_CONFIG.whatsapp,
-                "Hello! I'd like to book a cleaning service."
+                "Hello! I'd like to learn more about your services."
               )}
               target="_blank"
               rel="noopener noreferrer"

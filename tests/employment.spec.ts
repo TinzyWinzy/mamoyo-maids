@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Employment Page", () => {
   test("should load successfully", async ({ page }) => {
     await page.goto("/employment");
-    await expect(page).toHaveTitle(/Hire.*Mamoyo Maids/);
+    await expect(page).toHaveTitle(/Hire.*Mamoyo Services/);
   });
 
   test("should display hero section", async ({ page }) => {
@@ -50,10 +50,32 @@ test.describe("Employment Page", () => {
     ).toBeVisible({ timeout: 10000 });
   });
 
+  test("should not submit with empty required fields", async ({ page }) => {
+    await page.goto("/employment");
+    await page.getByRole("button", { name: /Submit Request/i }).click();
+    await expect(
+      page.getByText("Request Received!")
+    ).not.toBeVisible();
+  });
+
   test("should display Join Our Team section", async ({ page }) => {
     await page.goto("/employment");
     await expect(
       page.getByText("Looking to Join Our Team?")
     ).toBeVisible();
+  });
+
+  test("should display available maid profiles", async ({ page }) => {
+    await page.goto("/employment");
+    await expect(page.getByText("Meet Our Available Maids")).toBeVisible();
+    await expect(page.getByText("Sarah").first()).toBeVisible();
+    await expect(page.getByText("Tendai").first()).toBeVisible();
+    await expect(page.getByText("Chipo").first()).toBeVisible();
+  });
+
+  test("should have WhatsApp buttons on maid profiles", async ({ page }) => {
+    await page.goto("/employment");
+    const profileWhatsApp = page.getByRole("link", { name: /Chat on WhatsApp/i });
+    await expect(profileWhatsApp.first()).toBeVisible();
   });
 });

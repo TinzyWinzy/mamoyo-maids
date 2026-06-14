@@ -6,25 +6,13 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   CheckCircle,
-  Home,
-  Sparkles,
-  Shirt,
-  LayoutGrid,
-  Truck,
   MessageCircle,
 } from "lucide-react";
 import { SERVICES, SITE_CONFIG } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { CTASection } from "@/components/CTASection";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Home,
-  Sparkles,
-  Shirt,
-  LayoutGrid,
-  Truck,
-};
+import { iconMap } from "@/lib/icons";
 
 const serviceImages: Record<string, string> = {
   "home-cleaning": "/images/bed-making.jpg",
@@ -69,8 +57,8 @@ export function ServicesPage() {
             transition={{ delay: 0.2 }}
             className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto"
           >
-            Choose from our range of professional cleaning services, each
-            designed to give you a spotless, comfortable home.
+            From home cleaning to maid training, we offer services that help
+            your home and family thrive.
           </motion.p>
         </div>
       </section>
@@ -78,7 +66,7 @@ export function ServicesPage() {
       <section className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
           {SERVICES.map((service, index) => {
-            const Icon = iconMap[service.icon] || Home;
+            const Icon = iconMap[service.icon];
             const isReversed = index % 2 !== 0;
             return (
               <AnimatedSection key={service.id}>
@@ -198,9 +186,8 @@ export function ServicesPage() {
               <span className="text-pink">Us</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-              Save time, reduce stress, and enjoy a spotless home without lifting
-              a finger. Our professional team handles everything so you can focus
-              on what matters most.
+              Save time, reduce stress, and let our professional team handle the
+              hard work so you can focus on what matters most to your family.
             </p>
             <Link
               href="/booking"

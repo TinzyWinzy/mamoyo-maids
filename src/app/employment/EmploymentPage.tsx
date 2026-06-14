@@ -8,30 +8,21 @@ import {
   MessageCircle,
   Phone,
   ShieldCheck,
-  Clock,
-  Wallet,
-  GraduationCap,
-  TrendingUp,
-  Heart,
   CheckCircle,
   Send,
   Users,
   Star,
   Award,
   Briefcase,
+  MapPin,
+  Calendar,
+  DollarSign,
+  UserCheck,
 } from "lucide-react";
-import { SITE_CONFIG, EMPLOYMENT_BENEFITS } from "@/lib/constants";
+import { SITE_CONFIG, EMPLOYMENT_BENEFITS, MAID_PROFILES } from "@/lib/constants";
 import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
 import { AnimatedSection } from "@/components/AnimatedSection";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  ShieldCheck,
-  Clock,
-  Wallet,
-  GraduationCap,
-  TrendingUp,
-  Heart,
-};
+import { iconMap } from "@/lib/icons";
 
 const howItWorks = [
   {
@@ -128,7 +119,7 @@ export function EmploymentPage() {
       <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
         <Image
           src="/images/about-hero.jpg"
-          alt="Hire a maid from Mamoyo Maids"
+          alt="Hire a maid from Mamoyo Services"
           fill
           sizes="100vw"
           className="object-cover animate-zoom-slow"
@@ -316,7 +307,7 @@ export function EmploymentPage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6">
             {EMPLOYMENT_BENEFITS.map((benefit, index) => {
-              const Icon = iconMap[benefit.icon] || Heart;
+              const Icon = iconMap[benefit.icon];
               return (
                 <AnimatedSection key={benefit.title} delay={index * 0.08}>
                   <div className="bg-light-section rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-border/40 text-center hover:shadow-[0_12px_40px_rgba(232,139,167,0.08)] transition-all duration-500">
@@ -333,6 +324,89 @@ export function EmploymentPage() {
                 </AnimatedSection>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-12 sm:mb-16">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+              Available Maids
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
+              Meet Our <span className="text-pink">Available</span> Maids
+            </h2>
+            <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
+              Browse profiles of trusted, background-checked domestic workers
+              ready to join your home. Tap any profile to connect via WhatsApp.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+            {MAID_PROFILES.map((maid, index) => (
+              <AnimatedSection key={maid.id} delay={index * 0.05}>
+                <div className="bg-light-section rounded-2xl sm:rounded-3xl border border-border/40 p-5 sm:p-6 h-full flex flex-col hover:shadow-[0_12px_40px_rgba(232,139,167,0.08)] transition-all duration-500">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-navy to-pink flex items-center justify-center text-lg font-bold text-white shrink-0">
+                      {maid.name.charAt(0)}
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-text-primary">
+                        {maid.name}
+                      </h3>
+                      <p className="text-xs text-text-secondary">
+                        {maid.age} years
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 mb-4 flex-1">
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
+                      <MapPin className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <span>{maid.areaOfOrigin}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
+                      <Users className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <span>{maid.church}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
+                      <UserCheck className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <span>{maid.children} {maid.children === 1 ? "child" : "children"}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
+                      <DollarSign className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <span>${maid.salaryExpectation}/month</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
+                      <Calendar className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <span>Off: {maid.daysOff}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
+                      <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <span>{maid.policeClearance ? "Police Clearance" : "Pending clearance"}</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-xs sm:text-sm text-text-secondary mt-1">
+                      <Briefcase className="h-3.5 w-3.5 shrink-0 text-pink mt-0.5" />
+                      <span>{maid.previousWork}</span>
+                    </div>
+                  </div>
+
+                  <a
+                    href={getWhatsAppUrl(
+                      SITE_CONFIG.whatsapp,
+                      `Hello! I'm interested in hiring ${maid.name} (${maid.age} yrs, ${maid.areaOfOrigin}).`
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-pink text-white font-semibold text-sm hover:bg-pink-light transition-colors shadow-md shadow-pink/20"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    Chat on WhatsApp
+                  </a>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
@@ -559,13 +633,13 @@ export function EmploymentPage() {
             </h2>
             <p className="text-sm sm:text-base text-white/60 mb-8 max-w-xl mx-auto">
               We&apos;re always looking for reliable, hardworking individuals to
-              join the Mamoyo Maids family.
+              join the Mamoyo Services family.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href={getWhatsAppUrl(
                   SITE_CONFIG.whatsapp,
-                  "Hello! I'd like to apply to work with Mamoyo Maids."
+                  "Hello! I'd like to apply to work with Mamoyo Services."
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

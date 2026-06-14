@@ -13,7 +13,7 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="/images/kitchen-cleaning-team.jpg"
-          alt="Mamoyo Maids professional cleaning team at work"
+          alt={`${SITE_CONFIG.name} professional team at work`}
           fill
           sizes="100vw"
           className="object-cover animate-zoom-slow"
@@ -41,9 +41,9 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-5 sm:mb-6"
           >
-            Your Trusted Maids
-            <span className="block text-pink">Clean Homes,</span>
-            <span className="block">Happy Lives</span>
+            Your Trusted
+            <span className="block text-pink">Home & Life</span>
+            <span className="block">Services</span>
           </motion.h1>
 
           <motion.p
@@ -52,9 +52,8 @@ export function HeroSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed mb-8 sm:mb-10 max-w-xl"
           >
-            Flexible schedules, reliable service, and a home that shines. Let our
-            professional team take care of your cleaning while you focus on what
-            matters most.
+            Cleaning, maid placement, training, counselling, and cultural support
+            — we help your home and family thrive.
           </motion.p>
 
           <motion.div
@@ -67,13 +66,13 @@ export function HeroSection() {
               href="/booking"
               className="group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-all duration-300 shadow-xl shadow-pink/30"
             >
-              Book Your Cleaning Today
+              Book a Service
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
               href={getWhatsAppUrl(
                 SITE_CONFIG.whatsapp,
-                "Hello! I'd like to book a cleaning service."
+                "Hello! I'd like to learn more about your services."
               )}
               target="_blank"
               rel="noopener noreferrer"
@@ -92,7 +91,7 @@ export function HeroSection() {
           >
             {[
               { icon: Shield, label: "Background Checked" },
-              { icon: Clock, label: "Flexible Scheduling" },
+              { icon: Clock, label: "Reliable Service" },
               { icon: Award, label: "5-Star Rated" },
             ].map((badge) => (
               <div

@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Contact Page", () => {
   test("should load successfully", async ({ page }) => {
     await page.goto("/contact");
-    await expect(page).toHaveTitle(/Contact.*Mamoyo Maids/);
+    await expect(page).toHaveTitle(/Contact.*Mamoyo Services/);
   });
 
   test("should display hero section", async ({ page }) => {
@@ -43,5 +43,13 @@ test.describe("Contact Page", () => {
     await expect(
       page.getByText("Message Sent!")
     ).toBeVisible();
+  });
+
+  test("should not submit with empty required fields", async ({ page }) => {
+    await page.goto("/contact");
+    await page.getByRole("button", { name: /Send Inquiry/i }).click();
+    await expect(
+      page.getByText("Message Sent!")
+    ).not.toBeVisible();
   });
 });

@@ -11,9 +11,10 @@ import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Cleaning Services" },
+  { href: "/services", label: "Services" },
   { href: "/employment", label: "Hire a Maid" },
-  { href: "/booking", label: "Book Now" },
+  { href: "/aunt-for-hire", label: "Aunt for Hire" },
+  { href: "/marriage-counselling", label: "Marriage" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -42,7 +43,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <Image
               src="/logo.png"
-              alt="Mamoyo Maids"
+              alt={SITE_CONFIG.name}
               width={44}
               height={44}
               className="h-10 sm:h-11 w-auto"
@@ -83,7 +84,7 @@ export function Navbar() {
             <a
               href={getWhatsAppUrl(
                 SITE_CONFIG.whatsapp,
-                "Hello! I'd like to book a cleaning service."
+                "Hello! I'd like to learn more about your services."
               )}
               target="_blank"
               rel="noopener noreferrer"
@@ -147,7 +148,7 @@ export function Navbar() {
                 <a
                   href={getWhatsAppUrl(
                     SITE_CONFIG.whatsapp,
-                    "Hello! I'd like to book a cleaning service."
+                    "Hello! I'd like to learn more about your services."
                   )}
                   target="_blank"
                   rel="noopener noreferrer"

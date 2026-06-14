@@ -4,9 +4,21 @@ test.describe("Navigation", () => {
   test("should navigate between pages", async ({ page }) => {
     await page.goto("/");
 
-    await page.getByRole("banner").getByRole("link", { name: /Services/i }).click();
+    await page.getByRole("banner").getByRole("link", { name: /Services/i }).first().click();
     await page.waitForURL(/\/services/);
     await expect(page).toHaveURL(/\/services/);
+
+    await page.getByRole("banner").getByRole("link", { name: /Hire a Maid/i }).click();
+    await page.waitForURL(/\/employment/);
+    await expect(page).toHaveURL(/\/employment/);
+
+    await page.getByRole("banner").getByRole("link", { name: /Aunt for Hire/i }).click();
+    await page.waitForURL(/\/aunt-for-hire/);
+    await expect(page).toHaveURL(/\/aunt-for-hire/);
+
+    await page.getByRole("banner").getByRole("link", { name: /Marriage/i }).click();
+    await page.waitForURL(/\/marriage-counselling/);
+    await expect(page).toHaveURL(/\/marriage-counselling/);
 
     await page.getByRole("banner").getByRole("link", { name: /About/i }).click();
     await page.waitForURL(/\/about/);
@@ -23,7 +35,7 @@ test.describe("Navigation", () => {
 
   test("should have working logo link", async ({ page }) => {
     await page.goto("/services");
-    await page.getByRole("banner").getByRole("link", { name: /Mamoyo Maids/i }).click();
+    await page.getByRole("banner").getByRole("link", { name: /Mamoyo Services/i }).click();
     await page.waitForURL(/\//);
     await expect(page).toHaveURL("/");
   });
@@ -52,7 +64,7 @@ test.describe("Mobile Navigation", () => {
 test.describe("Footer", () => {
   test("should display footer content", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByText("© 2026 Mamoyo Maids")).toBeVisible();
+    await expect(page.getByText(/© 2026 Mamoyo/)).toBeVisible();
     await expect(page.getByRole("contentinfo").getByText("Clean Spaces, Better Lives", { exact: true })).toBeVisible();
   });
 

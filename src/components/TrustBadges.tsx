@@ -1,12 +1,5 @@
-import { ShieldCheck, Clock, ThumbsUp, CalendarCheck } from "lucide-react";
+import { iconMap } from "@/lib/icons";
 import { TRUST_BADGES } from "@/lib/constants";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  ShieldCheck,
-  Clock,
-  ThumbsUp,
-  CalendarCheck,
-};
 
 export function TrustBadges() {
   return (
@@ -14,7 +7,7 @@ export function TrustBadges() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {TRUST_BADGES.map((badge) => {
-            const Icon = iconMap[badge.icon] || ShieldCheck;
+            const Icon = iconMap[badge.icon];
             return (
               <div
                 key={badge.label}

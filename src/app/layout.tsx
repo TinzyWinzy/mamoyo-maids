@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Literata } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MobileCTABar } from "@/components/MobileCTABar";
-import { SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG, SERVICES } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const literata = Literata({
+  variable: "--font-literata",
   subsets: ["latin"],
   display: "swap",
 });
@@ -20,15 +26,18 @@ export const metadata: Metadata = {
   },
   description: SITE_CONFIG.description,
   keywords: [
-    "cleaning services",
-    "maid services",
+    "cleaning services Zimbabwe",
+    "maid services Harare",
     "home cleaning",
+    "maid training Zimbabwe",
+    "marriage counselling Harare",
+    "aunt for hire Zimbabwe",
     "domestic cleaning",
-    "Harare cleaning",
-    "Zimbabwe cleaning services",
-    "deep cleaning",
-    "laundry service",
-    "move-in move-out cleaning",
+    "maid placement Harare",
+    "professional cleaning Zimbabwe",
+    "premarital counselling",
+    "home services Zimbabwe",
+    "Mamoyo Services",
   ],
   authors: [{ name: SITE_CONFIG.name }],
   creator: SITE_CONFIG.name,
@@ -86,6 +95,20 @@ export default function RootLayout({
       addressLocality: "Harare",
       addressCountry: "ZW",
     },
+    areaServed: ["Harare", "Borrowdale", "Greendale", "Avondale", "Mt Pleasant", "Hatfield", "Chisipite", "Highlands"],
+    sameAs: [SITE_CONFIG.social.facebook, SITE_CONFIG.social.instagram, SITE_CONFIG.social.tiktok, SITE_CONFIG.social.linkedin],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Mamoyo Services",
+      itemListElement: SERVICES.map((s) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.title,
+          description: s.description,
+        },
+      })),
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -109,7 +132,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} h-full`} data-scroll-behavior="smooth">
+    <html lang="en" className={`${inter.variable} ${literata.variable} h-full`} data-scroll-behavior="smooth">
       <head>
         <script
           type="application/ld+json"

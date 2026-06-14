@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Booking Page", () => {
   test("should load successfully", async ({ page }) => {
     await page.goto("/booking");
-    await expect(page).toHaveTitle(/Book.*Mamoyo Maids/);
+    await expect(page).toHaveTitle(/Book.*Mamoyo Services/);
   });
 
   test("should display hero section", async ({ page }) => {
@@ -43,5 +43,13 @@ test.describe("Booking Page", () => {
     await expect(
       page.getByText("Booking Request Received!")
     ).toBeVisible({ timeout: 10000 });
+  });
+
+  test("should not submit with empty required fields", async ({ page }) => {
+    await page.goto("/booking");
+    await page.getByRole("button", { name: /Book Now/i }).click();
+    await expect(
+      page.getByText("Booking Request Received!")
+    ).not.toBeVisible();
   });
 });

@@ -4,23 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import {
-  Home,
-  Sparkles,
-  Shirt,
-  LayoutGrid,
-  Truck,
-} from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 import { AnimatedSection } from "./AnimatedSection";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Home,
-  Sparkles,
-  Shirt,
-  LayoutGrid,
-  Truck,
-};
+import { iconMap } from "@/lib/icons";
 
 const serviceImages: Record<string, string> = {
   "home-cleaning": "/images/bed-making.jpg",
@@ -39,18 +25,17 @@ export function FeaturedServices() {
             Our Services
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-            Premium Cleaning{" "}
-            <span className="text-pink">Services</span>
+            Our <span className="text-pink">Services</span>
           </h2>
           <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
-            From routine cleaning to deep cleans, we have a service for every
-            need. Every visit is tailored to your home.
+            From home cleaning and maid training to full-service maid placement,
+            we offer comprehensive solutions for your home and family.
           </p>
         </AnimatedSection>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {SERVICES.map((service, index) => {
-            const Icon = iconMap[service.icon] || Home;
+            const Icon = iconMap[service.icon];
             return (
               <AnimatedSection key={service.id} delay={index * 0.1}>
                 <motion.div

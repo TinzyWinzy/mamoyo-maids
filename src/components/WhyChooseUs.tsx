@@ -1,23 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ShieldCheck,
-  Wallet,
-  Calendar,
-  Heart,
-  Eye,
-} from "lucide-react";
 import { WHY_CHOOSE_US } from "@/lib/constants";
 import { AnimatedSection } from "./AnimatedSection";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  ShieldCheck,
-  Wallet,
-  Calendar,
-  Heart,
-  Eye,
-};
+import { iconMap } from "@/lib/icons";
 
 export function WhyChooseUs() {
   return (
@@ -38,7 +24,7 @@ export function WhyChooseUs() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-5">
           {WHY_CHOOSE_US.map((item, index) => {
-            const Icon = iconMap[item.icon] || ShieldCheck;
+            const Icon = iconMap[item.icon];
             return (
               <AnimatedSection key={item.title} delay={index * 0.08}>
                 <motion.div

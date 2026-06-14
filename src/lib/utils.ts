@@ -1,9 +1,3 @@
-import { clsx, type ClassValue } from "clsx";
-
-export function cn(...inputs: ClassValue[]) {
-  return clsx(inputs);
-}
-
 export function getWhatsAppUrl(phone: string, message?: string): string {
   const encoded = message ? encodeURIComponent(message) : "";
   return `https://wa.me/${phone.replace(/[^0-9]/g, "")}${encoded ? `?text=${encoded}` : ""}`;

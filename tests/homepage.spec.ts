@@ -3,16 +3,16 @@ import { test, expect } from "@playwright/test";
 test.describe("Homepage", () => {
   test("should load successfully", async ({ page }) => {
     await page.goto("/");
-    await expect(page).toHaveTitle(/Mamoyo Maids/);
+    await expect(page).toHaveTitle(/Mamoyo Services/);
   });
 
   test("should display hero section", async ({ page }) => {
     await page.goto("/");
     await expect(
-      page.getByRole("heading", { name: /Your Trusted Maids/i })
+      page.getByRole("heading", { name: /Home & Life/i })
     ).toBeVisible();
     await expect(
-      page.getByRole("heading", { name: /Clean Homes/i })
+      page.getByRole("heading", { name: /Services/i })
     ).toBeVisible();
   });
 
@@ -20,15 +20,15 @@ test.describe("Homepage", () => {
     await page.goto("/");
     await expect(page.getByRole("link", { name: /Home/i }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: /Services/i }).first()).toBeVisible();
-    await expect(page.getByRole("link", { name: /Book Now/i }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: /Aunt for Hire/i }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: /About/i }).first()).toBeVisible();
     await expect(page.getByRole("link", { name: /Contact/i }).first()).toBeVisible();
   });
 
   test("should display trust badges", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByText("Background Checked Staff")).toBeVisible();
-    await expect(page.getByText("Reliable Scheduling")).toBeVisible();
+    await expect(page.getByText("Background Checked")).toBeVisible();
+    await expect(page.getByText("Reliable & Trustworthy")).toBeVisible();
     await expect(page.getByText("Satisfaction Guaranteed")).toBeVisible();
   });
 

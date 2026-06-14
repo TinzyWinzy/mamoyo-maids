@@ -4,9 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  ClipboardList,
-  CalendarDays,
-  PartyPopper,
   Send,
   MessageCircle,
   CheckCircle,
@@ -14,12 +11,7 @@ import {
 import { BOOKING_STEPS, SERVICES, SITE_CONFIG } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { AnimatedSection } from "@/components/AnimatedSection";
-
-const stepIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  ClipboardList,
-  CalendarDays,
-  PartyPopper,
-};
+import { iconMap } from "@/lib/icons";
 
 export function BookingPage() {
   const [formData, setFormData] = useState({
@@ -47,7 +39,7 @@ export function BookingPage() {
   };
 
   const handleWhatsApp = () => {
-    const message = `Hello! I'd like to book a cleaning service.%0A%0AName: ${formData.name}%0APhone: ${formData.phone}%0AEmail: ${formData.email}%0AService: ${formData.service}%0ADate: ${formData.date}%0ATime: ${formData.time}%0ANotes: ${formData.notes}`;
+    const message = `Hello! I'd like to book a service.%0A%0AName: ${formData.name}%0APhone: ${formData.phone}%0AEmail: ${formData.email}%0AService: ${formData.service}%0ADate: ${formData.date}%0ATime: ${formData.time}%0ANotes: ${formData.notes}`;
     window.open(getWhatsAppUrl(SITE_CONFIG.whatsapp, message), "_blank");
   };
 
@@ -56,7 +48,7 @@ export function BookingPage() {
       <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
         <Image
           src="/images/booking-hero.jpg"
-          alt="Book a cleaning"
+          alt="Book a service"
           fill
           sizes="100vw"
           className="object-cover animate-zoom-slow"
@@ -85,7 +77,7 @@ export function BookingPage() {
             transition={{ delay: 0.2 }}
             className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto"
           >
-            Getting your home cleaned is just 3 simple steps away.
+            Booking your service is just 3 simple steps away.
           </motion.p>
         </div>
       </section>
@@ -94,7 +86,7 @@ export function BookingPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 mb-20 sm:mb-24">
             {BOOKING_STEPS.map((step, index) => {
-              const Icon = stepIcons[step.icon] || ClipboardList;
+              const Icon = iconMap[step.icon];
               return (
                 <AnimatedSection key={step.step} delay={index * 0.15}>
                   <div className="relative text-center">
@@ -164,7 +156,7 @@ export function BookingPage() {
                 <>
                   <div className="text-center mb-8 sm:mb-10">
                     <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-2">
-                      Book Your Cleaning
+                      Book Your Service
                     </h3>
                     <p className="text-sm sm:text-[15px] text-text-secondary">
                       Fill out the form below and we&apos;ll confirm your

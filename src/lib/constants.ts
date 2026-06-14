@@ -1,13 +1,14 @@
 export const SITE_CONFIG = {
-  name: "Mamoyo Maids",
-  tagline: "Clean Spaces, Better Lives",
+  name: "Mamoyo Services",
+  tagline: "Your Trusted Home & Life Services",
   description:
-    "Professional domestic cleaning services and trusted maid placement agency. Flexible schedules, reliable service, and a home that shines.",
-  url: "https://mamoyomaids.com",
-  phone: "+263771234567",
-  whatsapp: "+263771234567",
-  email: "info@mamoyomaids.com",
-  address: "Harare, Zimbabwe",
+    "Professional domestic cleaning, maid placement, maid training, marriage counselling, and cultural advisory services. We help families live better.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mamoyomaids.com",
+  phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || "+263783717844",
+  whatsapp: process.env.NEXT_PUBLIC_BUSINESS_WHATSAPP || "+263783717844",
+  phoneSecondary: process.env.NEXT_PUBLIC_BUSINESS_PHONE_SECONDARY || "+263716453381",
+  email: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@mamoyomaids.com",
+  address: process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || "Harare, Zimbabwe",
   operatingHours: {
     weekdays: "7:00 AM – 6:00 PM",
     saturday: "8:00 AM – 4:00 PM",
@@ -127,6 +128,32 @@ export const SERVICES = [
     ],
   },
   {
+    id: "maid-training",
+    title: "Maid Training & Upskilling",
+    shortTitle: "Maid Training",
+    description:
+      "Professional training programs for domestic workers to build skills, earn certification, and deliver exceptional service.",
+    icon: "GraduationCap",
+    image: "/services/maid-training.jpg",
+    benefits: [
+      "Nationally recognised certification",
+      "Improved employability",
+      "Higher earning potential",
+      "Confidence and professionalism",
+    ],
+    features: [
+      "Cleaning techniques & standards",
+      "Hygiene & sanitation protocols",
+      "Safety & emergency procedures",
+      "Customer service & etiquette",
+    ],
+    useCases: [
+      "New domestic workers seeking training",
+      "Experienced maids wanting to upskill",
+      "Employers who want professionally trained staff",
+    ],
+  },
+  {
     id: "move-cleaning",
     title: "Move-in / Move-out Cleaning",
     shortTitle: "Move Cleaning",
@@ -151,6 +178,105 @@ export const SERVICES = [
       "New homeowners moving in",
       "Property managers preparing listings",
     ],
+  },
+];
+
+export const MAID_PROFILES = [
+  {
+    id: "maid-1",
+    name: "Sarah",
+    age: 28,
+    areaOfOrigin: "Mashonaland East",
+    church: "Methodist",
+    children: 2,
+    salaryExpectation: 250,
+    policeClearance: true,
+    previousWork: "3 years domestic work in Borrowdale",
+    daysOff: "Sunday",
+  },
+  {
+    id: "maid-2",
+    name: "Tendai",
+    age: 34,
+    areaOfOrigin: "Manicaland",
+    church: "Anglican",
+    children: 3,
+    salaryExpectation: 200,
+    policeClearance: true,
+    previousWork: "5 years live-in maid in Greendale",
+    daysOff: "Saturday",
+  },
+  {
+    id: "maid-3",
+    name: "Chipo",
+    age: 25,
+    areaOfOrigin: "Mashonaland West",
+    church: "Apostolic",
+    children: 1,
+    salaryExpectation: 280,
+    policeClearance: true,
+    previousWork: "2 years housekeeping at a lodge",
+    daysOff: "Sunday",
+  },
+  {
+    id: "maid-4",
+    name: "Ruth",
+    age: 31,
+    areaOfOrigin: "Midlands",
+    church: "Catholic",
+    children: 2,
+    salaryExpectation: 230,
+    policeClearance: true,
+    previousWork: "4 years domestic work in Avondale",
+    daysOff: "Alternate Sundays",
+  },
+  {
+    id: "maid-5",
+    name: "Patience",
+    age: 40,
+    areaOfOrigin: "Masvingo",
+    church: "ZCC",
+    children: 4,
+    salaryExpectation: 180,
+    policeClearance: true,
+    previousWork: "8 years live-out maid in Mt Pleasant",
+    daysOff: "Sunday",
+  },
+  {
+    id: "maid-6",
+    name: "Nyasha",
+    age: 27,
+    areaOfOrigin: "Harare",
+    church: "Baptist",
+    children: 1,
+    salaryExpectation: 300,
+    policeClearance: true,
+    previousWork: "3 years nanny and housekeeper",
+    daysOff: "Saturday & Sunday",
+  },
+  {
+    id: "maid-7",
+    name: "Linda",
+    age: 33,
+    areaOfOrigin: "Bulawayo",
+    church: "Seventh Day Adventist",
+    children: 2,
+    salaryExpectation: 220,
+    policeClearance: true,
+    previousWork: "6 years domestic worker in Highlands",
+    daysOff: "Saturday",
+  },
+  {
+    id: "maid-8",
+    name: "Ruvarashe",
+    age: 24,
+    areaOfOrigin: "Mashonaland Central",
+    church: "Pentecostal",
+    children: 0,
+    salaryExpectation: 260,
+    policeClearance: true,
+    previousWork: "1 year housekeeping at a guesthouse",
+    daysOff: "Sunday",
   },
 ];
 
@@ -192,7 +318,7 @@ export const TESTIMONIALS = [
     name: "Grace M.",
     role: "Busy Mom",
     rating: 5,
-    text: "Mamoyo Maids made our home sparkle. The team is always punctual and so thorough. Highly recommended!",
+    text: "Mamoyo Services made our home sparkle. The team is always punctual and so thorough. Highly recommended!",
   },
   {
     name: "Tendai K.",
@@ -210,13 +336,25 @@ export const TESTIMONIALS = [
     name: "David S.",
     role: "Elderly Homeowner",
     rating: 5,
-    text: "Such a relief to find a cleaning service I can trust. They treat my home with care and respect.",
+    text: "Such a relief to find a service I can trust. They treat my home with care and respect.",
   },
   {
     name: "Chiedza L.",
     role: "Property Manager",
     rating: 5,
-    text: "Reliable, professional, and great value. Mamoyo Maids is my go-to for all property turnovers.",
+    text: "Reliable, professional, and great value. Mamoyo Services is my go-to for all property turnovers.",
+  },
+  {
+    name: "Tariro N.",
+    role: "Bride-to-Be",
+    rating: 5,
+    text: "The Aunt for Hire service was a lifesaver. She guided me through every tradition and made my wedding preparation so much smoother.",
+  },
+  {
+    name: "Munyaradzi & Tsitsi",
+    role: "Couple",
+    rating: 5,
+    text: "Marriage counselling helped us build a stronger foundation. We're grateful for the wisdom and patience shared with us.",
   },
 ];
 
@@ -224,47 +362,47 @@ export const WHY_CHOOSE_US = [
   {
     title: "Trusted Professionals",
     description:
-      "Every team member is background-checked, trained, and committed to excellence.",
+      "Every member of our network is background-checked, trained, and committed to excellence.",
     icon: "ShieldCheck",
   },
   {
     title: "Affordable Rates",
     description:
-      "Premium cleaning services at prices that fit your budget. No hidden fees.",
+      "Premium services at prices that fit your budget. No hidden fees, no surprises.",
     icon: "Wallet",
   },
   {
     title: "Flexible Scheduling",
     description:
-      "Book weekly, bi-weekly, or one-time cleans that fit your lifestyle.",
+      "Book services that fit your lifestyle — weekly, one-time, or as needed.",
     icon: "Calendar",
   },
   {
-    title: "Friendly Service",
+    title: "Wide Service Range",
     description:
-      "Our warm, professional team makes every visit a pleasant experience.",
-    icon: "Heart",
+      "From cleaning and maid placement to counselling and cultural support — we do it all.",
+    icon: "LayoutGrid",
   },
   {
     title: "Attention to Detail",
     description:
-      "We don't just clean — we transform your space with meticulous care.",
+      "We care about the little things. Every service is delivered with meticulous care.",
     icon: "Eye",
   },
 ];
 
 export const TRUST_BADGES = [
-  { label: "Background Checked Staff", icon: "ShieldCheck" },
-  { label: "Reliable Scheduling", icon: "Clock" },
+  { label: "Background Checked", icon: "ShieldCheck" },
+  { label: "Reliable & Trustworthy", icon: "Clock" },
   { label: "Satisfaction Guaranteed", icon: "ThumbsUp" },
-  { label: "Flexible Appointments", icon: "CalendarCheck" },
+  { label: "Wide Service Range", icon: "LayoutGrid" },
 ];
 
 export const BOOKING_STEPS = [
   {
     step: 1,
     title: "Pick Your Service",
-    description: "Choose from our range of professional cleaning services.",
+    description: "Choose from our range of professional home services.",
     icon: "ClipboardList",
   },
   {
@@ -276,8 +414,35 @@ export const BOOKING_STEPS = [
   {
     step: 3,
     title: "Confirm & Relax",
-    description: "We'll take care of the rest. Enjoy your sparkling clean home!",
+    description: "We'll take care of the rest. Enjoy your peace of mind!",
     icon: "PartyPopper",
+  },
+];
+
+export const TIKTOK_POSTS = [
+  {
+    id: "1",
+    url: "https://www.tiktok.com/@mamoyomaids/video/1",
+    title: "Professional Home Cleaning Tips",
+    service: "Home Cleaning",
+  },
+  {
+    id: "2",
+    url: "https://www.tiktok.com/@mamoyomaids/video/2",
+    title: "Deep Cleaning Before & After",
+    service: "Deep Cleaning",
+  },
+  {
+    id: "3",
+    url: "https://www.tiktok.com/@mamoyomaids/video/3",
+    title: "Marriage Prep Advice",
+    service: "Marriage Counselling",
+  },
+  {
+    id: "4",
+    url: "https://www.tiktok.com/@mamoyomaids/video/4",
+    title: "Behind the Scenes with Our Maids",
+    service: "Maid Placement",
   },
 ];
 
@@ -285,7 +450,7 @@ export const TEAM_MEMBERS = [
   {
     name: "Tatenda Moyo",
     role: "Founder & CEO",
-    bio: "Tatenda founded Mamoyo Maids with a vision to provide reliable, trustworthy cleaning services that families can depend on.",
+    bio: "Tatenda founded Mamoyo Services with a vision to provide reliable, trustworthy home and family services that families can depend on.",
   },
   {
     name: "Nyasha Chikwanha",
