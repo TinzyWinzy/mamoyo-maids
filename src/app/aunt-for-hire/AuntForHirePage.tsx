@@ -47,10 +47,9 @@ const auntReviews = TESTIMONIALS.filter((t) =>
 export function AuntForHirePage() {
   return (
     <>
-      {/* Hero — dark background with decorative accent elements */}
+      {/* Hero */}
       <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden bg-dark">
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/20 via-transparent to-dark/60" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
