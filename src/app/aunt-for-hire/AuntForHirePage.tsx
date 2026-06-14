@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Heart,
@@ -8,6 +7,7 @@ import {
   Star,
   MessageCircle,
   Phone,
+  Sparkles,
 } from "lucide-react";
 import { SITE_CONFIG, TESTIMONIALS } from "@/lib/constants";
 import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
@@ -47,21 +47,14 @@ const auntReviews = TESTIMONIALS.filter((t) =>
 export function AuntForHirePage() {
   return (
     <>
-      <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
-        <Image
-          src="/images/about-hero.jpg"
-          alt="Aunt for Hire"
-          fill
-          sizes="100vw"
-          className="object-cover animate-zoom-slow"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy/95" />
+      {/* Hero — dark background with decorative accent elements */}
+      <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden bg-dark">
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/20 via-transparent to-dark/60" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4"
+            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-accent mb-3 sm:mb-4"
           >
             Cultural Guidance
           </motion.p>
@@ -71,13 +64,13 @@ export function AuntForHirePage() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
           >
-            Aunt for <span className="text-pink">Hire</span>
+            Aunt for <span className="text-accent">Hire</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto"
           >
             Traditional marriage mentorship and cultural guidance for your
             wedding journey. Let an experienced aunt guide you through every
@@ -86,15 +79,15 @@ export function AuntForHirePage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-28 bg-white">
+      <section className="py-20 sm:py-28 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-accent mb-3 sm:mb-4">
               What Is an Aunt for Hire?
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-5 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-5 sm:mb-6">
               Your Guide Through{" "}
-              <span className="text-pink">Tradition</span>
+              <span className="text-accent">Tradition</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
               In Zimbabwean culture, a <em>tete</em> (aunt) plays a vital role
@@ -112,11 +105,11 @@ export function AuntForHirePage() {
               const Icon = item.icon;
               return (
                 <AnimatedSection key={item.title} delay={index * 0.1}>
-                  <div className="bg-light-section rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/40 h-full hover:shadow-[0_12px_40px_rgba(232,139,167,0.08)] transition-all duration-500">
-                    <div className="inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br from-navy to-navy-light text-white mb-4 sm:mb-5">
+                  <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/40 h-full hover:shadow-[0_12px_40px_rgba(0,255,255,0.06)] transition-all duration-500">
+                    <div className="inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-dark text-white mb-4 sm:mb-5">
                       <Icon className="h-6 w-6 sm:h-7 sm:w-7" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-dark mb-2">
                       {item.title}
                     </h3>
                     <p className="text-sm sm:text-[15px] text-text-secondary leading-relaxed">
@@ -133,11 +126,11 @@ export function AuntForHirePage() {
       <section className="py-20 sm:py-28 bg-light-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12 sm:mb-16">
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-accent mb-3 sm:mb-4">
               How It Works
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              Simple <span className="text-pink">Process</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4 sm:mb-5">
+              Simple <span className="text-accent">Process</span>
             </h2>
           </AnimatedSection>
 
@@ -161,12 +154,12 @@ export function AuntForHirePage() {
             ].map((item, index) => (
               <AnimatedSection key={item.step} delay={index * 0.15}>
                 <div className="text-center">
-                  <div className="inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl sm:rounded-3xl bg-gradient-to-br from-navy to-navy-light text-white mb-5 sm:mb-6 shadow-xl shadow-navy/15">
+                  <div className="inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl sm:rounded-3xl bg-dark text-white mb-5 sm:mb-6 shadow-xl shadow-dark/15">
                     <span className="text-xl sm:text-2xl font-bold">
                       {item.step}
                     </span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-dark mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm sm:text-[15px] text-text-secondary leading-relaxed">
@@ -180,31 +173,29 @@ export function AuntForHirePage() {
       </section>
 
       {auntReviews.length > 0 && (
-        <section className="py-20 sm:py-28 bg-white">
+        <section className="py-20 sm:py-28 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary">
-                What Families <span className="text-pink">Say</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark">
+                What Families <span className="text-accent">Say</span>
               </h2>
             </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {auntReviews.map((t, i) => (
                 <AnimatedSection key={t.name} delay={i * 0.1}>
-                  <div className="bg-light-section rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/40">
+                  <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/40">
                     <div className="flex gap-1 mb-4">
                       {[...Array(t.rating)].map((_, j) => (
                         <Star
                           key={j}
-                          className="h-4 w-4 sm:h-5 sm:w-5 fill-pink text-pink"
+                          className="h-4 w-4 sm:h-5 sm:w-5 fill-accent text-accent"
                         />
                       ))}
                     </div>
                     <p className="text-text-secondary leading-relaxed mb-4 text-sm sm:text-[15px]">
                       &ldquo;{t.text}&rdquo;
                     </p>
-                    <p className="text-sm font-bold text-text-primary">
-                      {t.name}
-                    </p>
+                    <p className="text-sm font-bold text-dark">{t.name}</p>
                     <p className="text-xs text-text-secondary">{t.role}</p>
                   </div>
                 </AnimatedSection>
@@ -214,13 +205,15 @@ export function AuntForHirePage() {
         </section>
       )}
 
-      <section className="py-20 sm:py-28 bg-navy">
+      {/* Final CTA */}
+      <section className="py-20 sm:py-28 bg-dark">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
+            <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-accent mx-auto mb-4" />
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
-              Ready for a <span className="text-pink">Guide</span>?
+              Ready for a <span className="text-accent">Guide</span>?
             </h2>
-            <p className="text-base sm:text-lg text-white/60 mb-8 max-w-xl mx-auto">
+            <p className="text-base sm:text-lg text-white/90 mb-8 max-w-xl mx-auto">
               Whether you&apos;re planning a traditional wedding or need support
               with family discussions, we&apos;re here for you.
             </p>
@@ -232,14 +225,14 @@ export function AuntForHirePage() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-colors shadow-lg shadow-pink/25"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 min-h-[52px] rounded-full bg-accent text-dark font-semibold text-sm sm:text-base hover:bg-accent-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-accent/25"
               >
                 <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                 Chat on WhatsApp
               </a>
               <a
                 href={getPhoneUrl(SITE_CONFIG.phone)}
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full border-2 border-white/15 text-white font-semibold text-sm sm:text-base hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 min-h-[52px] rounded-full border-2 border-white/20 text-white/90 font-semibold text-sm sm:text-base hover:bg-white/10 active:scale-[0.97] transition-all duration-300"
               >
                 <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                 Call Us
