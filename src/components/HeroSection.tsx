@@ -39,9 +39,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-5 sm:mb-6"
+            className="text-[clamp(2rem,8vw,4.5rem)] sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-4 sm:mb-6"
           >
-            Your Trusted
+            <span className="block">Your Trusted</span>
             <span className="block text-pink">Home & Life</span>
             <span className="block">Services</span>
           </motion.h1>
@@ -50,7 +50,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed mb-8 sm:mb-10 max-w-xl"
+            className="text-sm sm:text-lg md:text-xl text-white/70 leading-relaxed mb-6 sm:mb-10 max-w-xl"
           >
             Cleaning, maid placement, training, counselling, and cultural support
             — we help your home and family thrive.
@@ -60,11 +60,11 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-14"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-14"
           >
             <Link
               href="/booking"
-              className="group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-all duration-300 shadow-xl shadow-pink/30"
+              className="group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 min-h-[52px] rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light active:scale-[0.97] transition-all duration-300 shadow-xl shadow-pink/30"
             >
               Book a Service
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
@@ -76,7 +76,7 @@ export function HeroSection() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 min-h-[52px] rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 active:scale-[0.97] transition-all duration-300"
             >
               <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
               Chat on WhatsApp

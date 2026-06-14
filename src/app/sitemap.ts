@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/employment",
     "/aunt-for-hire",
     "/marriage-counselling",
+    "/founder",
     "/tiktok",
     "/about",
     "/contact",

@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { MessageCircle, Music, Heart, Share2 } from "lucide-react";
 import { SITE_CONFIG, TIKTOK_POSTS } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { TikTokEmbed } from "@/components/TikTokEmbed";
 import { TikTokIcon } from "@/lib/icons";
+import { Logo } from "@/components/Logo";
 
 const services = [
   { label: "Book Home Cleaning", message: "Hello! I'd like to book a home cleaning service." },
@@ -23,13 +23,8 @@ export function TikTokPage() {
       <div className="max-w-[500px] mx-auto px-6 pt-24 pb-16">
         {/* Profile Section */}
         <div className="flex flex-col items-center text-center mb-8">
-          <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent mb-4">
-            <Image
-              src="/logo.png"
-              alt={SITE_CONFIG.name}
-              fill
-              className="object-cover"
-            />
+          <div className="w-24 h-24 rounded-full bg-light-section border-2 border-accent flex items-center justify-center mb-4">
+            <Logo variant="dark" />
           </div>
           <h1 className="font-serif text-xl font-bold text-text-primary">
             {SITE_CONFIG.name}

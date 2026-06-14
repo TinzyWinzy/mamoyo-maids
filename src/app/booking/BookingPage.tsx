@@ -163,7 +163,7 @@ export function BookingPage() {
                       appointment quickly.
                     </p>
                   </div>
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       {[
                         { id: "name", label: "Full Name", type: "text", required: true, placeholder: "Your full name" },
@@ -181,7 +181,7 @@ export function BookingPage() {
                             required={field.required}
                             value={(formData as Record<string, string>)[field.id]}
                             onChange={handleChange}
-                            className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                            className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all"
                             placeholder={field.placeholder}
                           />
                         </div>
@@ -196,7 +196,7 @@ export function BookingPage() {
                           required
                           value={formData.service}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all"
                         >
                           <option value="">Select a service</option>
                           {SERVICES.map((s) => (
@@ -217,7 +217,7 @@ export function BookingPage() {
                           required
                           value={formData.date}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all"
                         />
                       </div>
                       <div>
@@ -230,7 +230,7 @@ export function BookingPage() {
                           required
                           value={formData.time}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all"
                         >
                           <option value="">Select a time</option>
                           {["7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM"].map((t) => (
@@ -249,14 +249,14 @@ export function BookingPage() {
                         rows={3}
                         value={formData.notes}
                         onChange={handleChange}
-                        className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all resize-none"
+                        className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent/25 focus:border-accent transition-all resize-none"
                         placeholder="Any special instructions or requests..."
                       />
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                       <button
                         type="submit"
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-all duration-300 shadow-lg shadow-pink/20"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 min-h-[52px] rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-pink/20"
                       >
                         <Send className="h-4 w-4 sm:h-5 sm:w-5" />
                         Book Now
@@ -264,7 +264,7 @@ export function BookingPage() {
                       <button
                         type="button"
                         onClick={handleWhatsApp}
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-navy text-white font-semibold text-sm sm:text-base hover:bg-navy-light transition-colors"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 min-h-[52px] rounded-full bg-navy text-white font-semibold text-sm sm:text-base hover:bg-navy-light active:scale-[0.97] transition-colors"
                       >
                         <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                         Send via WhatsApp

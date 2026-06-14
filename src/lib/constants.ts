@@ -448,9 +448,9 @@ export const TIKTOK_POSTS = [
 
 export const TEAM_MEMBERS = [
   {
-    name: "Tatenda Moyo",
+    name: "Mamoyo",
     role: "Founder & CEO",
-    bio: "Tatenda founded Mamoyo Services with a vision to provide reliable, trustworthy home and family services that families can depend on.",
+    bio: "Mamoyo founded Mamoyo Services with a vision to provide reliable, trustworthy home and family services that families can depend on.",
   },
   {
     name: "Nyasha Chikwanha",

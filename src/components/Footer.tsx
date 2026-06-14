@@ -1,25 +1,19 @@
 import Link from "next/link";
-import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
 import { TikTokIcon } from "@/lib/icons";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
     <footer className="bg-navy text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-14">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-block mb-5">
-              <Image
-                src="/logo.png"
-                alt={SITE_CONFIG.name}
-                width={160}
-                height={55}
-                className="h-12 sm:h-14 w-auto brightness-0 invert"
-              />
-            </Link>
+            <div className="mb-5">
+              <Logo variant="light" />
+            </div>
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
               {SITE_CONFIG.tagline}. From cleaning and maid placement to
               counselling and cultural support — we help families live better.
@@ -29,7 +23,7 @@ export function Footer() {
                 href={getWhatsAppUrl(SITE_CONFIG.whatsapp)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-pink/20 text-pink hover:bg-pink/30 transition-colors"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-pink/20 text-pink hover:bg-pink/30 transition-colors"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="h-4.5 w-4.5" />
@@ -40,7 +34,7 @@ export function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-white/10 hover:text-white transition-colors"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-white/10 hover:text-white transition-colors"
                   aria-label={platform}
                 >
                   {platform === "tiktok" ? (
@@ -63,6 +57,7 @@ export function Footer() {
                 { href: "/employment", label: "Hire a Maid" },
                 { href: "/aunt-for-hire", label: "Aunt for Hire" },
                 { href: "/marriage-counselling", label: "Marriage Counselling" },
+                { href: "/founder", label: "Our Founder" },
                 { href: "/about", label: "About Us" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (

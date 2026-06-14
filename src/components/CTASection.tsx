@@ -34,7 +34,7 @@ export function CTASection() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link
               href="/booking"
-              className="group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-all duration-300 shadow-xl shadow-pink/30"
+              className="group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 min-h-[52px] rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light active:scale-[0.97] transition-all duration-300 shadow-xl shadow-pink/30"
             >
               Book a Service
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
@@ -46,14 +46,14 @@ export function CTASection() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 min-h-[52px] rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 active:scale-[0.97] transition-all duration-300"
             >
               <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
               Chat on WhatsApp
             </a>
             <a
               href={getPhoneUrl(SITE_CONFIG.phone)}
-              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full border-2 border-white/15 text-white font-semibold text-sm sm:text-base hover:bg-white/10 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 min-h-[52px] rounded-full border-2 border-white/15 text-white font-semibold text-sm sm:text-base hover:bg-white/10 active:scale-[0.97] transition-all duration-300"
             >
               <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
               Call Us Now

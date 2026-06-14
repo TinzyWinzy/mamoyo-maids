@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
+import { Logo } from "@/components/Logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/employment", label: "Hire a Maid" },
   { href: "/aunt-for-hire", label: "Aunt for Hire" },
   { href: "/marriage-counselling", label: "Marriage" },
+  { href: "/founder", label: "Founder" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -40,16 +41,7 @@ export function Navbar() {
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 sm:h-18 lg:h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image
-              src="/logo.png"
-              alt={SITE_CONFIG.name}
-              width={44}
-              height={44}
-              className="h-10 sm:h-11 w-auto"
-              priority
-            />
-          </Link>
+          <Logo variant={scrolled ? "dark" : "light"} />
 
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
@@ -97,17 +89,17 @@ export function Navbar() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2 rounded-xl transition-colors ${
+            className={`lg:hidden p-3 rounded-xl transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center ${
               scrolled || isOpen
-                ? "text-navy hover:bg-pink-pale"
+                ? "text-dark hover:bg-accent-pale"
                 : "text-white hover:bg-white/10"
             }`}
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5" />
             )}
           </button>
         </div>
@@ -128,21 +120,21 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                  className={`block px-5 py-4 rounded-xl text-sm font-medium transition-colors min-h-[52px] flex items-center ${
                     pathname === link.href
-                      ? "bg-pink-pale text-pink"
-                      : "text-text-secondary hover:text-navy hover:bg-pink-pale/50"
+                      ? "bg-accent-pale text-accent"
+                      : "text-text-secondary hover:text-dark hover:bg-accent-pale/30"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-3 px-4 flex flex-col gap-2.5">
+              <div className="pt-3 px-4 flex flex-col gap-3">
                 <a
                   href={getPhoneUrl(SITE_CONFIG.phone)}
-                  className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl border border-border text-sm font-medium text-navy hover:bg-pink-pale transition-colors"
+                  className="flex items-center justify-center gap-2 px-4 py-4 rounded-xl border border-border text-sm font-medium text-dark hover:bg-accent-pale transition-colors min-h-[52px]"
                 >
-                  <Phone className="h-4 w-4" />
+                  <Phone className="h-5 w-5" />
                   Call Us
                 </a>
                 <a
@@ -152,9 +144,9 @@ export function Navbar() {
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-pink text-white text-sm font-semibold hover:bg-pink-light transition-colors"
+                  className="flex items-center justify-center gap-2 px-4 py-4 rounded-xl bg-accent text-dark text-sm font-semibold hover:bg-accent-light transition-colors min-h-[52px]"
                 >
-                  <MessageCircle className="h-4 w-4" />
+                  <MessageCircle className="h-5 w-5" />
                   Chat on WhatsApp
                 </a>
               </div>
