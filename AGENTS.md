@@ -74,6 +74,13 @@ For multi-step tasks, state a brief plan:
 
 ---
 
+### Never add `outputFileTracingExcludes` or `serverExternalPackages` to next.config.ts
+**Incident:** Added `serverExternalPackages: ["playwright"]` and `outputFileTracingExcludes` to exclude Playwright from the bundle. This broke the Vercel deployment — all pages became 843 kB serverless functions instead of static HTML, and the site returned ERR_CONNECTION_TIMED_OUT.
+
+**Rule:** Keep `next.config.ts` minimal. Never add config options to "fix" dev/test dependencies leaking into production — fix the root cause instead (remove the dependency from production builds, or use `.vercelignore`).
+
+---
+
 ## Application
 
 These principles apply to **every task** in this project. If a prompt conflicts with these principles, the principles take precedence. When in doubt, refer to the principle that best matches the situation and follow its guidance.
