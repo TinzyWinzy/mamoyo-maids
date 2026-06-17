@@ -1,24 +1,24 @@
 export const SITE_CONFIG = {
-  name: "Mamoyo Services",
-  tagline: "Your Trusted Home & Life Services",
+  name: "WOBIC Employment Services",
+  tagline: "Your Trusted Employment Partner",
   description:
-    "Professional domestic cleaning, maid placement, maid training, marriage counselling, and cultural advisory services. We help families live better.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mamoyomaids.com",
-  phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || "+263783717844",
-  whatsapp: process.env.NEXT_PUBLIC_BUSINESS_WHATSAPP || "+263783717844",
-  phoneSecondary: process.env.NEXT_PUBLIC_BUSINESS_PHONE_SECONDARY || "+263716453381",
-  email: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@mamoyomaids.com",
-  address: process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || "Harare, Zimbabwe",
+    "Professional recruitment, staff placement, and training services. We provide reliable people with police clearances for domestic work, security, driving, construction, and more.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://wobic.co.zw",
+  phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || "+263734257057",
+  whatsapp: process.env.NEXT_PUBLIC_BUSINESS_WHATSAPP || "+263734257057",
+  phoneSecondary: process.env.NEXT_PUBLIC_BUSINESS_PHONE_SECONDARY || "+263783717844",
+  email: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@wobic.co.zw",
+  address: "Karigamombe Centre, 11th Floor, Corner Julius Nyerere & Samora Machel, Harare, Zimbabwe",
   operatingHours: {
     weekdays: "7:00 AM – 6:00 PM",
     saturday: "8:00 AM – 4:00 PM",
     sunday: "Closed",
   },
   social: {
-    facebook: "https://facebook.com/mamoyomaids",
-    instagram: "https://instagram.com/mamoyomaids",
-    tiktok: "https://tiktok.com/@mamoyomaids",
-    linkedin: "https://linkedin.com/company/mamoyomaids",
+    facebook: "https://facebook.com/wobicemployment",
+    instagram: "https://instagram.com/wobicemployment",
+    tiktok: "https://tiktok.com/@wobic0",
+    linkedin: "https://linkedin.com/company/wobic",
   },
 };
 
@@ -360,42 +360,42 @@ export const TESTIMONIALS = [
 
 export const WHY_CHOOSE_US = [
   {
-    title: "Trusted Professionals",
+    title: "Police Clearance Guaranteed",
     description:
-      "Every member of our network is background-checked, trained, and committed to excellence.",
+      "Every person we place has a valid police clearance. Your safety and peace of mind come first.",
     icon: "ShieldCheck",
+  },
+  {
+    title: "Trained & Reliable Staff",
+    description:
+      "We train our candidates so they arrive ready to deliver professional, high-quality service.",
+    icon: "GraduationCap",
+  },
+  {
+    title: "Wide Range of Services",
+    description:
+      "From house maids to security guards, drivers to construction workers — we cover all your staffing needs.",
+    icon: "LayoutGrid",
   },
   {
     title: "Affordable Rates",
     description:
-      "Premium services at prices that fit your budget. No hidden fees, no surprises.",
+      "Competitive pricing with no hidden fees. Get the right staff at the right price.",
     icon: "Wallet",
   },
   {
-    title: "Flexible Scheduling",
+    title: "Trusted Since Day One",
     description:
-      "Book services that fit your lifestyle — weekly, one-time, or as needed.",
-    icon: "Calendar",
-  },
-  {
-    title: "Wide Service Range",
-    description:
-      "From cleaning and maid placement to counselling and cultural support — we do it all.",
-    icon: "LayoutGrid",
-  },
-  {
-    title: "Attention to Detail",
-    description:
-      "We care about the little things. Every service is delivered with meticulous care.",
-    icon: "Eye",
+      "Hundreds of families and businesses trust us to deliver reliable staff every time.",
+    icon: "Heart",
   },
 ];
 
 export const TRUST_BADGES = [
-  { label: "Background Checked", icon: "ShieldCheck" },
-  { label: "Reliable & Trustworthy", icon: "Clock" },
+  { label: "Police Cleared Staff", icon: "ShieldCheck" },
+  { label: "Trained Professionals", icon: "GraduationCap" },
   { label: "Satisfaction Guaranteed", icon: "ThumbsUp" },
-  { label: "Wide Service Range", icon: "LayoutGrid" },
+  { label: "Licensed Agency", icon: "Building2" },
 ];
 
 export const BOOKING_STEPS = [

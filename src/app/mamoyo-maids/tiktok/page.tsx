@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { TikTokPage } from "./TikTokPage";
 
 export const metadata: Metadata = {
-  title: "Follow Us on TikTok",
+  title: "Follow Us on TikTok | Mamoyo Maids",
   description:
-    "Follow Mamoyo Services on TikTok for cleaning tips, marriage advice, and behind-the-scenes content.",
+    "Follow Mamoyo Maids on TikTok for cleaning tips, marriage advice, and behind-the-scenes content.",
   openGraph: {
-    title: "Mamoyo Services on TikTok",
+    title: "Mamoyo Maids on TikTok",
     description: "Follow us on TikTok for tips, tutorials, and family content.",
   },
 };

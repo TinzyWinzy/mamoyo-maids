@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { AboutPage } from "./AboutPage";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | WOBIC Employment Services",
   description:
-    "Learn about Mamoyo Services — our mission, our team, and why hundreds of families trust us for home care and family services in Harare.",
+    "Learn about WOBIC Employment Services — our mission, our team, and why hundreds of families and businesses trust us for recruitment and staff placement in Harare.",
 };
 
 export default function About() {

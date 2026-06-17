@@ -17,6 +17,7 @@ import {
   PartyPopper,
   GraduationCap,
   TrendingUp,
+  Building2,
   type LucideIcon,
 } from "lucide-react";
 
@@ -39,6 +40,7 @@ export const iconMap: Record<string, LucideIcon> = {
   PartyPopper,
   GraduationCap,
   TrendingUp,
+  Building2,
 };
 
 export function TikTokIcon({ className }: { className?: string }) {

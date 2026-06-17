@@ -13,7 +13,7 @@ const milestones = [
   { year: "2020", event: "Founded Mamoyo with a vision to change how families access home services." },
   { year: "2021", event: "Expanded from cleaning to full-service maid placement and training." },
   { year: "2023", event: "Launched Aunt for Hire and Marriage Counselling — supporting families beyond the home." },
-  { year: "2025", event: "Rebranded to Mamoyo Services, serving hundreds of families across Harare." },
+  { year: "2025", event: "Rebranded to Mamoyo Maids, serving hundreds of families across Harare." },
 ];
 
 export function FounderPage() {
@@ -25,7 +25,7 @@ export function FounderPage() {
         <div className="relative h-[55vh] sm:h-[60vh] lg:h-[100dvh] lg:w-[55%] bg-dark">
           <Image
             src="/founder.jpg"
-            alt="Mamoyo — Founder of Mamoyo Services"
+            alt="Mamoyo — Founder of Mamoyo Maids"
             fill
             className="object-contain object-center"
             priority
@@ -92,7 +92,7 @@ export function FounderPage() {
             </h2>
             <div className="space-y-5 text-base text-text-secondary leading-relaxed">
               <p>
-                Mamoyo founded Mamoyo Services in 2020 after experiencing
+                Mamoyo founded Mamoyo Maids in 2020 after experiencing
                 firsthand the struggle of finding reliable, trustworthy home
                 service providers in Harare. Too many families were being let
                 down by inconsistent services and unvetted staff.
@@ -104,7 +104,7 @@ export function FounderPage() {
                 operation has grown into a multi-service family support platform.
               </p>
               <p>
-                Today, Mamoyo Services employs dozens of trained professionals
+                Today, Mamoyo Maids employs dozens of trained professionals
                 and has served hundreds of families across Harare&apos;s premier
                 suburbs. But for Mamoyo, it&apos;s never been about size —
                 it&apos;s about impact.

@@ -26,18 +26,18 @@ export const metadata: Metadata = {
   },
   description: SITE_CONFIG.description,
   keywords: [
-    "cleaning services Zimbabwe",
-    "maid services Harare",
-    "home cleaning",
-    "maid training Zimbabwe",
-    "marriage counselling Harare",
-    "aunt for hire Zimbabwe",
-    "domestic cleaning",
-    "maid placement Harare",
-    "professional cleaning Zimbabwe",
-    "premarital counselling",
-    "home services Zimbabwe",
-    "Mamoyo Services",
+    "employment agency Zimbabwe",
+    "recruitment services Harare",
+    "WOBIC employment services",
+    "house maids Harare",
+    "babysitters Zimbabwe",
+    "security guards",
+    "drivers Harare",
+    "gardeners",
+    "caretakers",
+    "police clearance Zimbabwe",
+    "staff placement Zimbabwe",
+    "WOBIC",
   ],
   authors: [{ name: SITE_CONFIG.name }],
   creator: SITE_CONFIG.name,
@@ -92,23 +92,12 @@ export default function RootLayout({
     email: SITE_CONFIG.email,
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Karigamombe Centre, 11th Floor, Corner Julius Nyerere & Samora Machel",
       addressLocality: "Harare",
       addressCountry: "ZW",
     },
-    areaServed: ["Harare", "Borrowdale", "Greendale", "Avondale", "Mt Pleasant", "Hatfield", "Chisipite", "Highlands"],
+    areaServed: ["Harare", "Zimbabwe"],
     sameAs: [SITE_CONFIG.social.facebook, SITE_CONFIG.social.instagram, SITE_CONFIG.social.tiktok, SITE_CONFIG.social.linkedin],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Mamoyo Services",
-      itemListElement: SERVICES.map((s) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: s.title,
-          description: s.description,
-        },
-      })),
-    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -124,11 +113,6 @@ export default function RootLayout({
       },
     ],
     priceRange: "$$",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: "120",
-    },
   };
 
   return (

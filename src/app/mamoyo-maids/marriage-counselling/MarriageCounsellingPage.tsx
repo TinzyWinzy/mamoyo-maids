@@ -61,7 +61,7 @@ export function MarriageCounsellingPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4"
+            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4"
           >
             Relationship Support
           </motion.p>
@@ -71,7 +71,7 @@ export function MarriageCounsellingPage() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
           >
-            Marriage <span className="text-pink">Counselling</span>
+            Marriage <span className="text-gold">Counselling</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -191,7 +191,7 @@ export function MarriageCounsellingPage() {
                       {[...Array(t.rating)].map((_, j) => (
                         <Star
                           key={j}
-                          className="h-4 w-4 sm:h-5 sm:w-5 fill-pink text-pink"
+                          className="h-4 w-4 sm:h-5 sm:w-5 fill-gold text-gold"
                         />
                       ))}
                     </div>
@@ -215,7 +215,7 @@ export function MarriageCounsellingPage() {
           <AnimatedSection>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
               Start Your Journey{" "}
-              <span className="text-pink">Today</span>
+              <span className="text-gold">Today</span>
             </h2>
             <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl mx-auto">
               Whether you&apos;re engaged, newly married, or decades in,
@@ -230,7 +230,7 @@ export function MarriageCounsellingPage() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-colors shadow-lg shadow-pink/25"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/25"
               >
                 <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                 Chat on WhatsApp

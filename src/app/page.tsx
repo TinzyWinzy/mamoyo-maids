@@ -1,18 +1,16 @@
-import { HeroSection } from "@/components/HeroSection";
+import { WOBICHeroSection } from "@/components/WOBICHeroSection";
 import { TrustBadges } from "@/components/TrustBadges";
-import { WhyChooseUs } from "@/components/WhyChooseUs";
-import { FeaturedServices } from "@/components/FeaturedServices";
-import { Testimonials } from "@/components/Testimonials";
+import { WOBICWhyChooseUs } from "@/components/WOBICWhyChooseUs";
+import { WOBICServicesSection } from "@/components/WOBICServicesSection";
 import { CTASection } from "@/components/CTASection";
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
+      <WOBICHeroSection />
       <TrustBadges />
-      <WhyChooseUs />
-      <FeaturedServices />
-      <Testimonials />
+      <WOBICWhyChooseUs />
+      <WOBICServicesSection />
       <CTASection />
     </>
   );

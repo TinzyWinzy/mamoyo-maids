@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -42,18 +43,18 @@ export function ContactPage() {
       <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
         <Image
           src="/images/contact-hero.jpg"
-          alt="Contact Mamoyo Services"
+          alt="Contact WOBIC Employment Services"
           fill
           sizes="100vw"
           className="object-cover animate-zoom-slow"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#4e2d7b]/90 via-[#4e2d7b]/80 to-[#4e2d7b]/95" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4"
+            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4"
           >
             Get in Touch
           </motion.p>
@@ -63,7 +64,7 @@ export function ContactPage() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
           >
-            Let&apos;s Help Your Home Thrive
+            Let&apos;s Find Your Ideal Staff
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +73,7 @@ export function ContactPage() {
             className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto"
           >
             Get in touch with us today. We&apos;re here to answer your questions
-            and help you find the right service for your needs.
+            and help you find the right staff for your needs.
           </motion.p>
         </div>
       </section>
@@ -94,7 +95,7 @@ export function ContactPage() {
                     href={getPhoneUrl(SITE_CONFIG.phone)}
                     className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl hover:bg-light-section transition-all duration-300 group"
                   >
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-navy to-navy-light text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#4e2d7b] text-white group-hover:scale-110 transition-transform duration-300">
                       <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -111,7 +112,7 @@ export function ContactPage() {
                     href={getPhoneUrl(SITE_CONFIG.phoneSecondary)}
                     className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl hover:bg-light-section transition-all duration-300 group"
                   >
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-navy-light to-navy text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#4e2d7b]/80 text-white group-hover:scale-110 transition-transform duration-300">
                       <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -133,7 +134,7 @@ export function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl hover:bg-light-section transition-all duration-300 group"
                   >
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-pink to-pink-light text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-gold text-[#4e2d7b] group-hover:scale-110 transition-transform duration-300">
                       <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -150,7 +151,7 @@ export function ContactPage() {
                     href={`mailto:${SITE_CONFIG.email}`}
                     className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl hover:bg-light-section transition-all duration-300 group"
                   >
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-navy-light to-navy text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#4e2d7b]/80 text-white group-hover:scale-110 transition-transform duration-300">
                       <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -164,7 +165,7 @@ export function ContactPage() {
                   </a>
 
                   <div className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5">
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-navy to-navy-light text-white">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#4e2d7b] text-white">
                       <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -172,7 +173,9 @@ export function ContactPage() {
                         Location
                       </p>
                       <p className="text-base sm:text-lg font-bold text-text-primary">
-                        {SITE_CONFIG.address}
+                        Karigamombe Centre, 11th Floor<br />
+                        Corner Julius Nyerere & Samora Machel<br />
+                        Harare, Zimbabwe
                       </p>
                     </div>
                   </div>
@@ -180,7 +183,7 @@ export function ContactPage() {
 
                 <div className="bg-light-section rounded-2xl p-5 sm:p-6 border border-border/40 mb-6 sm:mb-8">
                   <div className="flex items-center gap-2 mb-3 sm:mb-4">
-                    <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-pink" />
+                    <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gold" />
                     <h3 className="text-sm sm:text-base font-bold text-text-primary">
                       Operating Hours
                     </h3>
@@ -216,7 +219,7 @@ export function ContactPage() {
                   <p className="text-text-secondary text-sm leading-relaxed">
                     We serve Greater Harare and surrounding areas including
                     Borrowdale, Greendale, Avondale, Mount Pleasant, Chisipite,
-                    Greystone Park, and all major suburbs.
+                    Greystone Park, and all major suburbs across Zimbabwe.
                   </p>
                 </div>
               </AnimatedSection>
@@ -277,7 +280,7 @@ export function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                           placeholder="Your name"
                         />
                       </div>
@@ -295,7 +298,7 @@ export function ContactPage() {
                           required
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                           placeholder="+263 77 123 4567"
                         />
                       </div>
@@ -312,7 +315,7 @@ export function ContactPage() {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                           placeholder="you@example.com"
                         />
                       </div>
@@ -330,13 +333,13 @@ export function ContactPage() {
                           required
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all resize-none"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all resize-none"
                           placeholder="How can we help you?"
                         />
                       </div>
                       <button
                         type="submit"
-                        className="w-full inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-all duration-300 shadow-lg shadow-pink/20"
+                        className="w-full inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
                       >
                         <Send className="h-4 w-4 sm:h-5 sm:w-5" />
                         Send Inquiry
@@ -350,7 +353,7 @@ export function ContactPage() {
                 <div className="mt-5 sm:mt-6 rounded-2xl sm:rounded-[2rem] overflow-hidden border border-border/40 bg-light-section h-52 sm:h-64 flex items-center justify-center">
                   <div className="text-center text-text-secondary">
                     <MapPin className="h-8 w-8 sm:h-10 sm:w-10 mx-auto mb-2 opacity-40" />
-                    <p className="text-xs sm:text-sm font-medium">Google Maps</p>
+                    <p className="text-xs sm:text-sm font-medium">Karigamombe Centre, 11th Floor</p>
                     <p className="text-[11px] sm:text-xs opacity-60">Harare, Zimbabwe</p>
                   </div>
                 </div>
@@ -360,30 +363,30 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-28 bg-navy">
+      <section className="py-20 sm:py-28 bg-[#4e2d7b]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4">
+            <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4">
               Ready?
             </p>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-5">
-              Ready to Book?
+              Ready to Hire?
             </h2>
             <p className="text-sm sm:text-base text-white/80 mb-8 max-w-xl mx-auto">
-              Choose your preferred way to get started with Mamoyo Services.
+              Choose your preferred way to get started with WOBIC Employment Services.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <a
-                href="/booking"
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-colors shadow-lg shadow-pink/25"
+              <Link
+                href="/mamoyo-maids/booking"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/25"
               >
-                Book Now
+                Hire Staff Now
                 <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
-              </a>
+              </Link>
               <a
                 href={getWhatsAppUrl(
                   SITE_CONFIG.whatsapp,
-                  "Hello! I'd like to book a service."
+                  "Hello! I'd like to hire staff."
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

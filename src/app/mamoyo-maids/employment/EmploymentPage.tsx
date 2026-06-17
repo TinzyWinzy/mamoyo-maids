@@ -119,7 +119,7 @@ export function EmploymentPage() {
       <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
         <Image
           src="/images/about-hero.jpg"
-          alt="Hire a maid from Mamoyo Services"
+          alt="Hire a maid from Mamoyo Maids"
           fill
           sizes="100vw"
           className="object-cover animate-zoom-slow"
@@ -130,7 +130,7 @@ export function EmploymentPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4"
+            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4"
           >
             Maid Placement Agency
           </motion.p>
@@ -140,7 +140,7 @@ export function EmploymentPage() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
           >
-            Hire a Trusted <span className="text-pink">Maid</span>
+            Hire a Trusted <span className="text-gold">Maid</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -159,7 +159,7 @@ export function EmploymentPage() {
           >
             <a
               href="#request-form"
-              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-all duration-300 shadow-xl shadow-pink/30"
+              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-xl shadow-gold/30"
             >
               Request a Maid
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -192,8 +192,8 @@ export function EmploymentPage() {
                 key={badge.label}
                 className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 bg-white rounded-2xl shadow-[0_4px_25px_rgba(26,39,68,0.06)] border border-border/40"
               >
-                <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-pink/10">
-                  <badge.icon className="h-5 w-5 sm:h-6 sm:w-6 text-pink" />
+                <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-gold/10">
+                  <badge.icon className="h-5 w-5 sm:h-6 sm:w-6 text-gold" />
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm font-bold text-text-primary">
@@ -228,7 +228,7 @@ export function EmploymentPage() {
             {maidTypes.map((type, index) => (
               <AnimatedSection key={type.title} delay={index * 0.1}>
                 <div className="bg-light-section rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/40 h-full hover:shadow-[0_12px_40px_rgba(232,139,167,0.08)] transition-all duration-500">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink/10 text-pink text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 text-[#4e2d7b] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-5">
                     <Users className="h-3.5 w-3.5" />
                     {type.title}
                   </div>
@@ -241,7 +241,7 @@ export function EmploymentPage() {
                         key={feature}
                         className="flex items-center gap-2.5 text-sm text-text-secondary"
                       >
-                        <CheckCircle className="h-4 w-4 text-pink shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-gold shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -273,7 +273,7 @@ export function EmploymentPage() {
                     <div className="inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl sm:rounded-3xl bg-gradient-to-br from-navy to-navy-light text-white mb-5 sm:mb-6 shadow-xl shadow-navy/15">
                       <Icon className="h-8 w-8 sm:h-9 sm:w-9" />
                     </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink/10 text-[11px] font-bold text-pink uppercase tracking-wider mb-3 sm:mb-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-[11px] font-bold text-[#4e2d7b] uppercase tracking-wider mb-3 sm:mb-4">
                       Step {step.step}
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">
@@ -363,31 +363,31 @@ export function EmploymentPage() {
 
                   <div className="space-y-2 mb-4 flex-1">
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
-                      <MapPin className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <MapPin className="h-3.5 w-3.5 shrink-0 text-gold" />
                       <span>{maid.areaOfOrigin}</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
-                      <Users className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <Users className="h-3.5 w-3.5 shrink-0 text-gold" />
                       <span>{maid.church}</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
-                      <UserCheck className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <UserCheck className="h-3.5 w-3.5 shrink-0 text-gold" />
                       <span>{maid.children} {maid.children === 1 ? "child" : "children"}</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
-                      <DollarSign className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <DollarSign className="h-3.5 w-3.5 shrink-0 text-gold" />
                       <span>${maid.salaryExpectation}/month</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
-                      <Calendar className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <Calendar className="h-3.5 w-3.5 shrink-0 text-gold" />
                       <span>Off: {maid.daysOff}</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary">
-                      <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-pink" />
+                      <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-gold" />
                       <span>{maid.policeClearance ? "Police Clearance" : "Pending clearance"}</span>
                     </div>
                     <div className="flex items-start gap-2 text-xs sm:text-sm text-text-secondary mt-1">
-                      <Briefcase className="h-3.5 w-3.5 shrink-0 text-pink mt-0.5" />
+                      <Briefcase className="h-3.5 w-3.5 shrink-0 text-gold mt-0.5" />
                       <span>{maid.previousWork}</span>
                     </div>
                   </div>
@@ -399,7 +399,7 @@ export function EmploymentPage() {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-pink text-white font-semibold text-sm hover:bg-pink-light transition-colors shadow-md shadow-pink/20"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm hover:bg-gold-light transition-colors shadow-md shadow-gold/20"
                   >
                     <MessageCircle className="h-4 w-4" />
                     Chat on WhatsApp
@@ -430,7 +430,7 @@ export function EmploymentPage() {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <button
                       onClick={handleWhatsApp}
-                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-pink text-white font-semibold text-sm hover:bg-pink-light transition-colors shadow-lg shadow-pink/20"
+                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm hover:bg-gold-light transition-colors shadow-lg shadow-gold/20"
                     >
                       <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                       Confirm via WhatsApp
@@ -481,7 +481,7 @@ export function EmploymentPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                           placeholder="Your full name"
                         />
                       </div>
@@ -499,7 +499,7 @@ export function EmploymentPage() {
                           required
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                           placeholder="+263 77 123 4567"
                         />
                       </div>
@@ -516,7 +516,7 @@ export function EmploymentPage() {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                           placeholder="you@example.com"
                         />
                       </div>
@@ -533,7 +533,7 @@ export function EmploymentPage() {
                           required
                           value={formData.serviceType}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                         >
                           <option value="">Select type</option>
                           <option value="Live-In Maid">Live-In Maid</option>
@@ -553,7 +553,7 @@ export function EmploymentPage() {
                           name="maidAge"
                           value={formData.maidAge}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                         >
                           <option value="">No preference</option>
                           <option value="18-25">18–25 years</option>
@@ -574,7 +574,7 @@ export function EmploymentPage() {
                           name="bedrooms"
                           value={formData.bedrooms}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                         >
                           <option value="">Select</option>
                           <option value="1-2">1–2 Bedrooms</option>
@@ -596,14 +596,14 @@ export function EmploymentPage() {
                         rows={3}
                         value={formData.requirements}
                         onChange={handleChange}
-                        className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all resize-none"
+                        className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all resize-none"
                         placeholder="e.g., cooking skills, childcare experience, languages spoken..."
                       />
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                       <button
                         type="submit"
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-all duration-300 shadow-lg shadow-pink/20"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
                       >
                         <Send className="h-4 w-4 sm:h-5 sm:w-5" />
                         Submit Request
@@ -629,21 +629,21 @@ export function EmploymentPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-5">
-              Looking to <span className="text-pink">Join</span> Our Team?
+              Looking to <span className="text-gold">Join</span> Our Team?
             </h2>
             <p className="text-sm sm:text-base text-white/80 mb-8 max-w-xl mx-auto">
               We&apos;re always looking for reliable, hardworking individuals to
-              join the Mamoyo Services family.
+              join the Mamoyo Maids family.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href={getWhatsAppUrl(
                   SITE_CONFIG.whatsapp,
-                  "Hello! I'd like to apply to work with Mamoyo Services."
+                  "Hello! I'd like to apply to work with Mamoyo Maids."
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light transition-colors shadow-lg shadow-pink/25"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/25"
               >
                 <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                 Apply via WhatsApp

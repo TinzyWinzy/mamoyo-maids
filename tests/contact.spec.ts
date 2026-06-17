@@ -3,20 +3,20 @@ import { test, expect } from "@playwright/test";
 test.describe("Contact Page", () => {
   test("should load successfully", async ({ page }) => {
     await page.goto("/contact");
-    await expect(page).toHaveTitle(/Contact.*Mamoyo Services/);
+    await expect(page).toHaveTitle(/Contact.*WOBIC Employment Services/);
   });
 
   test("should display hero section", async ({ page }) => {
     await page.goto("/contact");
     await expect(
-      page.getByRole("heading", { name: /Let.*Make Your Home Shine/i })
+      page.getByRole("heading", { name: /Let.*Find Your Ideal Staff/i })
     ).toBeVisible();
   });
 
   test("should display contact information", async ({ page }) => {
     await page.goto("/contact");
     await expect(page.getByRole("link", { name: /Phone \+/i }).first()).toBeVisible();
-    await expect(page.getByText("info@mamoyomaids.com").first()).toBeVisible();
+    await expect(page.getByText("info@wobic.co.zw").first()).toBeVisible();
   });
 
   test("should display operating hours", async ({ page }) => {

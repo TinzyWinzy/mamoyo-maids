@@ -59,7 +59,7 @@ export function BookingPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-pink mb-3 sm:mb-4"
+            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4"
           >
             Simple Process
           </motion.p>
@@ -96,7 +96,7 @@ export function BookingPage() {
                     <div className="inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl sm:rounded-3xl bg-gradient-to-br from-navy to-navy-light text-white mb-4 sm:mb-6 shadow-xl shadow-navy/15">
                       <Icon className="h-8 w-8 sm:h-9 sm:w-9" />
                     </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink/10 text-[10px] sm:text-[11px] font-bold text-pink uppercase tracking-wider mb-3 sm:mb-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-[10px] sm:text-[11px] font-bold text-[#4e2d7b] uppercase tracking-wider mb-3 sm:mb-4">
                       Step {step.step}
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">
@@ -128,7 +128,7 @@ export function BookingPage() {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <button
                       onClick={handleWhatsApp}
-                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-pink text-white font-semibold text-sm hover:bg-pink-light transition-colors shadow-lg shadow-pink/20"
+                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm hover:bg-gold-light transition-colors shadow-lg shadow-gold/20"
                     >
                       <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                       Confirm via WhatsApp
@@ -181,7 +181,7 @@ export function BookingPage() {
                             required={field.required}
                             value={(formData as Record<string, string>)[field.id]}
                             onChange={handleChange}
-                            className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                            className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                             placeholder={field.placeholder}
                           />
                         </div>
@@ -196,7 +196,7 @@ export function BookingPage() {
                           required
                           value={formData.service}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                         >
                           <option value="">Select a service</option>
                           {SERVICES.map((s) => (
@@ -217,7 +217,7 @@ export function BookingPage() {
                           required
                           value={formData.date}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                         />
                       </div>
                       <div>
@@ -230,7 +230,7 @@ export function BookingPage() {
                           required
                           value={formData.time}
                           onChange={handleChange}
-                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all"
+                          className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                         >
                           <option value="">Select a time</option>
                           {["7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM"].map((t) => (
@@ -249,14 +249,14 @@ export function BookingPage() {
                         rows={3}
                         value={formData.notes}
                         onChange={handleChange}
-                        className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-pink/25 focus:border-pink transition-all resize-none"
+                        className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all resize-none"
                         placeholder="Any special instructions or requests..."
                       />
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                       <button
                         type="submit"
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 min-h-[52px] rounded-full bg-pink text-white font-semibold text-sm sm:text-base hover:bg-pink-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-pink/20"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 min-h-[52px] rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-gold/20"
                       >
                         <Send className="h-4 w-4 sm:h-5 sm:w-5" />
                         Book Now
