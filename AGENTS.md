@@ -61,6 +61,19 @@ For multi-step tasks, state a brief plan:
 
 ---
 
+## Deployment Safety
+
+### NEVER add `postinstall` scripts that download large binaries
+**Incident:** `postinstall: "npx playwright install"` was added to `package.json`. On Vercel, `npm install` triggers `postinstall`, which downloads Chromium + Firefox + WebKit (~400MB). This hung every deployment and broke the live site.
+
+**Rule:** Before adding ANY `postinstall` or lifecycle script to `package.json`:
+- Ask: "Will this run on the deployment server (Vercel)?"
+- If yes: NEVER use it to download binaries, run heavy processes, or do anything beyond symlink fixing
+- Playwright browsers, Puppeteer, native modules — install locally only, never via postinstall
+- Test: `npm install --ignore-scripts` should still produce a working build
+
+---
+
 ## Application
 
 These principles apply to **every task** in this project. If a prompt conflicts with these principles, the principles take precedence. When in doubt, refer to the principle that best matches the situation and follow its guidance.
