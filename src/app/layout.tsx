@@ -118,6 +118,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${literata.variable} h-full`} data-scroll-behavior="smooth">
       <head>
+        <meta name="theme-color" content="#4e2d7b" />
+        <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

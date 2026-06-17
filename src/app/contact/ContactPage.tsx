@@ -350,12 +350,18 @@ export function ContactPage() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.3}>
-                <div className="mt-5 sm:mt-6 rounded-2xl sm:rounded-[2rem] overflow-hidden border border-border/40 bg-light-section h-52 sm:h-64 flex items-center justify-center">
-                  <div className="text-center text-text-secondary">
-                    <MapPin className="h-8 w-8 sm:h-10 sm:w-10 mx-auto mb-2 opacity-40" />
-                    <p className="text-xs sm:text-sm font-medium">Karigamombe Centre, 11th Floor</p>
-                    <p className="text-[11px] sm:text-xs opacity-60">Harare, Zimbabwe</p>
-                  </div>
+                <div className="mt-5 sm:mt-6 rounded-2xl sm:rounded-[2rem] overflow-hidden border border-border/40 h-52 sm:h-64">
+                  <iframe
+                    title="WOBIC Employment Services Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3796.7!2d31.0522!3d-17.8252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931997f0e5e5e5d%3A0x5e5e5e5e5e5e5e5e!2sKarigamombe%20Centre!5e0!3m2!1sen!2szw!4v1700000000000"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full"
+                  />
                 </div>
               </AnimatedSection>
             </div>

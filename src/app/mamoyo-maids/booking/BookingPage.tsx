@@ -24,6 +24,21 @@ export function BookingPage() {
     notes: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+    else if (!/^(\+?263|0)?[7-9]\d{8}$/.test(formData.phone.replace(/\s/g, ""))) newErrors.phone = "Invalid phone number";
+    if (!formData.service) newErrors.service = "Please select a service";
+    if (!formData.date) newErrors.date = "Date is required";
+    else if (new Date(formData.date) < new Date(new Date().toDateString())) newErrors.date = "Date cannot be in the past";
+    if (!formData.time) newErrors.time = "Time is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -31,11 +46,17 @@ export function BookingPage() {
     >
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (errors[e.target.name]) setErrors({ ...errors, [e.target.name]: "" });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (!validate()) return;
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 800);
   };
 
   const handleWhatsApp = () => {
@@ -181,9 +202,12 @@ export function BookingPage() {
                             required={field.required}
                             value={(formData as Record<string, string>)[field.id]}
                             onChange={handleChange}
-                            className="w-full px-4 sm:px-5 py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
+                            className={`w-full px-4 sm:px-5 py-3.5 rounded-xl border bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all ${
+                              errors[field.id] ? "border-red-400" : "border-border/50"
+                            }`}
                             placeholder={field.placeholder}
                           />
+                          {errors[field.id] && <p className="text-red-500 text-xs mt-1">{errors[field.id]}</p>}
                         </div>
                       ))}
                       <div>
@@ -256,10 +280,15 @@ export function BookingPage() {
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                       <button
                         type="submit"
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 min-h-[52px] rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-gold/20"
+                        disabled={loading}
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 min-h-[52px] rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-60 disabled:pointer-events-none"
                       >
-                        <Send className="h-4 w-4 sm:h-5 sm:w-5" />
-                        Book Now
+                        {loading ? (
+                          <div className="h-4 w-4 sm:h-5 sm:w-5 border-2 border-[#4e2d7b] border-t-transparent rounded-full animate-spin" />
+                        ) : (
+                          <Send className="h-4 w-4 sm:h-5 sm:w-5" />
+                        )}
+                        {loading ? "Submitting..." : "Book Now"}
                       </button>
                       <button
                         type="button"

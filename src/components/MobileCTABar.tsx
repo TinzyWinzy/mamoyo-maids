@@ -28,7 +28,7 @@ export function MobileCTABar() {
         WhatsApp
       </a>
       <Link
-        href="/services"
+        href="/mamoyo-maids/services"
         className="flex-1 flex items-center justify-center gap-1.5 py-3.5 rounded-xl bg-white text-dark text-[13px] font-semibold border border-border transition-colors active:scale-[0.97] min-h-[48px]"
       >
         <Calendar className="h-4 w-4" />

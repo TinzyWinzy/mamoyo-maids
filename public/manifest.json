@@ -1,0 +1,22 @@
+{
+  "name": "WOBIC Employment Services",
+  "short_name": "WOBIC",
+  "description": "Zimbabwe's trusted employment agency. Police-cleared staff, trained professionals, satisfaction guaranteed.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4e2d7b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

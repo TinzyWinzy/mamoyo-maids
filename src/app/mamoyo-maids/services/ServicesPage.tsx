@@ -136,7 +136,7 @@ export function ServicesPage() {
 
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Link
-                        href="/booking"
+                        href="/mamoyo-maids/booking"
                         className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
                       >
                         Book This Service
@@ -190,7 +190,7 @@ export function ServicesPage() {
               hard work so you can focus on what matters most to your family.
             </p>
             <Link
-              href="/booking"
+              href="/mamoyo-maids/booking"
               className="inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
             >
               Get Started Today

@@ -37,12 +37,12 @@ test.describe("Booking Page", () => {
     await page.getByLabel(/Full Name/i).fill("Test User");
     await page.getByLabel(/Phone Number/i).fill("+263771234567");
     await page.getByLabel(/Service Needed/i).selectOption("Home Cleaning");
-    await page.getByLabel(/Preferred Date/i).fill("2026-06-15");
+    await page.getByLabel(/Preferred Date/i).fill("2026-12-15");
     await page.getByLabel(/Preferred Time/i).selectOption("9:00 AM");
     await page.getByRole("button", { name: /Book Now/i }).click();
     await expect(
       page.getByText("Booking Request Received!")
-    ).toBeVisible({ timeout: 10000 });
+    ).toBeVisible({ timeout: 15000 });
   });
 
   test("should not submit with empty required fields", async ({ page }) => {

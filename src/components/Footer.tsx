@@ -2,8 +2,15 @@ import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
-import { TikTokIcon } from "@/lib/icons";
+import { TikTokIcon, FacebookIcon, InstagramIcon, LinkedInIcon } from "@/lib/icons";
 import { Logo } from "@/components/Logo";
+
+const socialIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  facebook: FacebookIcon,
+  instagram: InstagramIcon,
+  tiktok: TikTokIcon,
+  linkedin: LinkedInIcon,
+};
 
 export function Footer() {
   return (
@@ -15,7 +22,7 @@ export function Footer() {
               <Logo variant="light" />
             </div>
             <p className="text-white/65 text-sm leading-relaxed mb-6 max-w-xs">
-              {SITE_CONFIG.tagline}.               We train and provide reliable people with police clearances for all your staffing needs.
+              {SITE_CONFIG.tagline}. We train and provide reliable people with police clearances for all your staffing needs.
             </p>
             <div className="flex gap-3">
               <a
@@ -36,11 +43,10 @@ export function Footer() {
                   className="flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-white/65 hover:bg-white/10 hover:text-white transition-colors"
                   aria-label={platform}
                 >
-                  {platform === "tiktok" ? (
-                    <TikTokIcon className="h-4 w-4" />
-                  ) : (
-                    platform.charAt(0).toUpperCase()
-                  )}
+                  {(() => {
+                    const Icon = socialIcons[platform];
+                    return Icon ? <Icon className="h-4 w-4" /> : platform.charAt(0).toUpperCase();
+                  })()}
                 </a>
               ))}
             </div>
