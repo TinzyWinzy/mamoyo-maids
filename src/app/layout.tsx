@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: SITE_CONFIG.name }],
   creator: SITE_CONFIG.name,
-  metadataBase: new URL(SITE_CONFIG.url),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://mamoyo-maids.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_ZW",

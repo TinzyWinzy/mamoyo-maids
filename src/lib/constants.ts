@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   tagline: "Your Trusted Employment Partner",
   description:
     "Professional recruitment, staff placement, and training services. We provide reliable people with police clearances for domestic work, security, driving, construction, and more.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://wobic.co.zw",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mamoyo-maids.vercel.app",
   phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || "+263734257057",
   whatsapp: process.env.NEXT_PUBLIC_BUSINESS_WHATSAPP || "+263734257057",
   phoneSecondary: process.env.NEXT_PUBLIC_BUSINESS_PHONE_SECONDARY || "+263783717844",
