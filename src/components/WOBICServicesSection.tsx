@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   Home,
   Baby,
@@ -54,11 +53,8 @@ export function WOBICServicesSection() {
             const Icon = item.icon;
             return (
               <AnimatedSection key={item.title} delay={index * 0.04}>
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="group bg-light-section rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-center border border-border/40 hover:border-gold/30 hover:shadow-[0_12px_40px_rgba(78,45,123,0.06)] transition-all duration-500 h-full"
-                >
-                  <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#4e2d7b]/10 text-[#4e2d7b] mb-3 sm:mb-4 group-hover:bg-[#4e2d7b] group-hover:text-white transition-all duration-500">
+                <div className="group bg-light-section rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-center border border-border/40 transition-all duration-500 h-full">
+                  <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#4e2d7b]/10 text-[#4e2d7b] mb-3 sm:mb-4 transition-all duration-500">
                     <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                   <h3 className="text-sm sm:text-base font-bold text-text-primary mb-1">
@@ -67,7 +63,7 @@ export function WOBICServicesSection() {
                   <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
                     {item.description}
                   </p>
-                </motion.div>
+                </div>
               </AnimatedSection>
             );
           })}

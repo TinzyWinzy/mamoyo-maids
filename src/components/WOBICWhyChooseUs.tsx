@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { WHY_CHOOSE_US } from "@/lib/constants";
 import { AnimatedSection } from "./AnimatedSection";
 import { iconMap } from "@/lib/icons";
@@ -27,12 +26,8 @@ export function WOBICWhyChooseUs() {
             const Icon = iconMap[item.icon];
             return (
               <AnimatedSection key={item.title} delay={index * 0.08}>
-                <motion.div
-                  whileHover={{ y: -8 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="group relative bg-white rounded-2xl sm:rounded-3xl border border-border/50 p-5 sm:p-7 text-center hover:shadow-[0_15px_50px_rgba(78,45,123,0.1)] hover:border-gold/30 transition-all duration-500"
-                >
-                  <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl sm:rounded-2xl bg-[#4e2d7b] text-white mb-4 sm:mb-5 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#4e2d7b]/15 transition-all duration-500">
+                <div className="group relative bg-white rounded-2xl sm:rounded-3xl border border-border/50 p-5 sm:p-7 text-center transition-all duration-500">
+                  <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl sm:rounded-2xl bg-[#4e2d7b] text-white mb-4 sm:mb-5 transition-all duration-500">
                     <Icon className="h-6 w-6 sm:h-8 sm:w-8" />
                   </div>
                   <h3 className="text-sm sm:text-base font-bold text-text-primary mb-1.5 sm:mb-2">
@@ -41,7 +36,7 @@ export function WOBICWhyChooseUs() {
                   <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
                     {item.description}
                   </p>
-                </motion.div>
+                </div>
               </AnimatedSection>
             );
           })}

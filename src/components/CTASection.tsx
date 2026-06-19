@@ -15,7 +15,7 @@ export function CTASection() {
         alt={`${SITE_CONFIG.name} professional team`}
         fill
         sizes="100vw"
-        className="object-cover animate-zoom-slow"
+        className="object-cover"
         quality={85}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/90 to-navy/85" />
@@ -46,7 +46,7 @@ export function CTASection() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 min-h-[52px] rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 active:scale-[0.97] transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 min-h-[52px] rounded-full bg-white/10 border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 active:scale-[0.97] transition-all duration-300"
             >
               <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
               Chat on WhatsApp
