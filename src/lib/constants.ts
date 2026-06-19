@@ -179,6 +179,60 @@ export const SERVICES = [
       "Property managers preparing listings",
     ],
   },
+  {
+    id: "professional-moaners",
+    title: "Professional Moaners",
+    shortTitle: "Moaners",
+    description:
+      "Experienced professional mourners for funerals and memorial services. We provide respectful, culturally appropriate mourning services to honor your loved ones.",
+    icon: "Heart",
+    image: "/services/professional-moaners.jpg",
+    benefits: [
+      "Culturally respectful mourning",
+      "Experienced professional mourners",
+      "Flexible scheduling for services",
+      "Dignified and compassionate",
+    ],
+    features: [
+      "Traditional funeral mourning",
+      "Memorial service support",
+      "Night vigil attendance",
+      "Cultural rites participation",
+    ],
+    useCases: [
+      "Funerals requiring traditional mourning",
+      "Memorial services",
+      "Night vigils (kurova guva)",
+      "Family needing mourning support",
+    ],
+  },
+  {
+    id: "funeral-moving-support",
+    title: "Funeral & Moving Support",
+    shortTitle: "Funeral Moving",
+    description:
+      "Comprehensive logistical support for funerals and household moves. We handle transport, setup, and coordination so you can focus on what matters.",
+    icon: "Truck",
+    image: "/services/funeral-moving.jpg",
+    benefits: [
+      "Stress-free logistics",
+      "Experienced coordination team",
+      "Flexible scheduling",
+      "Respectful handling of belongings",
+    ],
+    features: [
+      "Body transport coordination",
+      "Funeral venue setup",
+      "Household moving & packing",
+      "Furniture disassembly/reassembly",
+    ],
+    useCases: [
+      "Families organizing funerals",
+      "Household relocations",
+      "Funeral logistics coordination",
+      "Elderly relatives moving homes",
+    ],
+  },
 ];
 
 export const MAID_PROFILES = [
