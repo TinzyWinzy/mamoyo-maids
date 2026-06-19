@@ -84,3 +84,60 @@ For multi-step tasks, state a brief plan:
 ## Application
 
 These principles apply to **every task** in this project. If a prompt conflicts with these principles, the principles take precedence. When in doubt, refer to the principle that best matches the situation and follow its guidance.
+
+---
+
+## Low-End Android Constraints (Zimbabwe Market)
+
+### Target Device Baseline
+- **OS**: Android 8–10 (Go Edition common), system WebView 70–90
+- **Hardware**: 1–2 GB RAM, 8–16 GB storage, Cortex-A53/A55 CPUs
+- **Screen**: 320–360px width, 480–720px height, 2–3x DPR
+- **Network**: 3G/EDGE common, 4G intermittent, data $15–20/GB
+- **Browser**: Chrome WebView (no auto-update), Opera Mini (proxy), UC Browser
+
+### Observed Failure Modes
+
+| Symptom | Root Cause | Fix |
+|---------|------------|-----|
+| Janky scroll, 10–15 fps | Framer Motion `animate` on mount + large images | Reduce motion, `will-change`, native CSS scroll |
+| White flash on nav | No skeleton, heavy JS bundle | Static HTML shell + streaming, critical CSS inline |
+| Touch delay 300ms | Missing `touch-action: manipulation` | Add globally on interactive elements |
+| Images don't load | AVIF/WebP unsupported on WebView <70 | `<picture>` with JPEG fallback, `loading="lazy"` |
+| Layout shift on font load | `display: swap` without size-adjust | `size-adjust`, `ascent-override`, fallback font metrics |
+| Memory crash on gallery | Multiple 2MB+ JPGs decoded simultaneously | Downsample server-side, `decoding="async"`, limit DOM nodes |
+| WhatsApp WebView breaks | `target="_blank"` opens external browser | `href="whatsapp://"` with `data-action="share"` fallback |
+| Form submission fails | JS disabled/blocked by data saver | Native `<form action="/api/...">` + progressive enhancement |
+
+### Progressive Enhancement Rules
+
+1. **HTML-first**: Every page works without JS (forms, links, content visible)
+2. **CSS baseline**: Layout works on Flexbox/Grid with float fallback; no `gap` without fallback
+3. **JS as enhancement**: IntersectionObserver, smooth scroll, animations — all `if ('feature' in window)`
+4. **Images**: `<picture><source type="image/avif"><source type="image/webp"><img src="jpg"></picture>` + explicit `width`/`height`
+5. **Fonts**: Subset WOFF2, preload, `font-display: optional` for body, `swap` only for headings
+6. **Motion**: `@media (prefers-reduced-motion: reduce)` disables ALL transitions/animations
+7. **Bundle**: Target <50 KB gzipped JS for initial load; code-split by route
+8. **Caching**: Service Worker with `stale-while-revalidate` for static assets; `network-first` for API
+
+### Test Matrix Additions (playwright.config.ts)
+
+```typescript
+// Add these projects for Zim-realistic coverage
+{ name: "low-end-android", use: { ...devices["Galaxy A10"] } },      // 320px, 2GB RAM
+{ name: "android-go", use: { ...devices["Galaxy J4 Core"] } },       // 1GB RAM, Go Edition
+{ name: "opera-mini", use: { userAgent: "Opera/9.80...", viewport: { width: 360, height: 640 }, isMobile: true } },
+{ name: "throttled-3g", use: { ...devices["Galaxy A10"], offline: false, downloadThroughput: 400*1024/8, uploadThroughput: 400*1024/8, latency: 300 } },
+```
+
+### CI Gates
+- `npm test` must pass on `low-end-android` + `throttled-3g`
+- Lighthouse CI: Performance ≥ 85 on 3G throttle, Accessibility ≥ 95
+- Bundle analyzer: `next build && npx @next/bundle-analyzer` — main chunk < 50 KB gzip
+
+### Design Token Adjustments for Low-End
+- Reduce `box-shadow` depth (expensive paint)
+- Avoid `backdrop-filter` (no support on WebView <80)
+- Limit `border-radius` on large elements (corner rasterization cost)
+- Prefer `transform: translateZ(0)` only where measured necessary
+- Static gradients over animated ones

@@ -36,9 +36,7 @@
   --font-serif: "Literata", Georgia, serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 body {
   background: var(--background);
@@ -59,6 +57,37 @@ body {
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes zoomIn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes zoomOut {
+    0% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+  }
+
+  @keyframes zoomSlow {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+  }
+
+  .animate-zoom-in {
+    animation: zoomIn 8s ease-in-out infinite;
+  }
+
+  .animate-zoom-out {
+    animation: zoomOut 8s ease-in-out infinite;
+  }
+
+  .animate-zoom-slow {
+    animation: zoomSlow 20s ease-in-out infinite alternate;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -67,33 +96,23 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  .animate-zoom-in,
+  .animate-zoom-out,
+  .animate-zoom-slow {
+    animation: none !important;
+  }
 }
 
-@keyframes zoomIn {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
+* {
+  touch-action: manipulation;
 }
 
-@keyframes zoomOut {
-  0% { transform: scale(1.08); }
-  50% { transform: scale(1); }
-  100% { transform: scale(1.08); }
-}
-
-@keyframes zoomSlow {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.05); }
-}
-
-.animate-zoom-in {
-  animation: zoomIn 8s ease-in-out infinite;
-}
-
-.animate-zoom-out {
-  animation: zoomOut 8s ease-in-out infinite;
-}
-
-.animate-zoom-slow {
-  animation: zoomSlow 20s ease-in-out infinite alternate;
+button,
+a,
+[role="button"],
+input,
+select,
+textarea {
+  touch-action: manipulation;
 }

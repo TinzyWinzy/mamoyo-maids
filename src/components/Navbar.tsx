@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
-import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
+import { getWhatsAppUrl, getWhatsAppWebUrl, getPhoneUrl } from "@/lib/utils";
 import { Logo } from "@/components/Logo";
 
 const navLinks = [
@@ -33,6 +33,8 @@ export function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const desktopWhatsAppRef = useRef<HTMLAnchorElement>(null);
+  const mobileWhatsAppRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -42,11 +44,55 @@ export function Navbar() {
 
   const isMamoyoActive = pathname.startsWith("/mamoyo-maids");
 
+  useEffect(() => {
+    const handleWhatsAppClick = (e: MouseEvent) => {
+      const nativeUrl = getWhatsAppUrl(
+        SITE_CONFIG.whatsapp,
+        "Hello! I'd like to learn more about your services."
+      );
+      const webUrl = getWhatsAppWebUrl(
+        SITE_CONFIG.whatsapp,
+        "Hello! I'd like to learn more about your services."
+      );
+
+      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        const iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.src = nativeUrl;
+        document.body.appendChild(iframe);
+        setTimeout(() => document.body.removeChild(iframe), 1000);
+
+        setTimeout(() => {
+          if (document.body.contains(iframe)) {
+            document.body.removeChild(iframe);
+          }
+        }, 1500);
+
+        setTimeout(() => {
+          window.location.href = webUrl;
+        }, 1500);
+
+        e.preventDefault();
+      }
+    };
+
+    const desktopBtn = desktopWhatsAppRef.current;
+    const mobileBtn = mobileWhatsAppRef.current;
+
+    if (desktopBtn) desktopBtn.addEventListener("click", handleWhatsAppClick);
+    if (mobileBtn) mobileBtn.addEventListener("click", handleWhatsAppClick);
+
+    return () => {
+      if (desktopBtn) desktopBtn.removeEventListener("click", handleWhatsAppClick);
+      if (mobileBtn) mobileBtn.removeEventListener("click", handleWhatsAppClick);
+    };
+  }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/98 backdrop-blur-xl shadow-[0_1px_20px_rgba(26,39,68,0.06)]"
+          ? "bg-white/98 shadow-[0_1px_20px_rgba(26,39,68,0.06)]"
           : "bg-transparent"
       }`}
     >
@@ -136,7 +182,8 @@ export function Navbar() {
               Call Us
             </a>
             <a
-              href={getWhatsAppUrl(
+              ref={desktopWhatsAppRef}
+              href={getWhatsAppWebUrl(
                 SITE_CONFIG.whatsapp,
                 "Hello! I'd like to learn more about your services."
               )}
@@ -253,7 +300,8 @@ export function Navbar() {
                   Call Us
                 </a>
                 <a
-                  href={getWhatsAppUrl(
+                  ref={mobileWhatsAppRef}
+                  href={getWhatsAppWebUrl(
                     SITE_CONFIG.whatsapp,
                     "Hello! I'd like to learn more about your services."
                   )}

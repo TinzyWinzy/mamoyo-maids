@@ -16,9 +16,9 @@ export function WOBICHeroSection() {
           alt={`${SITE_CONFIG.name} professional team`}
           fill
           sizes="100vw"
-          className="object-cover animate-zoom-slow"
+          className="object-cover"
           priority
-          quality={90}
+          quality={85}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#4e2d7b]/85 via-[#4e2d7b]/70 to-[#4e2d7b]/90" />
       </div>
