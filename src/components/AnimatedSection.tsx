@@ -15,8 +15,17 @@ export function AnimatedSection({
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    if (mediaQuery.matches) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -35,17 +44,28 @@ export function AnimatedSection({
   }, []);
 
   const delayMs = delay * 1000;
-  const style = isVisible
-    ? {
-        opacity: 1,
-        transform: "translateY(0)",
-        transition: `opacity 0.6s ease-out ${delayMs}ms, transform 0.6s ease-out ${delayMs}ms`,
-      }
-    : {
-        opacity: 0,
-        transform: "translateY(30px)",
-        transition: "none",
-      };
+  
+  let style: React.CSSProperties = {};
+  
+  if (prefersReducedMotion) {
+    style = { opacity: 1, transform: "none" };
+  } else {
+    style = isVisible
+      ? {
+          opacity: 1,
+          transform: "translate3d(0, 0, 0)",
+          transition: `opacity 0.6s ease-out ${delayMs}ms, transform 0.6s ease-out ${delayMs}ms`,
+          willChange: "opacity, transform",
+          backfaceVisibility: "hidden",
+        }
+      : {
+          opacity: 0,
+          transform: "translate3d(0, 30px, 0)",
+          transition: "none",
+          willChange: "opacity, transform",
+          backfaceVisibility: "hidden",
+        };
+  }
 
   return (
     <div ref={ref} style={style} className={className}>
