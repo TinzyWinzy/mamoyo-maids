@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   Send,
   MessageCircle,
@@ -66,40 +65,26 @@ export function BookingPage() {
 
   return (
     <>
-      <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center">
         <Image
           src="/images/booking-hero.jpg"
           alt="Book a service"
           fill
           sizes="100vw"
-          className="object-cover animate-zoom-slow"
+          className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy/95" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4"
-          >
+          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4">
             Simple Process
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
-          >
+          </p>
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5">
             How Booking Works
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto"
-          >
+          </h1>
+          <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto">
             Booking your service is just 3 simple steps away.
-          </motion.p>
+          </p>
         </div>
       </section>
 

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   MessageCircle,
@@ -116,47 +115,28 @@ export function EmploymentPage() {
 
   return (
     <>
-      <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center">
         <Image
           src="/images/about-hero.jpg"
           alt="Hire a maid from Mamoyo Maids"
           fill
           sizes="100vw"
-          className="object-cover animate-zoom-slow"
+          className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/80 to-navy/95" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4"
-          >
+          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4">
             Maid Placement Agency
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
-          >
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5">
             Hire a Trusted <span className="text-gold">Maid</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mb-8 sm:mb-10"
-          >
+          </h1>
+          <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mb-8 sm:mb-10">
             Looking for a reliable domestic worker? We connect you with
             background-checked, trained, and trustworthy maids for your home.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
-          >
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
               href="#request-form"
               className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-xl shadow-gold/30"
@@ -171,12 +151,12 @@ export function EmploymentPage() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 transition-all duration-300"
             >
               <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
               Chat on WhatsApp
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
 

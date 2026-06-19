@@ -9,7 +9,7 @@ import { AnimatedSection } from "./AnimatedSection";
 
 export function CTASection() {
   return (
-    <section className="relative py-20 sm:py-28 overflow-hidden">
+    <section className="relative py-20 sm:py-28">
       <Image
         src="/images/kitchen-cleaning-team.jpg"
         alt={`${SITE_CONFIG.name} professional team`}

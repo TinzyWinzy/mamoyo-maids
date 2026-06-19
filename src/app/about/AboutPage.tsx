@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   ShieldCheck,
   ThumbsUp,
@@ -75,40 +74,26 @@ const values = [
 export function AboutPage() {
   return (
     <>
-      <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center">
         <Image
           src="/images/cleaning-team.jpg"
           alt="About WOBIC Employment Services"
           fill
           sizes="100vw"
-          className="object-cover animate-zoom-slow"
+          className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#4e2d7b]/90 via-[#4e2d7b]/80 to-[#4e2d7b]/95" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4"
-          >
+          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4">
             Our Story
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
-          >
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5">
             About <span className="text-gold">WOBIC</span> Employment Services
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto"
-          >
+          </h1>
+          <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto">
             Your trusted partner for recruitment, staff placement, and training in Harare, Zimbabwe.
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -137,11 +122,11 @@ export function AboutPage() {
                 alt="WOBIC professional team"
                 width={800}
                 height={500}
-                className="w-full h-auto object-cover animate-zoom-in"
+                className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#4e2d7b]/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90">
                   <span className="text-xs sm:text-sm font-semibold text-[#4e2d7b]">Licensed & Verified Employment Agency</span>
                 </div>
               </div>

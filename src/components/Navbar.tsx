@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { getWhatsAppUrl, getWhatsAppWebUrl, getPhoneUrl } from "@/lib/utils";
@@ -90,7 +89,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
         scrolled
           ? "bg-white/98 shadow-[0_1px_20px_rgba(26,39,68,0.06)]"
           : "bg-transparent"
@@ -123,13 +122,8 @@ export function Navbar() {
                       {link.label}
                       <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`} />
                     </Link>
-                    <AnimatePresence>
-                      {dropdownOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 8 }}
-                          transition={{ duration: 0.15 }}
+                    {dropdownOpen && (
+                        <div
                           className="absolute top-full left-0 mt-2 w-56 rounded-2xl bg-white border border-border/50 shadow-xl overflow-hidden"
                         >
                           {link.subLinks.map((sub) => (
@@ -145,9 +139,8 @@ export function Navbar() {
                               {sub.label}
                             </Link>
                           ))}
-                        </motion.div>
+                        </div>
                       )}
-                    </AnimatePresence>
                   </div>
                 );
               }
@@ -214,15 +207,8 @@ export function Navbar() {
         </div>
       </nav>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-border overflow-hidden"
-          >
+      {isOpen && (
+          <div className="lg:hidden bg-white border-t border-border overflow-hidden">
             <div className="px-4 py-4 space-y-1 max-h-[70vh] overflow-y-auto">
               {navLinks.map((link) => {
                 if (link.subLinks) {
@@ -239,14 +225,8 @@ export function Navbar() {
                         {link.label}
                         <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${mobileDropdownOpen ? "rotate-180" : ""}`} />
                       </button>
-                      <AnimatePresence>
-                        {mobileDropdownOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden"
-                          >
+                      {mobileDropdownOpen && (
+                          <div className="overflow-hidden">
                             <div className="pl-4 py-1 space-y-1">
                               <Link
                                 href={link.href}
@@ -270,9 +250,8 @@ export function Navbar() {
                                 </Link>
                               ))}
                             </div>
-                          </motion.div>
+                          </div>
                         )}
-                      </AnimatePresence>
                     </div>
                   );
                 }
@@ -314,9 +293,8 @@ export function Navbar() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </header>
   );
 }

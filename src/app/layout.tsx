@@ -10,7 +10,7 @@ import { SITE_CONFIG, SERVICES } from "@/lib/constants";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
 });
 
 const literata = Literata({

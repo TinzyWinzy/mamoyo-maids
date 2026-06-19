@@ -8,7 +8,7 @@ import { getWhatsAppUrl } from "@/lib/utils";
 
 export function WOBICHeroSection() {
   return (
-    <section className="relative min-h-[100dvh] flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center">
       <div className="absolute inset-0">
         <Image
           src="/images/cleaning-team.jpg"

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   Home,
@@ -71,47 +70,28 @@ const quickLinks = [
 export function MamoyoMaidsPage() {
   return (
     <>
-      <section className="relative min-h-[70vh] sm:min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center">
         <Image
           src="/images/kitchen-cleaning-team.jpg"
           alt="Mamoyo Maids professional team"
           fill
           sizes="100vw"
-          className="object-cover animate-zoom-slow"
+          className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#4e2d7b]/90 via-[#4e2d7b]/80 to-[#4e2d7b]/95" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4"
-          >
+          <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4">
             A Division of {SITE_CONFIG.name}
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5"
-          >
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-5">
             Mamoyo <span className="text-gold">Maids</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto"
-          >
+          </h1>
+          <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto">
             Professional home cleaning, maid placement, training, and family support services.
             Helping your home and family thrive.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mt-8 flex flex-col sm:flex-row gap-3 justify-center"
-          >
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/mamoyo-maids/services"
               className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
@@ -121,11 +101,11 @@ export function MamoyoMaidsPage() {
             </Link>
             <Link
               href="/mamoyo-maids/booking"
-              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white/10 border border-white/20 text-white font-semibold text-sm sm:text-base hover:bg-white/20 transition-all duration-300"
             >
               Book Now
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
 

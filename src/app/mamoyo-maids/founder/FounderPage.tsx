@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Heart, Target, Eye, Sparkles, Quote } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
@@ -35,12 +34,7 @@ export function FounderPage() {
 
         {/* Text — right side */}
         <div className="relative z-10 flex-1 flex items-center px-6 sm:px-10 lg:px-14 py-12 lg:py-0 bg-dark w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="w-full max-w-xl mx-auto lg:mx-0"
-          >
+          <div className="w-full max-w-xl mx-auto lg:mx-0">
             <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
               Meet the Founder
             </p>
@@ -69,13 +63,13 @@ export function FounderPage() {
               </a>
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 min-h-[52px] rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 font-semibold text-sm hover:bg-white/20 active:scale-[0.97] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 min-h-[52px] rounded-full bg-white/10 border border-white/20 text-white/90 font-semibold text-sm hover:bg-white/20 active:scale-[0.97] transition-all duration-300"
               >
                 Our Story
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
