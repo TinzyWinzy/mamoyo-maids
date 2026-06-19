@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -18,10 +18,13 @@ import {
   DollarSign,
   UserCheck,
 } from "lucide-react";
-import { SITE_CONFIG, EMPLOYMENT_BENEFITS, MAID_PROFILES } from "@/lib/constants";
+import { SITE_CONFIG, EMPLOYMENT_BENEFITS } from "@/lib/constants";
 import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { iconMap } from "@/lib/icons";
+import { db } from "@/lib/firebase";
+import { collection, query, getDocs } from "firebase/firestore";
+import type { MaidProfile } from "@/app/admin/maids/page";
 
 const howItWorks = [
   {
@@ -94,6 +97,27 @@ export function EmploymentPage() {
     requirements: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  
+  const [maids, setMaids] = useState<MaidProfile[]>([]);
+  const [maidsLoading, setMaidsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchMaids = async () => {
+      try {
+        const q = query(collection(db, "maids"));
+        const snapshot = await getDocs(q);
+        const maidsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as MaidProfile[];
+        setMaids(maidsData);
+      } catch (err) {
+        console.error("Failed to load maids", err);
+      } finally {
+        setMaidsLoading(false);
+      }
+    };
+    fetchMaids();
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -103,9 +127,23 @@ export function EmploymentPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/maid-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Failed to submit");
+      setSubmitted(true);
+    } catch (err) {
+      setError("Something went wrong. Please try again or use WhatsApp.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleWhatsApp = () => {
@@ -324,7 +362,11 @@ export function EmploymentPage() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-            {MAID_PROFILES.map((maid, index) => (
+            {maidsLoading ? (
+              <div className="col-span-full text-center py-10 text-text-secondary">Loading available maids...</div>
+            ) : maids.length === 0 ? (
+              <div className="col-span-full text-center py-10 text-text-secondary">No maids available at the moment. Please check back later.</div>
+            ) : maids.map((maid, index) => (
               <AnimatedSection key={maid.id} delay={index * 0.05}>
                 <div className="bg-light-section rounded-2xl sm:rounded-3xl border border-border/40 p-5 sm:p-6 h-full flex flex-col hover:shadow-[0_12px_40px_rgba(232,139,167,0.08)] transition-all duration-500">
                   <div className="flex items-center gap-3 mb-4">
@@ -580,13 +622,19 @@ export function EmploymentPage() {
                         placeholder="e.g., cooking skills, childcare experience, languages spoken..."
                       />
                     </div>
+                    {error && <p className="text-red-500 text-xs sm:text-sm text-center">{error}</p>}
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                       <button
                         type="submit"
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
+                        disabled={loading}
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-70"
                       >
-                        <Send className="h-4 w-4 sm:h-5 sm:w-5" />
-                        Submit Request
+                        {loading ? (
+                          <div className="h-4 w-4 sm:h-5 sm:w-5 border-2 border-[#4e2d7b] border-t-transparent rounded-full animate-spin" />
+                        ) : (
+                          <Send className="h-4 w-4 sm:h-5 sm:w-5" />
+                        )}
+                        {loading ? "Sending..." : "Submit Request"}
                       </button>
                       <button
                         type="button"

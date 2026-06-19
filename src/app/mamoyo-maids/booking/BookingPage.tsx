@@ -48,14 +48,26 @@ export function BookingPage() {
     if (errors[e.target.name]) setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitError, setSubmitError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Failed to submit");
       setSubmitted(true);
-    }, 800);
+    } catch (err) {
+      setSubmitError("Something went wrong. Please try again or use WhatsApp.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleWhatsApp = () => {
@@ -262,6 +274,7 @@ export function BookingPage() {
                         placeholder="Any special instructions or requests..."
                       />
                     </div>
+                    {submitError && <p className="text-red-500 text-xs sm:text-sm text-center">{submitError}</p>}
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
                       <button
                         type="submit"

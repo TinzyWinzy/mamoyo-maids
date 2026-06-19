@@ -25,6 +25,8 @@ export function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,9 +34,23 @@ export function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Failed to submit");
+      setSubmitted(true);
+    } catch (err) {
+      setError("Something went wrong. Please try again or use WhatsApp.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -322,12 +338,18 @@ export function ContactPage() {
                           placeholder="How can we help you?"
                         />
                       </div>
+                      {error && <p className="text-red-500 text-xs sm:text-sm text-center">{error}</p>}
                       <button
                         type="submit"
-                        className="w-full inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
+                        disabled={loading}
+                        className="w-full inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-70"
                       >
-                        <Send className="h-4 w-4 sm:h-5 sm:w-5" />
-                        Send Inquiry
+                        {loading ? (
+                          <div className="h-4 w-4 sm:h-5 sm:w-5 border-2 border-[#4e2d7b] border-t-transparent rounded-full animate-spin" />
+                        ) : (
+                          <Send className="h-4 w-4 sm:h-5 sm:w-5" />
+                        )}
+                        {loading ? "Sending..." : "Send Inquiry"}
                       </button>
                     </form>
                   )}
