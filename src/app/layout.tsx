@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Literata } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -14,12 +14,6 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "optional",
-});
-
-const literata = Literata({
-  variable: "--font-literata",
-  subsets: ["latin"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -119,7 +113,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${literata.variable} h-full`} data-scroll-behavior="smooth">
+    <html lang="en" className={`${inter.variable} h-full`} data-scroll-behavior="smooth">
       <head>
         <meta name="theme-color" content="#4e2d7b" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
