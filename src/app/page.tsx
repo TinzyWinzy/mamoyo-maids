@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      <section className="relative -mt-12 sm:-mt-16 z-20">
+      <section className="py-8 sm:py-10 bg-background">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {TRUST_BADGES.map((badge) => (
