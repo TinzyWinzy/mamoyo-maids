@@ -215,7 +215,7 @@ export function MarriageCounsellingPage() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/25"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/25"
               >
                 <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                 Chat on WhatsApp

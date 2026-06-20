@@ -96,7 +96,7 @@ export default function MaidsManagement() {
         <h1 className="text-2xl font-bold text-text-primary">Manage Maids</h1>
         <button
           onClick={() => setIsAdding(!isAdding)}
-          className="inline-flex items-center gap-2 bg-gold text-[#4e2d7b] px-4 py-2 rounded-xl font-semibold text-sm hover:bg-gold-light transition-colors"
+          className="inline-flex items-center gap-2 bg-gold text-dark px-4 py-2 rounded-xl font-semibold text-sm hover:bg-gold-light transition-colors"
         >
           {isAdding ? "Cancel" : <><Plus className="h-4 w-4" /> Add Maid</>}
         </button>
@@ -143,7 +143,7 @@ export default function MaidsManagement() {
               <textarea required value={newMaid.previousWork} onChange={e => setNewMaid({...newMaid, previousWork: e.target.value})} className="w-full px-3 py-2 border rounded-lg" rows={2}></textarea>
             </div>
             <div className="sm:col-span-2 flex justify-end mt-2">
-              <button type="submit" className="bg-[#4e2d7b] text-white px-6 py-2 rounded-xl text-sm font-semibold hover:bg-navy-light transition-colors">
+              <button type="submit" className="bg-dark text-white px-6 py-2 rounded-xl text-sm font-semibold hover:bg-navy-light transition-colors">
                 Save Profile
               </button>
             </div>

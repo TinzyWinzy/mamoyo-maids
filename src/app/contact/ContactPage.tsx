@@ -64,7 +64,7 @@ export function ContactPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#4e2d7b]/90 via-[#4e2d7b]/80 to-[#4e2d7b]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/80 to-dark/95" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
           <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4">
             Get in Touch
@@ -96,7 +96,7 @@ export function ContactPage() {
                     href={getPhoneUrl(SITE_CONFIG.phone)}
                     className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl hover:bg-light-section transition-all duration-300 group"
                   >
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#4e2d7b] text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-dark text-white group-hover:scale-110 transition-transform duration-300">
                       <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -113,7 +113,7 @@ export function ContactPage() {
                     href={getPhoneUrl(SITE_CONFIG.phoneSecondary)}
                     className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl hover:bg-light-section transition-all duration-300 group"
                   >
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#4e2d7b]/80 text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-dark/80 text-white group-hover:scale-110 transition-transform duration-300">
                       <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -135,7 +135,7 @@ export function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl hover:bg-light-section transition-all duration-300 group"
                   >
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-gold text-[#4e2d7b] group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-gold text-dark group-hover:scale-110 transition-transform duration-300">
                       <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -152,7 +152,7 @@ export function ContactPage() {
                     href={`mailto:${SITE_CONFIG.email}`}
                     className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5 rounded-2xl hover:bg-light-section transition-all duration-300 group"
                   >
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#4e2d7b]/80 text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-dark/80 text-white group-hover:scale-110 transition-transform duration-300">
                       <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -166,7 +166,7 @@ export function ContactPage() {
                   </a>
 
                   <div className="flex items-start gap-4 sm:gap-5 p-4 sm:p-5">
-                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[#4e2d7b] text-white">
+                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-dark text-white">
                       <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <div>
@@ -342,10 +342,10 @@ export function ContactPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className="w-full inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-70"
+                        className="w-full inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-70"
                       >
                         {loading ? (
-                          <div className="h-4 w-4 sm:h-5 sm:w-5 border-2 border-[#4e2d7b] border-t-transparent rounded-full animate-spin" />
+                          <div className="h-4 w-4 sm:h-5 sm:w-5 border-2 border-dark border-t-transparent rounded-full animate-spin" />
                         ) : (
                           <Send className="h-4 w-4 sm:h-5 sm:w-5" />
                         )}
@@ -376,7 +376,7 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-28 bg-[#4e2d7b]">
+      <section className="py-20 sm:py-28 bg-dark">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4">
@@ -391,7 +391,7 @@ export function ContactPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href="/mamoyo-maids/booking"
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/25"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/25"
               >
                 Hire Staff Now
                 <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />

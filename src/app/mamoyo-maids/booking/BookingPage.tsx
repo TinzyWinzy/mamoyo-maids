@@ -114,7 +114,7 @@ export function BookingPage() {
                     <div className="inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl sm:rounded-3xl bg-gradient-to-br from-navy to-navy-light text-white mb-4 sm:mb-6 shadow-xl shadow-navy/15">
                       <Icon className="h-8 w-8 sm:h-9 sm:w-9" />
                     </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-[10px] sm:text-[11px] font-bold text-[#4e2d7b] uppercase tracking-wider mb-3 sm:mb-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-[10px] sm:text-[11px] font-bold text-dark uppercase tracking-wider mb-3 sm:mb-4">
                       Step {step.step}
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">
@@ -146,7 +146,7 @@ export function BookingPage() {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <button
                       onClick={handleWhatsApp}
-                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm hover:bg-gold-light transition-colors shadow-lg shadow-gold/20"
+                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-gold text-dark font-semibold text-sm hover:bg-gold-light transition-colors shadow-lg shadow-gold/20"
                     >
                       <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                       Confirm via WhatsApp
@@ -279,10 +279,10 @@ export function BookingPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 min-h-[52px] rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-60 disabled:pointer-events-none"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 min-h-[52px] rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-60 disabled:pointer-events-none"
                       >
                         {loading ? (
-                          <div className="h-4 w-4 sm:h-5 sm:w-5 border-2 border-[#4e2d7b] border-t-transparent rounded-full animate-spin" />
+                          <div className="h-4 w-4 sm:h-5 sm:w-5 border-2 border-dark border-t-transparent rounded-full animate-spin" />
                         ) : (
                           <Send className="h-4 w-4 sm:h-5 sm:w-5" />
                         )}

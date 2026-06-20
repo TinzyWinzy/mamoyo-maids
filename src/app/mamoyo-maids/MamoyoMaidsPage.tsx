@@ -79,7 +79,7 @@ export function MamoyoMaidsPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#4e2d7b]/90 via-[#4e2d7b]/80 to-[#4e2d7b]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/80 to-dark/95" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
           <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4">
             A Division of {SITE_CONFIG.name}
@@ -94,7 +94,7 @@ export function MamoyoMaidsPage() {
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/mamoyo-maids/services"
-              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
+              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
             >
               View Services
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -132,7 +132,7 @@ export function MamoyoMaidsPage() {
                     href={service.href}
                     className="group block bg-light-section rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/40 hover:shadow-[0_12px_40px_rgba(78,45,123,0.08)] transition-all duration-500 h-full"
                   >
-                    <div className="inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-[#4e2d7b]/10 text-[#4e2d7b] mb-4 sm:mb-5 group-hover:bg-[#4e2d7b] group-hover:text-white transition-all duration-500">
+                    <div className="inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-dark/10 text-dark mb-4 sm:mb-5 group-hover:bg-dark group-hover:text-white transition-all duration-500">
                       <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2 sm:mb-3">
@@ -157,7 +157,7 @@ export function MamoyoMaidsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12 sm:mb-16">
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              More from <span className="text-[#4e2d7b]">Mamoyo Maids</span>
+              More from <span className="text-dark">Mamoyo Maids</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
               Explore all the ways we help families live better.
@@ -193,7 +193,7 @@ export function MamoyoMaidsPage() {
                 height={400}
                 className="w-full h-[250px] sm:h-[350px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4e2d7b]/80 to-transparent flex items-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-dark/80 to-transparent flex items-center">
                 <div className="px-6 sm:px-12 max-w-lg">
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
                     Ready to Get Started?
@@ -203,7 +203,7 @@ export function MamoyoMaidsPage() {
                   </p>
                   <Link
                     href="/mamoyo-maids/booking"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold text-dark font-semibold text-sm hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
                   >
                     Book a Service
                     <ArrowRight className="h-4 w-4" />

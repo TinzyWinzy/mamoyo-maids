@@ -113,7 +113,7 @@ export function Navbar() {
                   href={link.href}
                   className={`relative px-4 py-2 rounded-full text-[13px] font-medium tracking-wide transition-all duration-300 ${
                     pathname === link.href
-                      ? "text-[#4e2d7b] bg-gold"
+                      ? "text-dark bg-gold"
                       : scrolled
                       ? "text-text-secondary hover:text-navy"
                       : "text-white/80 hover:text-white"
@@ -178,7 +178,7 @@ export function Navbar() {
                         onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
                         className={`w-full flex items-center justify-between px-5 py-4 rounded-xl text-sm font-medium transition-colors min-h-[52px] ${
                           isMamoyoActive
-                            ? "bg-gold text-[#4e2d7b]"
+                            ? "bg-gold text-dark"
                             : "text-text-secondary hover:text-dark hover:bg-accent-pale/30"
                         }`}
                       >

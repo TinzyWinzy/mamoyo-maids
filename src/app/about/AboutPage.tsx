@@ -83,7 +83,7 @@ export function AboutPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#4e2d7b]/90 via-[#4e2d7b]/80 to-[#4e2d7b]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/80 to-dark/95" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-32 sm:pb-24 text-center w-full">
           <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-gold mb-3 sm:mb-4">
             Our Story
@@ -104,7 +104,7 @@ export function AboutPage() {
               Our Mission
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-5 sm:mb-6">
-              Connecting Talent with <span className="text-[#4e2d7b]">Opportunity</span>
+              Connecting Talent with <span className="text-dark">Opportunity</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
               WOBIC Employment Services is a licensed employment agency based in Harare, Zimbabwe.
@@ -124,10 +124,10 @@ export function AboutPage() {
                 height={500}
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#4e2d7b]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />
               <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90">
-                  <span className="text-xs sm:text-sm font-semibold text-[#4e2d7b]">Licensed & Verified Employment Agency</span>
+                  <span className="text-xs sm:text-sm font-semibold text-dark">Licensed & Verified Employment Agency</span>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export function AboutPage() {
               return (
                 <AnimatedSection key={value.title} delay={index * 0.1}>
                   <div className="bg-light-section rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-border/40 text-center h-full hover:shadow-[0_12px_40px_rgba(78,45,123,0.08)] transition-all duration-500">
-                    <div className="inline-flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-[#4e2d7b] text-white mb-4 sm:mb-5">
+                    <div className="inline-flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-dark text-white mb-4 sm:mb-5">
                       <Icon className="h-5 w-5 sm:h-7 sm:w-7" />
                     </div>
                     <h3 className="text-sm sm:text-lg font-bold text-text-primary mb-1.5 sm:mb-2">
@@ -163,7 +163,7 @@ export function AboutPage() {
               Trust Promise
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              Our <span className="text-[#4e2d7b]">Trust</span> Guarantee
+              Our <span className="text-dark">Trust</span> Guarantee
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
               We hold ourselves to the highest standards so you can feel confident hiring through us.
@@ -176,7 +176,7 @@ export function AboutPage() {
               return (
                 <AnimatedSection key={item.title} delay={index * 0.1}>
                   <div className="bg-light-section rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-border/40 text-center h-full">
-                    <div className="inline-flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-gold/10 text-[#4e2d7b] mb-4 sm:mb-5">
+                    <div className="inline-flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-gold/10 text-dark mb-4 sm:mb-5">
                       <Icon className="h-5 w-5 sm:h-7 sm:w-7" />
                     </div>
                     <h3 className="text-sm sm:text-lg font-bold text-text-primary mb-1.5 sm:mb-2">
@@ -197,7 +197,7 @@ export function AboutPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
+              className="inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
             >
               Get in Touch
             </Link>
@@ -212,7 +212,7 @@ export function AboutPage() {
               Our Brands
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-              WOBIC & <span className="text-[#4e2d7b]">Mamoyo Maids</span>
+              WOBIC & <span className="text-dark">Mamoyo Maids</span>
             </h2>
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
               WOBIC handles general recruitment and staff placement, while Mamoyo Maids specializes in
@@ -222,7 +222,7 @@ export function AboutPage() {
 
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
             <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/40 text-center">
-              <h3 className="text-xl sm:text-2xl font-bold text-[#4e2d7b] mb-3">WOBIC</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-dark mb-3">WOBIC</h3>
               <p className="text-sm sm:text-base text-text-secondary">
                 Employment Services — recruitment, staff placement, police clearances, and workforce solutions.
               </p>

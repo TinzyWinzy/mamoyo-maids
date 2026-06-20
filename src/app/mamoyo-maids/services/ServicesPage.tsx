@@ -57,7 +57,7 @@ export function ServicesPage() {
               <AnimatedSection key={service.id}>
                 <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
                   <div className={isReversed ? "lg:order-2" : ""}>
-                    <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gold/10 text-[#4e2d7b] text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-4 sm:mb-5">
+                    <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gold/10 text-dark text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-4 sm:mb-5">
                       <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       {service.shortTitle}
                     </div>
@@ -122,7 +122,7 @@ export function ServicesPage() {
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Link
                         href="/mamoyo-maids/booking"
-                        className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
+                        className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-gold text-dark font-semibold text-sm hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
                       >
                         Book This Service
                         <ArrowRight className="h-4 w-4" />
@@ -176,7 +176,7 @@ export function ServicesPage() {
             </p>
             <Link
               href="/mamoyo-maids/booking"
-              className="inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
+              className="inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
             >
               Get Started Today
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />

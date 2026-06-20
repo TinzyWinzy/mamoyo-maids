@@ -31,6 +31,8 @@
   --color-success: var(--success);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-pale: var(--accent-pale);
   --color-ring: var(--ring);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Literata", Georgia, serif;
@@ -128,18 +130,6 @@ body {
   transform: none;
   transition: none;
 }
-
-.animated-section.delay-0_00 { transition-delay: 0ms; }
-.animated-section.delay-0_04 { transition-delay: 40ms; }
-.animated-section.delay-0_08 { transition-delay: 80ms; }
-.animated-section.delay-0_12 { transition-delay: 120ms; }
-.animated-section.delay-0_16 { transition-delay: 160ms; }
-.animated-section.delay-0_20 { transition-delay: 200ms; }
-.animated-section.delay-0_24 { transition-delay: 240ms; }
-.animated-section.delay-0_28 { transition-delay: 280ms; }
-.animated-section.delay-0_32 { transition-delay: 320ms; }
-.animated-section.delay-0_36 { transition-delay: 360ms; }
-.animated-section.delay-0_40 { transition-delay: 400ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *,

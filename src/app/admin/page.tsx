@@ -77,7 +77,7 @@ export default function AdminDashboard() {
                       {lead.name}
                     </td>
                     <td className="px-6 py-4">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gold/10 text-[#4e2d7b] capitalize">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gold/10 text-dark capitalize">
                         {lead.type.replace("-", " ")}
                       </span>
                     </td>

@@ -86,7 +86,7 @@ export function AnimatedSection({
 }: AnimatedSectionProps) {
   const { observe, unobserve, prefersReducedMotion } = useScrollObserver();
   const ref = useRef<HTMLDivElement>(null);
-  const delayClass = delay > 0 ? `delay-${delay}` : "";
+  const delayMs = delay * 1000;
 
   useEffect(() => {
     const element = ref.current;
@@ -104,7 +104,8 @@ export function AnimatedSection({
   return (
     <div
       ref={ref}
-      className={`animated-section ${delayClass} ${className}`}
+      className={`animated-section ${className}`}
+      style={{ transitionDelay: delay > 0 ? `${delayMs}ms` : undefined }}
     >
       {children}
     </div>

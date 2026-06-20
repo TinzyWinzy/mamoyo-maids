@@ -177,7 +177,7 @@ export function EmploymentPage() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
               href="#request-form"
-              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-xl shadow-gold/30"
+              className="inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-xl shadow-gold/30"
             >
               Request a Maid
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -246,7 +246,7 @@ export function EmploymentPage() {
             {maidTypes.map((type, index) => (
               <AnimatedSection key={type.title} delay={index * 0.1}>
                 <div className="bg-light-section rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-border/40 h-full hover:shadow-[0_12px_40px_rgba(232,139,167,0.08)] transition-all duration-500">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 text-[#4e2d7b] text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-5">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold/10 text-dark text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-5">
                     <Users className="h-3.5 w-3.5" />
                     {type.title}
                   </div>
@@ -291,7 +291,7 @@ export function EmploymentPage() {
                     <div className="inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl sm:rounded-3xl bg-gradient-to-br from-navy to-navy-light text-white mb-5 sm:mb-6 shadow-xl shadow-navy/15">
                       <Icon className="h-8 w-8 sm:h-9 sm:w-9" />
                     </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-[11px] font-bold text-[#4e2d7b] uppercase tracking-wider mb-3 sm:mb-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 text-[11px] font-bold text-dark uppercase tracking-wider mb-3 sm:mb-4">
                       Step {step.step}
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-2">
@@ -421,7 +421,7 @@ export function EmploymentPage() {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm hover:bg-gold-light transition-colors shadow-md shadow-gold/20"
+                    className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gold text-dark font-semibold text-sm hover:bg-gold-light transition-colors shadow-md shadow-gold/20"
                   >
                     <MessageCircle className="h-4 w-4" />
                     Chat on WhatsApp
@@ -452,7 +452,7 @@ export function EmploymentPage() {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <button
                       onClick={handleWhatsApp}
-                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm hover:bg-gold-light transition-colors shadow-lg shadow-gold/20"
+                      className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-gold text-dark font-semibold text-sm hover:bg-gold-light transition-colors shadow-lg shadow-gold/20"
                     >
                       <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                       Confirm via WhatsApp
@@ -627,10 +627,10 @@ export function EmploymentPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-70"
+                        className="flex-1 inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-70"
                       >
                         {loading ? (
-                          <div className="h-4 w-4 sm:h-5 sm:w-5 border-2 border-[#4e2d7b] border-t-transparent rounded-full animate-spin" />
+                          <div className="h-4 w-4 sm:h-5 sm:w-5 border-2 border-dark border-t-transparent rounded-full animate-spin" />
                         ) : (
                           <Send className="h-4 w-4 sm:h-5 sm:w-5" />
                         )}
@@ -671,7 +671,7 @@ export function EmploymentPage() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/25"
+                className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors shadow-lg shadow-gold/25"
               >
                 <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                 Apply via WhatsApp

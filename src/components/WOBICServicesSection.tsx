@@ -32,8 +32,6 @@ const staffTypes = [
   { icon: HardHat, title: "Construction", description: "Skilled construction workers." },
 ];
 
-const delayClasses = staffTypes.map((_, i) => `delay-0_${String(i * 4).padStart(2, '0')}`);
-
 export function WOBICServicesSection() {
   return (
     <section className="py-20 sm:py-28 bg-white">
@@ -54,7 +52,7 @@ export function WOBICServicesSection() {
           {staffTypes.map((item, index) => {
             const Icon = item.icon;
             return (
-              <AnimatedSection key={item.title} className={delayClasses[index] || "delay-0_00"}>
+              <AnimatedSection key={item.title} delay={index * 0.04}>
                 <div className="group bg-light-section rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-center border border-border/40 transition-all duration-500 h-full">
                   <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-dark/10 text-dark mb-3 sm:mb-4 transition-all duration-500">
                     <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
