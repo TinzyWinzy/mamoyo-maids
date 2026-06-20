@@ -7,7 +7,8 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MobileCTABar } from "@/components/MobileCTABar";
 import { ScrollObserverProvider } from "@/components/AnimatedSection";
 import { LowEndDetector } from "@/components/LowEndDetector";
-import { SITE_CONFIG, SERVICES } from "@/lib/constants";
+import { PWARegister } from "@/components/PWARegister";
+import { SITE_CONFIG } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -121,7 +122,16 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${literata.variable} h-full`} data-scroll-behavior="smooth">
       <head>
         <meta name="theme-color" content="#4e2d7b" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="WOBIC" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-512.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -129,6 +139,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col antialiased">
         <LowEndDetector />
+        <PWARegister />
         <ScrollObserverProvider>
           <Navbar />
           <main className="flex-1">{children}</main>
