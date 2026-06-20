@@ -1,8 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MessageCircle } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/constants";
+import { ArrowRight, MessageCircle, ShieldCheck, GraduationCap, ThumbsUp, Building2 } from "lucide-react";
+import { SITE_CONFIG, TRUST_BADGES } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
+
+const trustIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  ShieldCheck, GraduationCap, ThumbsUp, Building2,
+};
+
+function TrustBadge({ label, icon }: { label: string; icon: string }) {
+  const Icon = trustIcons[icon];
+  if (!Icon) return null;
+  return (
+    <div className="flex items-center gap-2.5 sm:gap-3 p-3.5 sm:p-5 bg-white rounded-2xl border border-border/40">
+      <div className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-gold/10">
+        <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-gold" />
+      </div>
+      <span className="text-[11px] sm:text-[13px] font-semibold text-text-primary leading-tight">
+        {label}
+      </span>
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -58,6 +77,16 @@ export default function HomePage() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-background to-transparent" />
+      </section>
+
+      <section className="relative -mt-12 sm:-mt-16 z-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            {TRUST_BADGES.map((badge) => (
+              <TrustBadge key={badge.label} label={badge.label} icon={badge.icon} />
+            ))}
+          </div>
+        </div>
       </section>
     </>
   );
