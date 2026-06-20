@@ -88,6 +88,58 @@ body {
   }
 }
 
+@media (prefers-reduced-motion: reduce), (max-width: 480px) {
+  .animate-zoom-in,
+  .animate-zoom-out,
+  .animate-zoom-slow {
+    animation: none !important;
+  }
+}
+
+.low-end-device .animate-zoom-in,
+.low-end-device .animate-zoom-out,
+.low-end-device .animate-zoom-slow {
+  animation: none !important;
+}
+
+.low-end-device *,
+.low-end-device *::before,
+.low-end-device *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+.animated-section {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+.animated-section.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animated-section.reduce-motion {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.animated-section.delay-0_04 { transition-delay: 40ms; }
+.animated-section.delay-0_08 { transition-delay: 80ms; }
+.animated-section.delay-0_12 { transition-delay: 120ms; }
+.animated-section.delay-0_16 { transition-delay: 160ms; }
+.animated-section.delay-0_2 { transition-delay: 200ms; }
+.animated-section.delay-0_24 { transition-delay: 240ms; }
+.animated-section.delay-0_28 { transition-delay: 280ms; }
+.animated-section.delay-0_32 { transition-delay: 320ms; }
+.animated-section.delay-0_36 { transition-delay: 360ms; }
+.animated-section.delay-0_4 { transition-delay: 400ms; }
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -101,6 +153,12 @@ body {
   .animate-zoom-out,
   .animate-zoom-slow {
     animation: none !important;
+  }
+
+  .animated-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 

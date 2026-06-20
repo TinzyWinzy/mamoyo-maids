@@ -32,6 +32,8 @@ const staffTypes = [
   { icon: HardHat, title: "Construction", description: "Skilled construction workers." },
 ];
 
+const delayClasses = staffTypes.map((_, i) => `delay-0_0${i * 4}`);
+
 export function WOBICServicesSection() {
   return (
     <section className="py-20 sm:py-28 bg-white">
@@ -41,7 +43,7 @@ export function WOBICServicesSection() {
             We Provide
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-4 sm:mb-5">
-            Staff for Every <span className="text-[#4e2d7b]">Need</span>
+            Staff for Every <span className="text-dark">Need</span>
           </h2>
           <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
             We train and provide reliable people with police clearances for homes, businesses, and organizations.
@@ -52,9 +54,9 @@ export function WOBICServicesSection() {
           {staffTypes.map((item, index) => {
             const Icon = item.icon;
             return (
-              <AnimatedSection key={item.title} delay={index * 0.04}>
+              <AnimatedSection key={item.title} className={delayClasses[index] || "delay-0_00"}>
                 <div className="group bg-light-section rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-center border border-border/40 transition-all duration-500 h-full">
-                  <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-[#4e2d7b]/10 text-[#4e2d7b] mb-3 sm:mb-4 transition-all duration-500">
+                  <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-dark/10 text-dark mb-3 sm:mb-4 transition-all duration-500">
                     <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                   <h3 className="text-sm sm:text-base font-bold text-text-primary mb-1">
@@ -73,7 +75,7 @@ export function WOBICServicesSection() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link
               href="/mamoyo-maids/employment"
-              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
+              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
             >
               Hire Staff Now
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -85,7 +87,7 @@ export function WOBICServicesSection() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full border border-[#4e2d7b] text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-[#4e2d7b] hover:text-white transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full border border-dark text-dark font-semibold text-sm sm:text-base hover:bg-dark hover:text-white transition-all duration-300"
             >
               <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
               Enquire on WhatsApp

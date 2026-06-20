@@ -5,6 +5,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MobileCTABar } from "@/components/MobileCTABar";
+import { ScrollObserverProvider } from "@/components/AnimatedSection";
+import { LowEndDetector } from "@/components/LowEndDetector";
 import { SITE_CONFIG, SERVICES } from "@/lib/constants";
 
 const inter = Inter({
@@ -126,11 +128,14 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <MobileCTABar />
+        <LowEndDetector />
+        <ScrollObserverProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+          <MobileCTABar />
+        </ScrollObserverProvider>
       </body>
     </html>
   );

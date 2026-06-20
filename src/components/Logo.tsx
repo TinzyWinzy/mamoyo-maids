@@ -24,7 +24,7 @@ function BrandMark({ className }: { className?: string }) {
       />
       <path
         d="M14 20L20 24L26 20"
-        stroke="#e5b754"
+        stroke="currentColor"
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"

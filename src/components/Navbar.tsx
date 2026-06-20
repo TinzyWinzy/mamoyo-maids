@@ -5,8 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
-import { getWhatsAppUrl, getWhatsAppWebUrl, getPhoneUrl } from "@/lib/utils";
+import { getPhoneUrl } from "@/lib/utils";
 import { Logo } from "@/components/Logo";
+import { useWhatsApp } from "@/hooks/useWhatsApp";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -32,60 +33,22 @@ export function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const pathname = usePathname();
-  const desktopWhatsAppRef = useRef<HTMLAnchorElement>(null);
-  const mobileWhatsAppRef = useRef<HTMLAnchorElement>(null);
+  const rafRef = useRef<number | null>(null);
+  const { handleWhatsAppClick, whatsappHref } = useWhatsApp();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => setScrolled(window.scrollY > 20));
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   const isMamoyoActive = pathname.startsWith("/mamoyo-maids");
-
-  useEffect(() => {
-    const handleWhatsAppClick = (e: MouseEvent) => {
-      const nativeUrl = getWhatsAppUrl(
-        SITE_CONFIG.whatsapp,
-        "Hello! I'd like to learn more about your services."
-      );
-      const webUrl = getWhatsAppWebUrl(
-        SITE_CONFIG.whatsapp,
-        "Hello! I'd like to learn more about your services."
-      );
-
-      if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        const iframe = document.createElement("iframe");
-        iframe.style.display = "none";
-        iframe.src = nativeUrl;
-        document.body.appendChild(iframe);
-        setTimeout(() => document.body.removeChild(iframe), 1000);
-
-        setTimeout(() => {
-          if (document.body.contains(iframe)) {
-            document.body.removeChild(iframe);
-          }
-        }, 1500);
-
-        setTimeout(() => {
-          window.location.href = webUrl;
-        }, 1500);
-
-        e.preventDefault();
-      }
-    };
-
-    const desktopBtn = desktopWhatsAppRef.current;
-    const mobileBtn = mobileWhatsAppRef.current;
-
-    if (desktopBtn) desktopBtn.addEventListener("click", handleWhatsAppClick);
-    if (mobileBtn) mobileBtn.addEventListener("click", handleWhatsAppClick);
-
-    return () => {
-      if (desktopBtn) desktopBtn.removeEventListener("click", handleWhatsAppClick);
-      if (mobileBtn) mobileBtn.removeEventListener("click", handleWhatsAppClick);
-    };
-  }, []);
 
   return (
     <header
@@ -113,7 +76,7 @@ export function Navbar() {
                       href={link.href}
                       className={`relative flex items-center gap-1 px-4 py-2 rounded-full text-[13px] font-medium tracking-wide transition-all duration-300 ${
                         isMamoyoActive
-                          ? "text-[#4e2d7b] bg-gold"
+                          ? "text-dark bg-gold"
                           : scrolled
                           ? "text-text-secondary hover:text-navy"
                           : "text-white/80 hover:text-white"
@@ -132,7 +95,7 @@ export function Navbar() {
                               href={sub.href}
                               className={`block px-5 py-3 text-sm font-medium transition-colors ${
                                 pathname === sub.href
-                                  ? "text-[#4e2d7b] bg-gold"
+                                  ? "text-dark bg-gold"
                                   : "text-text-secondary hover:text-dark hover:bg-accent-pale/30"
                               }`}
                             >
@@ -175,14 +138,11 @@ export function Navbar() {
               Call Us
             </a>
             <a
-              ref={desktopWhatsAppRef}
-              href={getWhatsAppWebUrl(
-                SITE_CONFIG.whatsapp,
-                "Hello! I'd like to learn more about your services."
-              )}
+              href={whatsappHref}
+              onClick={handleWhatsAppClick}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-[#4e2d7b] text-[13px] font-semibold hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-dark text-[13px] font-semibold hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
             >
               <MessageCircle className="h-4 w-4" />
               WhatsApp
@@ -231,7 +191,7 @@ export function Navbar() {
                               <Link
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="block px-5 py-3 rounded-xl text-sm font-medium text-[#4e2d7b] bg-gold/50 min-h-[44px] flex items-center"
+                                 className="block px-5 py-3 rounded-xl text-sm font-medium text-dark bg-gold/50 min-h-[44px] flex items-center"
                               >
                                 Overview
                               </Link>
@@ -242,7 +202,7 @@ export function Navbar() {
                                   onClick={() => setIsOpen(false)}
                                   className={`block px-5 py-3 rounded-xl text-sm font-medium transition-colors min-h-[44px] flex items-center ${
                                     pathname === sub.href
-                                      ? "bg-gold text-[#4e2d7b]"
+                                      ? "bg-gold text-dark"
                                       : "text-text-secondary hover:text-dark hover:bg-accent-pale/30"
                                   }`}
                                 >
@@ -279,11 +239,8 @@ export function Navbar() {
                   Call Us
                 </a>
                 <a
-                  ref={mobileWhatsAppRef}
-                  href={getWhatsAppWebUrl(
-                    SITE_CONFIG.whatsapp,
-                    "Hello! I'd like to learn more about your services."
-                  )}
+                  href={whatsappHref}
+                  onClick={handleWhatsAppClick}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 px-4 py-4 rounded-xl bg-accent text-dark text-sm font-semibold hover:bg-accent-light transition-colors min-h-[52px]"

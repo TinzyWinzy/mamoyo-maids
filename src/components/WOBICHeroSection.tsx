@@ -18,8 +18,10 @@ export function WOBICHeroSection() {
           className="object-cover"
           priority
           quality={85}
+          width={1920}
+          height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#4e2d7b]/85 via-[#4e2d7b]/70 to-[#4e2d7b]/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/85 via-dark/70 to-dark/90" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-32 sm:pt-32 sm:pb-40 w-full">
@@ -43,7 +45,7 @@ export function WOBICHeroSection() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-14">
             <Link
               href="/mamoyo-maids/booking"
-              className="group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 min-h-[52px] rounded-full bg-gold text-[#4e2d7b] font-semibold text-sm sm:text-base hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-xl shadow-gold/30"
+              className="group inline-flex items-center justify-center gap-2.5 px-7 sm:px-8 py-4 min-h-[52px] rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light active:scale-[0.97] transition-all duration-300 shadow-xl shadow-gold/30"
             >
               Hire Staff Now
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
