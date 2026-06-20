@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useRef, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useRef, useState, useCallback, ReactNode } from "react";
 
 interface ScrollObserverContextValue {
   observe: (element: HTMLElement) => void;
@@ -48,15 +48,15 @@ export function ScrollObserverProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  const observe = (element: HTMLElement) => {
+  const observe = useCallback((element: HTMLElement) => {
     elementsRef.current.add(element);
     observerRef.current?.observe(element);
-  };
+  }, []);
 
-  const unobserve = (element: HTMLElement) => {
+  const unobserve = useCallback((element: HTMLElement) => {
     elementsRef.current.delete(element);
     observerRef.current?.unobserve(element);
-  };
+  }, []);
 
   return (
     <ScrollObserverContext.Provider value={{ observe, unobserve, prefersReducedMotion }}>

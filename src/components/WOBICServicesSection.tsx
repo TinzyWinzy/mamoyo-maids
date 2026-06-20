@@ -32,7 +32,7 @@ const staffTypes = [
   { icon: HardHat, title: "Construction", description: "Skilled construction workers." },
 ];
 
-const delayClasses = staffTypes.map((_, i) => `delay-0_0${i * 4}`);
+const delayClasses = staffTypes.map((_, i) => `delay-0_${String(i * 4).padStart(2, '0')}`);
 
 export function WOBICServicesSection() {
   return (
