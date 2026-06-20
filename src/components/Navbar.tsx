@@ -52,7 +52,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 will-change-transform transition-colors duration-200 ${
         scrolled
           ? "bg-white/98 shadow-[0_1px_20px_rgba(26,39,68,0.06)]"
           : "bg-transparent"
@@ -74,7 +74,7 @@ export function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      className={`relative flex items-center gap-1 px-4 py-2 rounded-full text-[13px] font-medium tracking-wide transition-all duration-300 ${
+                      className={`relative flex items-center gap-1 px-4 py-2 rounded-full text-[13px] font-medium tracking-wide transition-colors duration-300 ${
                         isMamoyoActive
                           ? "text-dark bg-gold"
                           : scrolled
@@ -111,7 +111,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 rounded-full text-[13px] font-medium tracking-wide transition-all duration-300 ${
+                  className={`relative px-4 py-2 rounded-full text-[13px] font-medium tracking-wide transition-colors duration-300 ${
                     pathname === link.href
                       ? "text-dark bg-gold"
                       : scrolled
@@ -128,7 +128,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={getPhoneUrl(SITE_CONFIG.phone)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-medium transition-all duration-300 ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-medium transition-colors duration-300 ${
                 scrolled
                   ? "text-text-secondary hover:text-navy"
                   : "text-white/80 hover:text-white"
@@ -142,7 +142,7 @@ export function Navbar() {
               onClick={handleWhatsAppClick}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-dark text-[13px] font-semibold hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/25"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold text-dark text-[13px] font-semibold hover:bg-gold-light transition-colors duration-300 shadow-lg shadow-gold/25"
             >
               <MessageCircle className="h-4 w-4" />
               WhatsApp

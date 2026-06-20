@@ -39,7 +39,7 @@ export function Logo({ variant = "light" }: { variant?: "light" | "dark" }) {
 
   return (
     <Link href="/" className="flex items-center gap-3 group">
-      <BrandMark className="h-9 w-9 sm:h-10 sm:w-10 text-gold group-hover:drop-shadow-[0_0_8px_rgba(229,183,84,0.4)] transition-all duration-500" />
+      <BrandMark className="h-9 w-9 sm:h-10 sm:w-10 text-gold group-hover:drop-shadow-[0_0_8px_rgba(229,183,84,0.4)] transition-shadow duration-500" />
       <div className="flex flex-col leading-none">
         <span className={`font-serif text-xl sm:text-2xl font-black tracking-tight ${textColor} leading-none`}>
           WOBIC
