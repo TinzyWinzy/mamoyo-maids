@@ -174,7 +174,4 @@ textarea {
   touch-action: manipulation;
 }
 
-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 500px;
-}
+

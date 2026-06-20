@@ -103,7 +103,7 @@ export default function HomePage() {
               return (
                 <div
                   key={item.title}
-                  className="bg-light-section rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-center border border-border/40 h-full"
+                  className="bg-light-section sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 text-center sm:border sm:border-border/40 h-full"
                 >
                   <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-dark/10 text-dark mb-3 sm:mb-4">
                     <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
@@ -166,9 +166,9 @@ export default function HomePage() {
               return (
                 <div
                   key={item.title}
-                  className="bg-white rounded-2xl sm:rounded-3xl border border-border/50 p-5 sm:p-7 text-center"
+                  className="bg-white sm:rounded-2xl lg:rounded-3xl sm:border sm:border-border/50 p-5 sm:p-7 text-center"
                 >
-                  <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-xl sm:rounded-2xl bg-dark text-white mb-4 sm:mb-5">
+                  <div className="inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center sm:rounded-xl lg:rounded-2xl bg-dark text-white mb-4 sm:mb-5">
                     {Icon && <Icon className="h-6 w-6 sm:h-8 sm:w-8" />}
                   </div>
                   <h3 className="text-sm sm:text-base font-bold text-text-primary mb-1.5 sm:mb-2">
@@ -203,7 +203,7 @@ export default function HomePage() {
             {TESTIMONIALS.slice(0, 3).map((t) => (
               <div
                 key={t.name}
-                className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-border/40"
+                className="bg-white sm:rounded-2xl lg:rounded-3xl p-5 sm:p-7 sm:border sm:border-border/40"
               >
                 <div className="flex gap-0.5 mb-3 sm:mb-4">
                   {Array.from({ length: 5 }).map((_, i) => (
