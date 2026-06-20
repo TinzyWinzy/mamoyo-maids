@@ -23,18 +23,27 @@ const reasons = [
   { title: "Trusted Since Day One", description: "Hundreds of families and businesses trust us." },
 ];
 
+function GoldBar() {
+  return <div className="w-10 sm:w-12 h-0.5 bg-gold mx-auto mb-4 sm:mb-5" />;
+}
+
+function SectionDivider() {
+  return <div className="h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />;
+}
+
 export default function HomePage() {
   return (
     <>
       <section className="bg-dark py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gold mb-3 sm:mb-4">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gold/80 mb-3 sm:mb-4">
               {SITE_CONFIG.name}
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 sm:mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-5 sm:mb-7">
               Your Trusted Employment Partner
             </h1>
+            <GoldBar />
             <p className="text-sm sm:text-lg text-white/70 max-w-xl mb-8 sm:mb-10 leading-relaxed">
               We train and provide reliable people with police clearances. House maids,
               babysitters, security, drivers, gardeners, and more.
@@ -59,6 +68,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
@@ -68,19 +79,28 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               Staff for Every <span className="text-dark">Need</span>
             </h2>
+            <GoldBar />
             <p className="text-sm sm:text-lg text-text-secondary max-w-2xl mx-auto">
               Trained, police-cleared staff for homes, businesses, and organizations.
             </p>
           </div>
 
-          <ul className="max-w-3xl mx-auto divide-y divide-border/40">
+          <div className="max-w-4xl mx-auto flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-3 lg:gap-4">
             {staffTypes.map((item) => (
-              <li key={item.title} className="py-4 sm:py-5 first:pt-0 last:pb-0">
-                <p className="text-sm sm:text-base font-bold text-text-primary mb-0.5">{item.title}</p>
-                <p className="text-sm text-text-secondary">{item.description}</p>
-              </li>
+              <div
+                key={item.title}
+                className="lg:rounded-xl lg:border lg:border-border/40 lg:p-5"
+              >
+                <p className="text-sm sm:text-base font-bold text-text-primary mb-0.5">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold mr-2.5 align-middle" />
+                  {item.title}
+                </p>
+                <p className="text-sm text-text-secondary pl-4 sm:pl-[22px]">
+                  {item.description}
+                </p>
+              </div>
             ))}
-          </ul>
+          </div>
 
           <div className="text-center mt-10 sm:mt-14">
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -103,6 +123,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       <section className="bg-light-section py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-14">
@@ -112,24 +134,36 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               The <span className="text-dark">WOBIC</span> Difference
             </h2>
+            <GoldBar />
           </div>
 
-          <ul className="max-w-3xl mx-auto divide-y divide-border/40">
+          <div className="max-w-4xl mx-auto flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-3 lg:gap-4">
             {reasons.map((item) => (
-              <li key={item.title} className="py-4 sm:py-5 first:pt-0 last:pb-0">
-                <p className="text-sm sm:text-base font-bold text-text-primary mb-0.5">{item.title}</p>
-                <p className="text-sm text-text-secondary">{item.description}</p>
-              </li>
+              <div
+                key={item.title}
+                className="lg:rounded-xl lg:border lg:border-border/50 lg:p-5 lg:bg-white"
+              >
+                <p className="text-sm sm:text-base font-bold text-text-primary mb-0.5">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold mr-2.5 align-middle" />
+                  {item.title}
+                </p>
+                <p className="text-sm text-text-secondary pl-4 sm:pl-[22px]">
+                  {item.description}
+                </p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       <section className="bg-dark py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-5">
             Ready to Find the Right Staff?
           </h2>
+          <GoldBar />
           <p className="text-sm sm:text-lg text-white/80 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
             Join hundreds of satisfied families and businesses who trust {SITE_CONFIG.name}{" "}
             for all their recruitment and staffing needs.
