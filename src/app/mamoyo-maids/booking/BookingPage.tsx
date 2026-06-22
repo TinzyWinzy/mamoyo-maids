@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { BOOKING_STEPS, SERVICES, SITE_CONFIG } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
+import { db } from "@/lib/firebase";
+import { addDoc, collection } from "firebase/firestore";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { iconMap } from "@/lib/icons";
 
@@ -56,14 +58,35 @@ export function BookingPage() {
     setLoading(true);
     setSubmitError("");
     try {
-      const res = await fetch("/api/booking", {
+      await addDoc(collection(db, "leads"), {
+        type: "booking",
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email || "",
+        service: formData.service,
+        date: formData.date,
+        time: formData.time,
+        notes: formData.notes || "",
+        createdAt: new Date().toISOString(),
+        status: "new",
+      });
+      setSubmitted(true);
+      fetch(`${window.location.origin}/api/notify-lead`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (!res.ok) throw new Error("Failed to submit");
-      setSubmitted(true);
-    } catch (err) {
+        body: JSON.stringify({
+          type: "booking",
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          service: formData.service,
+          date: formData.date,
+          time: formData.time,
+          notes: formData.notes,
+          createdAt: new Date().toISOString(),
+        }),
+      }).catch(() => {});
+    } catch {
       setSubmitError("Something went wrong. Please try again or use WhatsApp.");
     } finally {
       setLoading(false);

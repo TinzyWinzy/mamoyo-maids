@@ -50,7 +50,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/mamoyo-maids/booking"
+                href="/contact"
                 className="inline-flex items-center justify-center px-7 sm:px-8 py-4 min-h-[52px] rounded-md sm:rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors duration-300"
               >
                 Hire Staff Now
@@ -87,9 +87,12 @@ export default function HomePage() {
 
           <div className="max-w-4xl mx-auto flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-3 lg:gap-4">
             {staffTypes.map((item) => (
-              <div
+              <a
                 key={item.title}
-                className="lg:rounded-xl lg:border lg:border-border/40 lg:p-5"
+                href={getWhatsAppUrl(SITE_CONFIG.whatsapp, `Hello! I'm interested in hiring a ${item.title}. Please tell me more.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="lg:rounded-xl lg:border lg:border-border/40 lg:p-5 hover:bg-accent-pale hover:border-gold/40 transition-all duration-200 no-underline"
               >
                 <p className="text-sm sm:text-base font-bold text-text-primary mb-0.5">
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold mr-2.5 align-middle" />
@@ -98,14 +101,14 @@ export default function HomePage() {
                 <p className="text-sm text-text-secondary pl-4 sm:pl-[22px]">
                   {item.description}
                 </p>
-              </div>
+              </a>
             ))}
           </div>
 
           <div className="text-center mt-10 sm:mt-14">
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                href="/mamoyo-maids/employment"
+                href="/contact"
                 className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 sm:py-4 rounded-md sm:rounded-full bg-gold text-dark font-semibold text-sm sm:text-base hover:bg-gold-light transition-colors duration-300"
               >
                 Hire Staff Now

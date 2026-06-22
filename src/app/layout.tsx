@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: SITE_CONFIG.description,
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: SITE_CONFIG.name,
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_CONFIG.name} – ${SITE_CONFIG.tagline}`,
     description: SITE_CONFIG.description,
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -89,7 +89,7 @@ export default function RootLayout({
     email: SITE_CONFIG.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Karigamombe Centre, 11th Floor, Corner Julius Nyerere & Samora Machel",
+      streetAddress: "Karigamombe Centre, First Floor Room 109, Corner Julius Nyerere & Samora Machel",
       addressLocality: "Harare",
       addressCountry: "ZW",
     },
@@ -125,7 +125,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-512.png" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -10,10 +10,7 @@ import {
   Users,
   Heart,
   Award,
-  Star,
-  Quote,
 } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/constants";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { CTASection } from "@/components/CTASection";
 
@@ -193,7 +190,7 @@ export function AboutPage() {
 
           <AnimatedSection className="text-center">
             <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-6 sm:mb-8">
-              We are located at <strong>Karigamombe Centre, 11th Floor</strong>, corner of Julius Nyerere Way and Samora Machel Avenue, Harare.
+              We are located at <strong>Karigamombe Centre, First Floor Room 109</strong>, corner of Julius Nyerere Way and Samora Machel Avenue, Harare.
             </p>
             <Link
               href="/contact"

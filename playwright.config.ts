@@ -30,7 +30,7 @@ export default defineConfig({
     },
     {
       name: "low-end-android",
-      use: { ...devices["Galaxy S9+"] },
+      use: { ...devices["Galaxy A10"] },
     },
     {
       name: "android-go",
@@ -49,7 +49,7 @@ export default defineConfig({
     {
       name: "throttled-3g",
       use: {
-        ...devices["Galaxy S9+"],
+        ...devices["Galaxy A10"],
         offline: false,
       },
     },

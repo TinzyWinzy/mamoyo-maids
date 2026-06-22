@@ -4,7 +4,6 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
@@ -21,7 +20,7 @@ export default function AdminLogin() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/admin");
-    } catch (err: any) {
+    } catch {
       setError("Invalid email or password.");
     } finally {
       setLoading(false);

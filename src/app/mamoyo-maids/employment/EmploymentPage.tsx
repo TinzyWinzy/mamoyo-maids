@@ -23,7 +23,7 @@ import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { iconMap } from "@/lib/icons";
 import { db } from "@/lib/firebase";
-import { collection, query, getDocs } from "firebase/firestore";
+import { collection, query, getDocs, addDoc } from "firebase/firestore";
 import type { MaidProfile } from "@/app/admin/maids/page";
 
 const howItWorks = [
@@ -132,14 +132,33 @@ export function EmploymentPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/maid-request", {
+      await addDoc(collection(db, "leads"), {
+        type: "maid-request",
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email || "",
+        serviceType: formData.serviceType,
+        maidAge: formData.maidAge || "No preference",
+        bedrooms: formData.bedrooms || "Not specified",
+        requirements: formData.requirements || "None",
+        createdAt: new Date().toISOString(),
+        status: "new",
+      });
+      setSubmitted(true);
+      fetch(`${window.location.origin}/api/notify-lead`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (!res.ok) throw new Error("Failed to submit");
-      setSubmitted(true);
-    } catch (err) {
+        body: JSON.stringify({
+          type: "maid-request",
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          serviceType: formData.serviceType,
+          requirements: formData.requirements,
+          createdAt: new Date().toISOString(),
+        }),
+      }).catch(() => {});
+    } catch {
       setError("Something went wrong. Please try again or use WhatsApp.");
     } finally {
       setLoading(false);

@@ -19,6 +19,9 @@ const serviceImages: Record<string, string> = {
   "laundry-ironing": "/services/laundry.jpg",
   "organizing-decluttering": "/services/organizing.jpg",
   "move-cleaning": "/services/move-cleaning.jpg",
+  "maid-training": "/services/maid-training.jpg",
+  "professional-moaners": "/services/professional-moaners.jpg",
+  "funeral-moving-support": "/services/funeral-moving.jpg",
 };
 
 export function ServicesPage() {

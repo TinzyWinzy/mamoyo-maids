@@ -3,28 +3,43 @@
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
+import { User } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { 
+import {
   LayoutDashboard, 
   Users, 
-  Briefcase, 
+  UserCheck,
   MessageSquare, 
+  ShieldCheck,
   LogOut,
   Menu,
   X
 } from "lucide-react";
+
+const PAGE_TITLES: Record<string, string> = {
+  "/admin": "Dashboard",
+  "/admin/leads": "Leads",
+  "/admin/candidates": "Candidates",
+  "/admin/maids": "Maids",
+  "/admin/admins": "Admin Management",
+  "/admin/login": "Admin Login",
+};
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    document.title = `${PAGE_TITLES[pathname] || "Admin"} | Mamoyo Maids`;
+  }, [pathname]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -62,8 +77,9 @@ export default function AdminLayout({
   const navigation = [
     { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
     { name: "Leads", href: "/admin/leads", icon: MessageSquare },
+    { name: "Candidates", href: "/admin/candidates", icon: UserCheck },
     { name: "Maids", href: "/admin/maids", icon: Users },
-    { name: "Services", href: "/admin/services", icon: Briefcase },
+    { name: "Admins", href: "/admin/admins", icon: ShieldCheck },
   ];
 
   return (

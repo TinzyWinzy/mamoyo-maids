@@ -14,6 +14,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
+import { db } from "@/lib/firebase";
+import { addDoc, collection } from "firebase/firestore";
 import { getWhatsAppUrl, getPhoneUrl } from "@/lib/utils";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
@@ -21,6 +23,7 @@ export function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    lookingFor: "",
     email: "",
     message: "",
   });
@@ -29,7 +32,7 @@ export function ContactPage() {
   const [error, setError] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -39,14 +42,29 @@ export function ContactPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/contact", {
+      await addDoc(collection(db, "leads"), {
+        type: "contact",
+        name: formData.name,
+        phone: formData.phone,
+        lookingFor: formData.lookingFor || "Not specified",
+        email: formData.email || "",
+        message: formData.message,
+        createdAt: new Date().toISOString(),
+        status: "new",
+      });
+      setSubmitted(true);
+      fetch(`${window.location.origin}/api/notify-lead`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (!res.ok) throw new Error("Failed to submit");
-      setSubmitted(true);
-    } catch (err) {
+        body: JSON.stringify({
+          type: "contact",
+          name: formData.name,
+          phone: formData.phone,
+          message: formData.message,
+          createdAt: new Date().toISOString(),
+        }),
+      }).catch(() => {});
+    } catch {
       setError("Something went wrong. Please try again or use WhatsApp.");
     } finally {
       setLoading(false);
@@ -174,7 +192,7 @@ export function ContactPage() {
                         Location
                       </p>
                       <p className="text-base sm:text-lg font-bold text-text-primary">
-                        Karigamombe Centre, 11th Floor<br />
+                        Karigamombe Centre, First Floor Room 109<br />
                         Corner Julius Nyerere & Samora Machel<br />
                         Harare, Zimbabwe
                       </p>
@@ -256,6 +274,7 @@ export function ContactPage() {
                           setFormData({
                             name: "",
                             phone: "",
+                            lookingFor: "",
                             email: "",
                             message: "",
                           });
@@ -302,6 +321,36 @@ export function ContactPage() {
                           className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
                           placeholder="+263 77 123 4567"
                         />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="contact-lookingFor"
+                          className="block text-[11px] sm:text-xs font-semibold text-text-primary mb-2 uppercase tracking-wider"
+                        >
+                          What are you looking for? *
+                        </label>
+                        <select
+                          id="contact-lookingFor"
+                          name="lookingFor"
+                          required
+                          value={formData.lookingFor}
+                          onChange={handleChange}
+                          className="w-full px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl border border-border/50 bg-white text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-gold/25 focus:border-gold transition-all"
+                        >
+                          <option value="">Select...</option>
+                          <option value="House Maids">House Maids</option>
+                          <option value="Babysitters">Babysitters</option>
+                          <option value="Security">Security</option>
+                          <option value="Drivers">Drivers</option>
+                          <option value="Gardeners">Gardeners</option>
+                          <option value="Caretakers">Caretakers</option>
+                          <option value="Nurse Aids">Nurse Aids</option>
+                          <option value="Shop Workers">Shop Workers</option>
+                          <option value="Office Workers">Office Workers</option>
+                          <option value="Construction">Construction</option>
+                          <option value="Maid Services">Maid Services</option>
+                          <option value="General Inquiry">General Inquiry</option>
+                        </select>
                       </div>
                       <div>
                         <label

@@ -36,7 +36,6 @@ export default function MaidsManagement() {
   });
 
   const fetchMaids = async () => {
-    setLoading(true);
     try {
       const q = query(collection(db, "maids"));
       const snapshot = await getDocs(q);
@@ -53,7 +52,9 @@ export default function MaidsManagement() {
   };
 
   useEffect(() => {
-    fetchMaids();
+    (async () => {
+      await fetchMaids();
+    })();
   }, []);
 
   const handleAdd = async (e: React.FormEvent) => {

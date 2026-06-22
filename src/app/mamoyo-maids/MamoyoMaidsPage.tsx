@@ -9,15 +9,9 @@ import {
   Shirt,
   GraduationCap,
   Heart,
-  MessageCircle,
-  Shield,
-  Clock,
-  Award,
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
-import { getWhatsAppUrl } from "@/lib/utils";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { CTASection } from "@/components/CTASection";
 
 const services = [
   {

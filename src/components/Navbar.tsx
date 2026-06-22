@@ -125,7 +125,27 @@ export function Navbar() {
             })}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-4">
+            <Link
+              href="/dashboard/client"
+              className={`text-[12px] font-medium transition-colors duration-300 ${
+                scrolled
+                  ? "text-text-secondary hover:text-navy"
+                  : "text-white/70 hover:text-white"
+              }`}
+            >
+              Client Portal
+            </Link>
+            <Link
+              href="/dashboard/candidate"
+              className={`text-[12px] font-medium transition-colors duration-300 ${
+                scrolled
+                  ? "text-text-secondary hover:text-navy"
+                  : "text-white/70 hover:text-white"
+              }`}
+            >
+              Apply for Work
+            </Link>
             <a
               href={getPhoneUrl(SITE_CONFIG.phone)}
               className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-medium transition-colors duration-300 ${
@@ -230,7 +250,21 @@ export function Navbar() {
                   </Link>
                 );
               })}
-              <div className="pt-3 px-4 flex flex-col gap-3">
+              <div className="pt-3 px-4 flex flex-col gap-2">
+                <Link
+                  href="/dashboard/client"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center gap-2 px-4 py-4 rounded-xl border border-gold/30 text-sm font-medium text-dark hover:bg-gold/5 transition-colors min-h-[52px]"
+                >
+                  Client Portal
+                </Link>
+                <Link
+                  href="/dashboard/candidate"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center gap-2 px-4 py-4 rounded-xl border border-gold/30 text-sm font-medium text-dark hover:bg-gold/5 transition-colors min-h-[52px]"
+                >
+                  Apply for Work
+                </Link>
                 <a
                   href={getPhoneUrl(SITE_CONFIG.phone)}
                   className="flex items-center justify-center gap-2 px-4 py-4 rounded-xl border border-border text-sm font-medium text-dark hover:bg-accent-pale transition-colors min-h-[52px]"

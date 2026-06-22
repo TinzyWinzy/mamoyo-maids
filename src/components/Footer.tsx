@@ -66,6 +66,8 @@ export function Footer() {
                 { href: "/mamoyo-maids/founder", label: "Our Founder" },
                 { href: "/about", label: "About WOBIC" },
                 { href: "/contact", label: "Contact" },
+                { href: "/dashboard/client", label: "Client Portal" },
+                { href: "/dashboard/candidate", label: "Apply for Work" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -85,22 +87,22 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                "House Maids",
-                "Babysitters",
-                "Security Guards",
-                "Drivers",
-                "Gardeners",
-                "Caretakers",
-                "Nurse Aids",
-                "Office Workers",
-                "Construction Workers",
+                { label: "House Maids", type: "House Maids" },
+                { label: "Babysitters", type: "Babysitters" },
+                { label: "Security Guards", type: "Security" },
+                { label: "Drivers", type: "Drivers" },
+                { label: "Gardeners", type: "Gardeners" },
+                { label: "Caretakers", type: "Caretakers" },
+                { label: "Nurse Aids", type: "Nurse Aids" },
+                { label: "Office Workers", type: "Office Workers" },
+                { label: "Construction Workers", type: "Construction" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.label}>
                   <Link
-                    href="/mamoyo-maids/employment"
+                    href="/contact"
                     className="text-white/70 hover:text-white text-sm transition-colors duration-300"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}

@@ -8,11 +8,11 @@ export const SITE_CONFIG = {
   whatsapp: process.env.NEXT_PUBLIC_BUSINESS_WHATSAPP || "+263734257057",
   phoneSecondary: process.env.NEXT_PUBLIC_BUSINESS_PHONE_SECONDARY || "+263783717844",
   email: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@wobic.co.zw",
-  address: "Karigamombe Centre, 11th Floor, Corner Julius Nyerere & Samora Machel, Harare, Zimbabwe",
+  address: "Karigamombe Centre, First Floor Room 109, Corner Julius Nyerere & Samora Machel, Harare, Zimbabwe",
   operatingHours: {
     weekdays: "7:00 AM – 6:00 PM",
     saturday: "8:00 AM – 4:00 PM",
-    sunday: "Closed",
+    sunday: "8:00 AM – 1:00 PM",
   },
   social: {
     facebook: "https://facebook.com/wobicemployment",
@@ -314,46 +314,6 @@ export const TESTIMONIALS = [
   },
 ];
 
-export const WHY_CHOOSE_US = [
-  {
-    title: "Police Clearance Guaranteed",
-    description:
-      "Every person we place has a valid police clearance. Your safety and peace of mind come first.",
-    icon: "ShieldCheck",
-  },
-  {
-    title: "Trained & Reliable Staff",
-    description:
-      "We train our candidates so they arrive ready to deliver professional, high-quality service.",
-    icon: "GraduationCap",
-  },
-  {
-    title: "Wide Range of Services",
-    description:
-      "From house maids to security guards, drivers to construction workers — we cover all your staffing needs.",
-    icon: "LayoutGrid",
-  },
-  {
-    title: "Affordable Rates",
-    description:
-      "Competitive pricing with no hidden fees. Get the right staff at the right price.",
-    icon: "Wallet",
-  },
-  {
-    title: "Trusted Since Day One",
-    description:
-      "Hundreds of families and businesses trust us to deliver reliable staff every time.",
-    icon: "Heart",
-  },
-];
-
-export const TRUST_BADGES = [
-  { label: "Police Cleared Staff", icon: "ShieldCheck" },
-  { label: "Trained Professionals", icon: "GraduationCap" },
-  { label: "Satisfaction Guaranteed", icon: "ThumbsUp" },
-  { label: "Licensed Agency", icon: "Building2" },
-];
-
 export const BOOKING_STEPS = [
   {
     step: 1,
@@ -402,25 +362,4 @@ export const TIKTOK_POSTS = [
   },
 ];
 
-export const TEAM_MEMBERS = [
-  {
-    name: "Mamoyo",
-    role: "Founder & CEO",
-    bio: "Mamoyo founded Mamoyo Services with a vision to provide reliable, trustworthy home and family services that families can depend on.",
-  },
-  {
-    name: "Nyasha Chikwanha",
-    role: "Operations Manager",
-    bio: "Nyasha ensures every cleaning appointment runs smoothly and every customer receives exceptional service.",
-  },
-  {
-    name: "Farai Mutasa",
-    role: "Head of Quality",
-    bio: "Farai leads our quality assurance team, ensuring consistent excellence across every cleaning job.",
-  },
-  {
-    name: "Rumbidzai Ndlovu",
-    role: "Customer Relations",
-    bio: "Rumbidzai is dedicated to making every customer feel valued, heard, and satisfied with our services.",
-  },
-];
+
