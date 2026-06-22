@@ -13,7 +13,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "optional",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
