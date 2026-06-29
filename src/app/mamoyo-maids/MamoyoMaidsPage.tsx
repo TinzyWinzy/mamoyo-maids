@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 const services = [
   {
@@ -175,6 +176,8 @@ export function MamoyoMaidsPage() {
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
 
       <section className="py-20 sm:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -1,15 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle,
   MessageCircle,
+  Compass,
 } from "lucide-react";
 import { SERVICES, SITE_CONFIG } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { ServiceFinderWizard } from "@/components/ServiceFinderWizard";
 import { CTASection } from "@/components/CTASection";
 import { iconMap } from "@/lib/icons";
 
@@ -25,8 +28,15 @@ const serviceImages: Record<string, string> = {
 };
 
 export function ServicesPage() {
+  const [wizardOpen, setWizardOpen] = useState(false);
+
   return (
     <>
+      <ServiceFinderWizard
+        isOpen={wizardOpen}
+        onClose={() => setWizardOpen(false)}
+      />
+
       <section className="relative min-h-screen flex items-center">
         <Image
           src="/images/about-hero.jpg"
@@ -48,6 +58,13 @@ export function ServicesPage() {
             From home cleaning to maid training, we offer services that help
             your home and family thrive.
           </p>
+          <button
+            onClick={() => setWizardOpen(true)}
+            className="mt-6 sm:mt-8 inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border-2 border-gold/60 text-gold font-semibold text-sm hover:bg-gold hover:text-dark transition-all duration-300 group"
+          >
+            <Compass className="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" />
+            Find My Service
+          </button>
         </div>
       </section>
 
@@ -160,6 +177,26 @@ export function ServicesPage() {
               </AnimatedSection>
             );
           })}
+        </div>
+      </section>
+
+      <section className="py-14 sm:py-16 bg-white border-y border-border/30">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { value: "300+", label: "Homes Cleaned" },
+              { value: "4.9", label: "Average Rating" },
+              { value: "50+", label: "Trained Maids" },
+              { value: "7 yrs", label: "Serving Harare" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center p-4 rounded-xl bg-light-section border border-border/30">
+                <p className="text-xl sm:text-2xl font-bold text-dark">{stat.value}</p>
+                <p className="text-[10px] sm:text-[11px] font-semibold text-text-secondary uppercase tracking-wider mt-0.5">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
